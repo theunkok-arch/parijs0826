@@ -388,7 +388,7 @@ body {
   text-decoration: none;
 }
 
-/* ---------- Praktisch & budget ---------- */
+/* ---------- Praktisch ---------- */
 
 .praktisch-card {
   background: var(--card);
@@ -407,34 +407,6 @@ body {
   margin: 0;
   font-size: 14px;
   color: var(--ink-soft);
-}
-
-.budget-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid #F2EEE7;
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
-}
-.budget-row:last-of-type { border-bottom: none; }
-.budget-row .bedrag { font-weight: 800; white-space: nowrap; }
-
-.budget-total {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0 0;
-  font-size: 16px;
-  font-weight: 900;
-  font-variant-numeric: tabular-nums;
-}
-
-.budget-extra {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: var(--ink-mute);
 }
 
 /* ---------- Zoekresultaten ---------- */

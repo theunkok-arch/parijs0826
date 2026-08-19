@@ -151,18 +151,6 @@
       h += '<div class="praktisch-card"><h3>' + esc(p.title) + '</h3><p>' + esc(p.text) + '</p></div>';
     });
 
-    h += '<h2 class="section-title">Budget per dag</h2>';
-    h += '<div class="praktisch-card">';
-    var total = 0;
-    DATA.budget.perDag.forEach(function (row) {
-      total += row.bedrag;
-      h += '<div class="budget-row"><span>' + esc(row.post) + '</span><span class="bedrag">€ ' + esc(row.bedrag) + '</span></div>';
-    });
-    h += '<div class="budget-total"><span>Totaal per dag</span><span>€ ' + total + '</span></div>';
-    h += '<p class="budget-extra">' + esc(DATA.budget.tickets) + '</p>';
-    h += '<p class="budget-extra">' + esc(DATA.budget.tip) + '</p>';
-    h += '</div>';
-
     $('#tickets-view').innerHTML = h;
   }
 

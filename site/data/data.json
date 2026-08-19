@@ -759,27 +759,5 @@
       "title": "OV-verstoringen deze dagen",
       "text": "Metro 8 dicht (Balard-Concorde, 20-27 aug), RER C dicht tot 22 aug (lijn Champ de Mars). Op de scooter geen probleem, wel goed te weten bij regen."
     }
-  ],
-  "budget": {
-    "perDag": [
-      {
-        "post": "2 scooter-dagpassen (Cooltra)",
-        "bedrag": 58
-      },
-      {
-        "post": "Ontbijt buiten de deur (vr+za)",
-        "bedrag": 45
-      },
-      {
-        "post": "Lunch (4 pers)",
-        "bedrag": 100
-      },
-      {
-        "post": "Diner (4 pers)",
-        "bedrag": 160
-      }
-    ],
-    "tickets": "Entrees hele weekend: ca. 230-300 euro voor 4 (incl. Eiffel-top 110 en Versailles 128; meiden bijna overal gratis).",
-    "tip": "Ontbijt zit al in de hotelboeking en een markt-lunch scheelt 40 euro: zo blijf je ruim binnen 350 euro per dag."
-  }
+  ]
 }
