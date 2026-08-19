@@ -1,0 +1,717 @@
+{
+  "meta": {
+    "title": "Parijs met Roos & Isis",
+    "subtitle": "20 t/m 23 augustus 2026 · Plaza Tour Eiffel · op de scooter door de stad",
+    "hotel": {
+      "name": "Plaza Tour Eiffel",
+      "address": "32 Rue Greuze, 75116 Paris",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris",
+      "web": "https://www.plazatoureiffel.com/en/"
+    },
+    "family": [
+      "Papa",
+      "Mama",
+      "Isis (16)",
+      "Roos (14)"
+    ],
+    "checked": "Feiten en prijzen gecheckt op 15 augustus 2026 via officiele websites."
+  },
+  "days": [
+    {
+      "id": "donderdag",
+      "date": "2026-08-20",
+      "label": "Donderdag",
+      "sub": "Aankomst & entrecote",
+      "emoji": "🥩",
+      "color": "pink",
+      "items": [
+        {
+          "time": "20:00",
+          "title": "Inchecken Plaza Tour Eiffel",
+          "desc": "Tassen op de kamer, meer niet. Meteen checken of de twin bedden voor Roos en Isis geregeld zijn.",
+          "address": "32 Rue Greuze, 75116",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris",
+          "tags": [
+            "donderdag",
+            "hotel",
+            "trocadero"
+          ]
+        },
+        {
+          "time": "20:45",
+          "title": "Scooter naar Le Relais de l'Entrecote",
+          "desc": "Ongeveer 8 minuten rijden. Parkeren in een gemarkeerd tweewieler-vak in de zijstraten, nooit op de stoep.",
+          "address": "15 Rue Marbeuf, 75008",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Relais+de+l'Entrecote+15+Rue+Marbeuf+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris&destination=15+Rue+Marbeuf+75008+Paris&travelmode=driving",
+          "tags": [
+            "donderdag",
+            "eten",
+            "scooter",
+            "entrecote"
+          ]
+        },
+        {
+          "time": "21:00",
+          "title": "Le Relais de l'Entrecote",
+          "desc": "Geen reservering mogelijk, dat is de formule: aansluiten in de rij (rond 21:00 zo'n 20-45 min). Een gerecht: entrecote met geheime saus en onbeperkt friet, ca. 30 euro pp. Keuken tot 23:00.",
+          "address": "15 Rue Marbeuf, 75008",
+          "web": "https://www.relaisdelentrecote.com/fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Relais+de+l'Entrecote+15+Rue+Marbeuf+Paris",
+          "warn": "Plan B: vestiging 101 bd du Montparnasse (kortste rij) of Le Malakoff op Place du Trocadero (reserveerbaar, tot 01:00, terras met Eiffeltoren-zicht). Bel Marbeuf die middag: +33 1 49 52 07 17.",
+          "tags": [
+            "donderdag",
+            "eten",
+            "entrecote",
+            "steak"
+          ]
+        },
+        {
+          "time": "23:00",
+          "title": "Eiffeltoren-fonkeling vanaf Trocadero",
+          "desc": "De toren fonkelt elk heel uur 5 minuten. Het plein ligt op 5 minuten lopen van het hotel: beste (gratis) uitzicht van Parijs. Perfecte eerste-avond-foto.",
+          "address": "Place du Trocadero, 75116",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Place+du+Trocadero+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=15+Rue+Marbeuf+75008+Paris&destination=Place+du+Trocadero+Paris&travelmode=driving",
+          "tags": [
+            "donderdag",
+            "eiffeltoren",
+            "foto",
+            "gratis",
+            "trocadero"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vrijdag",
+      "date": "2026-08-21",
+      "label": "Vrijdag",
+      "sub": "Ile de la Cite, Saint-Germain & rooftop",
+      "emoji": "⛪",
+      "color": "blue",
+      "items": [
+        {
+          "time": "08:30",
+          "title": "Koffie & croissants bij Carette",
+          "desc": "6 minuten lopen, open vanaf 07:00. Reken op 10-14 euro pp. Goedkoper: Boulangerie Bonon (14 rue de Longchamp). Meer uitzicht: Cafe du Trocadero.",
+          "address": "4 Place du Trocadero, 75116",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Carette+4+Place+du+Trocadero+Paris",
+          "tags": [
+            "vrijdag",
+            "ontbijt",
+            "croissant",
+            "koffie",
+            "carette"
+          ]
+        },
+        {
+          "time": "09:00",
+          "title": "NU DOEN: tijdslot Notre-Dame boeken",
+          "desc": "Gratis, maar slots komen pas een paar uur vooraf vrij. Boek aan de ontbijttafel via resa.notredamedeparis.fr.",
+          "web": "https://resa.notredamedeparis.fr",
+          "tags": [
+            "vrijdag",
+            "tickets",
+            "notredame"
+          ]
+        },
+        {
+          "time": "09:20",
+          "title": "Scooter naar Ile de la Cite",
+          "desc": "Circa 15 minuten. Parkeren: quai de la Corse of quai aux Fleurs (bij de bloemenmarkt). Het plein voor de Notre-Dame is voetgangersgebied.",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris&destination=Quai+de+la+Corse+75004+Paris&travelmode=driving",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Quai+de+la+Corse+Paris+parking+deux+roues",
+          "tags": [
+            "vrijdag",
+            "scooter"
+          ]
+        },
+        {
+          "time": "09:50",
+          "title": "Sainte-Chapelle",
+          "desc": "Het mooiste glas-in-lood van Europa, op zijn best in ochtendlicht. 16 euro pp, Roos en Isis gratis (onder 18, ID mee!). De rij is de security, niet de kassa: tickets vooraf online. Binnen 30-45 min.",
+          "address": "10 Boulevard du Palais, 75001",
+          "web": "https://www.sainte-chapelle.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sainte-Chapelle+10+Boulevard+du+Palais+Paris",
+          "ticketRef": "saintechapelle",
+          "tags": [
+            "vrijdag",
+            "attractie",
+            "saintechapelle",
+            "kerk",
+            "glasinlood"
+          ]
+        },
+        {
+          "time": "10:50",
+          "title": "Notre-Dame de Paris",
+          "desc": "Gratis, in jullie tijdslot. Heropend na de brand: binnen is alles licht en nieuw. 30-45 minuten. De torens (424 treden) zijn een apart ticket dat alleen vooraf online kan.",
+          "address": "6 Parvis Notre-Dame, 75004",
+          "web": "https://www.notredamedeparis.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cathedrale+Notre-Dame+de+Paris",
+          "ticketRef": "notredametorens",
+          "tags": [
+            "vrijdag",
+            "attractie",
+            "notredame",
+            "kathedraal"
+          ]
+        },
+        {
+          "time": "11:45",
+          "title": "Ile Saint-Louis + ijs bij Berthillon",
+          "desc": "Het rustigste stukje oud Parijs. Beroemdste ijs van de stad. Op nr 26 zit reisboekhandel Librairie Ulysse, maar de eigenaresse zeilt in de zomer: grote kans dicht.",
+          "address": "Rue Saint-Louis-en-l'Ile, 75004",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Berthillon+29-31+Rue+Saint-Louis-en-l'Ile+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Cathedrale+Notre-Dame+de+Paris&destination=Berthillon+Paris&travelmode=walking",
+          "tags": [
+            "vrijdag",
+            "ijs",
+            "berthillon",
+            "winkel",
+            "boeken"
+          ]
+        },
+        {
+          "time": "12:45",
+          "title": "Lunch: Breizh Cafe Odeon",
+          "desc": "Boekweitgalettes en cider, ca. 25 euro pp, terras. Gereserveerd? Zo niet: breizhcafe.com.",
+          "address": "1 Rue de l'Odeon, 75006",
+          "web": "https://en.breizhcafe.com/breizh-cafe-odeon",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Breizh+Cafe+1+Rue+de+l'Odeon+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Berthillon+Paris&destination=1+Rue+de+l'Odeon+75006+Paris&travelmode=walking",
+          "tags": [
+            "vrijdag",
+            "eten",
+            "lunch",
+            "crepes"
+          ]
+        },
+        {
+          "time": "14:15",
+          "title": "Saint-Germain: galeriewandeling",
+          "desc": "Rue de Seine (dichtste galeriestraat van Parijs) - rue Mazarine - rue Jacques Callot - rue Bonaparte - place de Furstemberg. Koffie bij La Palette, 43 rue de Seine. Eerlijk: veel galeries zijn in augustus dicht, dit is kijken en sfeer.",
+          "address": "Rue de Seine, 75006",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rue+de+Seine+75006+Paris",
+          "tags": [
+            "vrijdag",
+            "kunst",
+            "galerie",
+            "wandelen",
+            "saintgermain"
+          ]
+        },
+        {
+          "time": "15:30",
+          "title": "Les Deux Magots",
+          "desc": "Espresso 5,50, cappuccino 9,50: drie keer de normale prijs, maar je zit waar Hemingway, Picasso en Sartre zaten. Precies een keer een half uur het terras waard. Niet eten.",
+          "address": "6 Place Saint-Germain-des-Pres, 75006",
+          "web": "https://lesdeuxmagots.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Les+Deux+Magots+Paris",
+          "tags": [
+            "vrijdag",
+            "koffie",
+            "deuxmagots",
+            "historie"
+          ]
+        },
+        {
+          "time": "16:15",
+          "title": "Musee Rodin (+ Hotel Matignon foto-stop)",
+          "desc": "Scooter, 8 min. Op nr 57 rue de Varenne woont de premier: hoge muur, dichte poort, gendarmes. Twee minuten voor een foto. Het echte doel: de beeldentuin van Rodin op nr 77, met De Denker. 14 euro pp, meiden gratis. Tot 18:30.",
+          "address": "77 Rue de Varenne, 75007",
+          "web": "https://www.musee-rodin.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Musee+Rodin+77+Rue+de+Varenne+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=6+Place+Saint-Germain-des-Pres+Paris&destination=Musee+Rodin+Paris&travelmode=driving",
+          "ticketRef": "rodin",
+          "tags": [
+            "vrijdag",
+            "kunst",
+            "rodin",
+            "matignon",
+            "tuin",
+            "attractie"
+          ]
+        },
+        {
+          "time": "18:30",
+          "title": "Galeries Lafayette Haussmann: koepel + rooftop",
+          "desc": "Scooter 15 min, parkeren rue de Provence of rue Joubert. Drie gratis toppers: de glas-in-lood koepel uit 1912, de Glasswalk, en het dakterras op de 8e met 360 graden uitzicht. Open tot 20:30.",
+          "address": "40 Boulevard Haussmann, 75009",
+          "web": "https://haussmann.galerieslafayette.com/en/the-terrace-at-galeries-lafayette/",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Galeries+Lafayette+Haussmann+40+Boulevard+Haussmann+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Musee+Rodin+Paris&destination=Galeries+Lafayette+Haussmann+Paris&travelmode=driving",
+          "tags": [
+            "vrijdag",
+            "winkelen",
+            "rooftop",
+            "uitzicht",
+            "gratis",
+            "galerieslafayette"
+          ]
+        },
+        {
+          "time": "19:45",
+          "title": "Optioneel: Karamell snoepwinkel",
+          "desc": "Virale Zweedse pick-n-mix, 10 minuten lopen vanaf Galeries Lafayette. Voor onderweg naar het diner.",
+          "address": "15 Rue des Martyrs, 75009",
+          "web": "https://www.karamell.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Karamell+15+Rue+des+Martyrs+Paris",
+          "tags": [
+            "vrijdag",
+            "snoep",
+            "viral",
+            "winkel"
+          ]
+        },
+        {
+          "time": "20:30",
+          "title": "Diner",
+          "desc": "Bij Opera blijven, of terug naar het 16e: Le Petit Retro (5 rue Mesnil, 7 dagen open, klassieke bistro) of Le Scheffer (22 rue Scheffer, 3 min van hotel, eerst bellen: sluit vaak in augustus).",
+          "address": "5 Rue Mesnil, 75116",
+          "web": "https://www.petitretro.fr/en/",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Petit+Retro+5+Rue+Mesnil+Paris",
+          "tags": [
+            "vrijdag",
+            "eten",
+            "diner",
+            "bistro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaterdag",
+      "date": "2026-08-22",
+      "label": "Zaterdag",
+      "sub": "Famous brand stores (+ een shot cultuur)",
+      "emoji": "🛍️",
+      "color": "lilac",
+      "items": [
+        {
+          "time": "08:30",
+          "title": "Koffie & croissants",
+          "desc": "Carette (vanaf 07:30) of Boulangerie Bonon (za tot 15:00).",
+          "address": "4 Place du Trocadero, 75116",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Carette+4+Place+du+Trocadero+Paris",
+          "tags": [
+            "zaterdag",
+            "ontbijt",
+            "croissant"
+          ]
+        },
+        {
+          "time": "09:30",
+          "title": "Scooter naar het Quartier Latin",
+          "desc": "Circa 18 minuten, parkeren rond rue des Ecoles.",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris&destination=Pantheon+Paris&travelmode=driving",
+          "tags": [
+            "zaterdag",
+            "scooter"
+          ]
+        },
+        {
+          "time": "10:00",
+          "title": "Pantheon: 45 minuten geschiedenis",
+          "desc": "De eregalerij van Frankrijk: Voltaire, Marie Curie, Josephine Baker, en de slinger van Foucault die bewijst dat de aarde draait. 16 euro pp, Roos en Isis gratis. Koepel is dicht (restauratie), dus 45 min is genoeg.",
+          "address": "Place du Pantheon, 75005",
+          "web": "https://www.paris-pantheon.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pantheon+Paris",
+          "ticketRef": "pantheon",
+          "tags": [
+            "zaterdag",
+            "attractie",
+            "pantheon",
+            "historie",
+            "cultuur"
+          ]
+        },
+        {
+          "time": "11:15",
+          "title": "Pop Mart Les Halles (Labubu!)",
+          "desc": "Scooter 8 min naar Les Halles. DE hype van nu: Labubu en blind boxes. Dit filiaal heeft de langste rijen van Parijs, dus dit is bewust vroeg gepland. Rustiger alternatief: Pop Mart Opera, 19 av. de l'Opera.",
+          "address": "99 Rue Rambuteau, 75001",
+          "web": "https://www.popmart.com/en-FR/store-list",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pop+Mart+99+Rue+Rambuteau+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Pantheon+Paris&destination=99+Rue+Rambuteau+75001+Paris&travelmode=driving",
+          "tags": [
+            "zaterdag",
+            "winkel",
+            "popmart",
+            "labubu",
+            "viral",
+            "merk"
+          ]
+        },
+        {
+          "time": "12:00",
+          "title": "Samaritaine",
+          "desc": "Het mooiste warenhuis-gebouw van Parijs (art nouveau + art deco), 5 min lopen richting Pont Neuf. Kort naar binnen voor het trappenhuis en de gevel, dan door.",
+          "address": "9 Rue de la Monnaie, 75001",
+          "web": "https://www.samaritaine.com/en/plan-your-visit/",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Samaritaine+9+Rue+de+la+Monnaie+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=99+Rue+Rambuteau+Paris&destination=Samaritaine+Paris&travelmode=walking",
+          "tags": [
+            "zaterdag",
+            "winkelen",
+            "samaritaine",
+            "warenhuis",
+            "architectuur"
+          ]
+        },
+        {
+          "time": "12:45",
+          "title": "Lunch: Marche des Enfants Rouges",
+          "desc": "Scooter 6 min naar de Marais. Overdekte markt uit 1615: Marokkaans, Japans, Italiaans, 12-20 euro, iedereen kiest zijn eigen ding. Liever een tafel: Chez Janou (2 rue Roger Verlomme, reserveren).",
+          "address": "39 Rue de Bretagne, 75003",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Marche+des+Enfants+Rouges+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Samaritaine+Paris&destination=39+Rue+de+Bretagne+75003+Paris&travelmode=driving",
+          "tags": [
+            "zaterdag",
+            "eten",
+            "lunch",
+            "markt",
+            "marais"
+          ]
+        },
+        {
+          "time": "14:00",
+          "title": "Marais: AMI, Sandro Stock & de boutiques",
+          "desc": "Te voet: AMI Paris flagship (96 rue de Turenne, grootste ter wereld), Sandro Stock outlet tot -40% (26 rue de Sevigne), Courreges (27 rue des Francs-Bourgeois), en de kleine independents in rue de Saintonge, rue Charlot en rue du Perche.",
+          "address": "96 Rue de Turenne, 75003",
+          "web": "https://www.amiparis.com/en-us/pages/le-marais",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=AMI+Paris+96+Rue+de+Turenne+Paris",
+          "tags": [
+            "zaterdag",
+            "winkelen",
+            "merk",
+            "ami",
+            "sandro",
+            "courreges",
+            "marais",
+            "boutique"
+          ]
+        },
+        {
+          "time": "15:45",
+          "title": "Scooter naar de Champs-Elysees",
+          "desc": "Circa 15 minuten. Parkeren in de zijstraten (rue de Marignan, rue Pierre Charron), niet op de avenue zelf.",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=39+Rue+de+Bretagne+75003+Paris&destination=Rond-Point+des+Champs-Elysees+Paris&travelmode=driving",
+          "tags": [
+            "zaterdag",
+            "scooter"
+          ]
+        },
+        {
+          "time": "16:00",
+          "title": "De flagship-run: Champs-Elysees & Gouden Driehoek",
+          "desc": "In deze volgorde: Polene (2 Rond-Point des CE) - Jacquemus (58 av. Montaigne) - adidas (nr 88) - Nike House of Innovation (nr 79) - Zara flagship (nr 74) - Galeries Lafayette CE (nr 60) - Louis Vuitton Maison (nr 101). Alles open tot minstens 20:00.",
+          "address": "Avenue des Champs-Elysees, 75008",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Avenue+des+Champs-Elysees+Paris",
+          "tags": [
+            "zaterdag",
+            "winkelen",
+            "merk",
+            "nike",
+            "adidas",
+            "zara",
+            "louisvuitton",
+            "jacquemus",
+            "polene",
+            "flagship",
+            "champselysees"
+          ]
+        },
+        {
+          "time": "18:00",
+          "title": "Kith Treats: ijs- en cereal-break",
+          "desc": "1 minuut van de avenue. De viraalste ijsjes van Parijs, in de mooiste sneakerwinkel van de stad. Zitten, bijkomen, stories posten.",
+          "address": "49 Rue Pierre Charron, 75008",
+          "web": "https://eu.kith.com/pages/kith-treats-paris",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kith+Paris+49+Rue+Pierre+Charron",
+          "tags": [
+            "zaterdag",
+            "ijs",
+            "kith",
+            "sneakers",
+            "viral",
+            "merk"
+          ]
+        },
+        {
+          "time": "18:45",
+          "title": "Sephora Champs-Elysees: de finale",
+          "desc": "Nr 70-72, open tot 23:30, dus geen enkele haast. Het grootste beautywalhalla van Europa als afsluiter van de shopdag.",
+          "address": "70-72 Avenue des Champs-Elysees, 75008",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sephora+72+Avenue+des+Champs-Elysees+Paris",
+          "tags": [
+            "zaterdag",
+            "winkelen",
+            "sephora",
+            "beauty",
+            "merk"
+          ]
+        },
+        {
+          "time": "20:15",
+          "title": "Diner + macarons",
+          "desc": "Laduree op nr 75 voor een doos macarons voor onderweg morgen. Dineren bij de avenue of rustig terug in het 16e. Vroeg naar bed: morgen 08:20 vertrekken.",
+          "address": "75 Avenue des Champs-Elysees, 75008",
+          "web": "https://laduree.com",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laduree+75+Avenue+des+Champs-Elysees+Paris",
+          "tags": [
+            "zaterdag",
+            "eten",
+            "diner",
+            "laduree",
+            "macarons"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zondag",
+      "date": "2026-08-23",
+      "label": "Zondag",
+      "sub": "Eiffeltoren-top, Versailles & naar huis",
+      "emoji": "👑",
+      "color": "mint",
+      "items": [
+        {
+          "time": "07:45",
+          "title": "Ontbijt in het hotel",
+          "desc": "Zit in de boeking. Vandaag strak schema: om 08:20 de deur uit.",
+          "tags": [
+            "zondag",
+            "ontbijt",
+            "hotel"
+          ]
+        },
+        {
+          "time": "08:20",
+          "title": "Uitchecken en de auto laden",
+          "desc": "Vraag of je de auto tot vertrek kunt laten staan als hij bij het hotel staat, anders direct richting toren (5 min rijden). Zondag is straatparkeren in Parijs gratis; anders Parking Pullman Tour Eiffel (18 av. de Suffren).",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Parking+Indigo+Pullman+Tour+Eiffel+Paris",
+          "tags": [
+            "zondag",
+            "hotel",
+            "auto",
+            "parkeren"
+          ]
+        },
+        {
+          "time": "08:45",
+          "title": "Eiffeltoren: Entree 1, Allee des Refuzniks",
+          "desc": "Security opent 08:45, eerste lift 09:00: jullie staan vooraan. Met e-tickets via de rij 'visitors with tickets'. Alleen voor de liefhebbers: helemaal naar de top op 276 meter.",
+          "address": "Allee des Refuzniks, 75007",
+          "web": "https://www.toureiffel.paris/en/access-map",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Allee+des+Refuzniks+Tour+Eiffel+Paris",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris&destination=Allee+des+Refuzniks+Paris&travelmode=driving",
+          "ticketRef": "eiffel",
+          "tags": [
+            "zondag",
+            "eiffeltoren",
+            "attractie",
+            "uitzicht",
+            "top"
+          ]
+        },
+        {
+          "time": "09:00",
+          "title": "Met de lift naar de top",
+          "desc": "36,70 euro pp volwassen, Roos en Isis 18,40 (jeugdtarief 12-24). Reken op 2 tot 2,5 uur totaal: top, dan 2e en 1e verdieping op de terugweg. Om 11:00 buiten.",
+          "web": "https://ticket.toureiffel.paris/en",
+          "tags": [
+            "zondag",
+            "eiffeltoren",
+            "top",
+            "tickets"
+          ]
+        },
+        {
+          "time": "11:15",
+          "title": "Auto naar Versailles",
+          "desc": "30-45 minuten op zondagochtend, via de Pont de Sevres en de D910 (de Jardin d'Acclimatation en het Bois laten we deze keer links liggen). Parkeren: Place d'Armes, recht voor het kasteel, ca. 4,80 euro per uur.",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Tour+Eiffel+Paris&destination=Parking+Place+d'Armes+Versailles&travelmode=driving",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Parking+Place+d'Armes+Versailles",
+          "tags": [
+            "zondag",
+            "auto",
+            "versailles",
+            "parkeren"
+          ]
+        },
+        {
+          "time": "12:15",
+          "title": "Lunch in Versailles-stad",
+          "desc": "Rond de Place du Marche Notre-Dame (8 min lopen van het kasteel) zitten de brasseries. Chic alternatief binnen de kasteelmuren: Angelina, beroemd om de warme chocolademelk.",
+          "address": "Place du Marche Notre-Dame, Versailles",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Place+du+Marche+Notre-Dame+Versailles",
+          "tags": [
+            "zondag",
+            "eten",
+            "lunch",
+            "versailles"
+          ]
+        },
+        {
+          "time": "13:30",
+          "title": "Chateau de Versailles: guided tour (90 min)",
+          "desc": "De Prive-vertrekken van de Koningen, in het Engels, met directe toegang zonder rij. Daarna mag je zelf door naar de Spiegelzaal en de staatsievertrekken. Verzamelen: Noord-ministersvleugel, rechts op het erehof. Let op: zondag 23/8 is Musical Fountains-dag, dus de tuinen zitten in jullie passport.",
+          "address": "Place d'Armes, 78000 Versailles",
+          "web": "https://billetterie.chateauversailles.fr",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chateau+de+Versailles",
+          "ticketRef": "versailles",
+          "warn": "Engelse tours op zondag zijn beperkt: boek VANDAAG. Plan B: gewoon 13:30-tijdslot + de gratis officiele app als audiotour.",
+          "tags": [
+            "zondag",
+            "versailles",
+            "attractie",
+            "tour",
+            "historie",
+            "kasteel",
+            "cultuur"
+          ]
+        },
+        {
+          "time": "15:15",
+          "title": "Spiegelzaal + blik in de tuinen",
+          "desc": "Na de tour zelf doorlopen: Spiegelzaal, slaapkamer van de koning, en een half uur tuinen met de muziekfonteinen aan.",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Jardins+du+Chateau+de+Versailles",
+          "tags": [
+            "zondag",
+            "versailles",
+            "tuin",
+            "spiegelzaal"
+          ]
+        },
+        {
+          "time": "16:15",
+          "title": "Naar huis",
+          "desc": "Vanaf Versailles direct de A13/A86 op richting het noorden: je hoeft Parijs niet meer in. Macarons van Laduree open op de achterbank.",
+          "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Parking+Place+d'Armes+Versailles&destination=Amsterdam&travelmode=driving",
+          "tags": [
+            "zondag",
+            "auto",
+            "naar huis"
+          ]
+        }
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": "eiffel",
+      "title": "Eiffeltoren: lift naar de top",
+      "urgency": "boek-vandaag",
+      "price": "110,20 euro voor 4 (2x 36,70 + 2x 18,40 jeugd 12-24)",
+      "url": "https://ticket.toureiffel.paris/en",
+      "when": "Zondag 09:00",
+      "note": "Top-tickets voor augustus zijn vaak uitverkocht, MAAR er komen elke paar dagen kleine nieuwe batches vrij. Check dagelijks, pak elk slot tussen 09:00 en 09:30. Plan B: trap+lift-combiticket ter plekke, of 2e verdieping."
+    },
+    {
+      "id": "versailles",
+      "title": "Versailles: Passport + guided tour",
+      "urgency": "boek-vandaag",
+      "price": "ca. 128 euro voor 4: 2x passport 32 (EEA-tarief, ID mee) + 2x jeugd-passport 12 + 4x tour ca. 10",
+      "url": "https://billetterie.chateauversailles.fr",
+      "when": "Zondag 13:30",
+      "note": "Onder 18 is de entree gratis maar een tijdslot-ticket is verplicht. 23/8 is fonteinen-dag: neem voor de meiden het 12-euro passport zodat iedereen ook de tuinen in kan. Engelse tour om ca. 13:30 boeken; vol = tijdslot + gratis app-audiotour."
+    },
+    {
+      "id": "saintechapelle",
+      "title": "Sainte-Chapelle",
+      "urgency": "vooraf-aangeraden",
+      "price": "32 euro voor 4 (meiden gratis)",
+      "url": "https://tickets.monuments-nationaux.fr",
+      "when": "Vrijdag 09:50",
+      "note": "Ticket vooraf scheelt niets aan de security-rij maar wel de kassa. Ochtend = kortste rij en mooiste licht."
+    },
+    {
+      "id": "notredame",
+      "title": "Notre-Dame: gratis tijdslot",
+      "urgency": "op-de-dag",
+      "price": "gratis",
+      "url": "https://resa.notredamedeparis.fr",
+      "when": "Vrijdag 10:50",
+      "note": "Slots komen pas enkele uren vooraf vrij. Boek vrijdagochtend aan het ontbijt."
+    },
+    {
+      "id": "notredametorens",
+      "title": "Notre-Dame torens (optioneel)",
+      "urgency": "beslismoment",
+      "price": "32 euro voor 4 (meiden gratis), 424 treden",
+      "url": "https://www.tours-notre-dame-de-paris.fr",
+      "when": "Vrijdag, na de kathedraal",
+      "note": "Alleen vooraf online, ter plekke is er geen verkoop. Beslis nu: willen jullie klimmen of niet?"
+    },
+    {
+      "id": "pantheon",
+      "title": "Pantheon",
+      "urgency": "kan-ter-plekke",
+      "price": "32 euro voor 4 (meiden gratis)",
+      "url": "https://tickets.monuments-nationaux.fr",
+      "when": "Zaterdag 10:00",
+      "note": "Walk-in is prima. Online kopen scheelt alleen de kassarij."
+    },
+    {
+      "id": "rodin",
+      "title": "Musee Rodin",
+      "urgency": "kan-ter-plekke",
+      "price": "28 euro voor 4 (meiden gratis)",
+      "url": "https://musee-rodin.tickeasy.com",
+      "when": "Vrijdag 16:15",
+      "note": "Reserveren aangeraden maar niet verplicht. De beeldentuin is het mooiste deel."
+    },
+    {
+      "id": "restaurants",
+      "title": "Restaurant-reserveringen",
+      "urgency": "boek-vandaag",
+      "price": "-",
+      "url": "https://en.breizhcafe.com/breizh-cafe-odeon",
+      "when": "Vrijdag lunch (Breizh Cafe) en evt. zaterdag (Chez Janou)",
+      "note": "Le Relais de l'Entrecote reserveert niet: gewoon aansluiten."
+    }
+  ],
+  "praktisch": [
+    {
+      "title": "Scooters (Cooltra/Yego)",
+      "text": "Beide ouders vooraf registreren in de app: rijbewijscontrole is handmatig en kan een dag duren. Vier paar CE-motorhandschoenen mee: wettelijk verplicht, ook achterop (boete 45 euro pp). Helmen zitten op de scooter, pas ze eerst. Elektrisch parkeert gratis, maar nooit op de stoep of in een fietsvak. Yego wil een parkeer-foto na elke rit."
+    },
+    {
+      "title": "Roos & Isis gratis naar binnen",
+      "text": "Onder 18 is bijna alles gratis (Sainte-Chapelle, Pantheon, Rodin, Versailles-entree). Neem ID's mee, ze controleren echt."
+    },
+    {
+      "title": "Augustus-realiteit",
+      "text": "Veel kunstgaleries en buurtbistro's zijn dicht (heropening eind aug/begin sept). De Marais en de warenhuizen draaien gewoon door. Bel bij buurtrestaurants altijd even vooraf."
+    },
+    {
+      "title": "OV-verstoringen deze dagen",
+      "text": "Metro 8 dicht (Balard-Concorde, 20-27 aug), RER C dicht tot 22 aug (lijn Champ de Mars). Op de scooter geen probleem, wel goed te weten bij regen."
+    }
+  ],
+  "budget": {
+    "perDag": [
+      {
+        "post": "2 scooter-dagpassen (Cooltra)",
+        "bedrag": 58
+      },
+      {
+        "post": "Ontbijt buiten de deur (vr+za)",
+        "bedrag": 45
+      },
+      {
+        "post": "Lunch (4 pers)",
+        "bedrag": 100
+      },
+      {
+        "post": "Diner (4 pers)",
+        "bedrag": 160
+      }
+    ],
+    "tickets": "Entrees hele weekend: ca. 230-300 euro voor 4 (incl. Eiffel-top 110 en Versailles 128; meiden bijna overal gratis).",
+    "tip": "Ontbijt zit al in de hotelboeking en een markt-lunch scheelt 40 euro: zo blijf je ruim binnen 350 euro per dag."
+  }
+}
