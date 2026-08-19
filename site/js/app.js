@@ -56,6 +56,24 @@
     if (item.address) h += '<p class="address">' + esc(item.address) + '</p>';
     if (item.warn) h += '<div class="warn"><strong>Let op:</strong> ' + esc(item.warn) + '</div>';
 
+    if (item.options) {
+      var lastGroup = null;
+      item.options.forEach(function (o) {
+        if (o.group && o.group !== lastGroup) {
+          h += '<p class="option-group">' + esc(o.group) + '</p>';
+          lastGroup = o.group;
+        }
+        h += '<div class="option">';
+        h += '<p class="option-name">' + esc(o.name) + '</p>';
+        h += '<p class="option-note">' + esc(o.note) + '</p>';
+        var ob = '';
+        if (o.mapsUrl) ob += '<a class="btn" href="' + esc(o.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
+        if (o.web) ob += '<a class="btn" href="' + esc(o.web) + '" target="_blank" rel="noopener">' + ICONS.globe + 'Reserveer</a>';
+        if (ob) h += '<div class="btnrow option-btns">' + ob + '</div>';
+        h += '</div>';
+      });
+    }
+
     var btns = '';
     if (item.mapsUrl) btns += '<a class="btn" href="' + esc(item.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
     if (item.routeUrl) btns += '<a class="btn" href="' + esc(item.routeUrl) + '" target="_blank" rel="noopener">' + ICONS.route + 'Route</a>';
@@ -74,7 +92,15 @@
     h += '<p class="ticket-meta"><strong>Wanneer:</strong> ' + esc(t.when) + '</p>';
     h += '<p class="ticket-meta"><strong>Prijs:</strong> ' + esc(t.price) + '</p>';
     h += '<p class="ticket-note">' + esc(t.note) + '</p>';
-    h += '<a class="btn-book" href="' + esc(t.url) + '" target="_blank" rel="noopener">Boek tickets</a>';
+    if (t.links) {
+      h += '<div class="btnrow ticket-links">';
+      t.links.forEach(function (l) {
+        h += '<a class="btn" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + ICONS.globe + esc(l.label) + '</a>';
+      });
+      h += '</div>';
+    } else if (t.url) {
+      h += '<a class="btn-book" href="' + esc(t.url) + '" target="_blank" rel="noopener">Boek tickets</a>';
+    }
     h += '</article>';
     return h;
   }
@@ -186,7 +212,8 @@
     var results = [];
     DATA.days.forEach(function (day) {
       day.items.forEach(function (item) {
-        var hay = (item.title + ' ' + item.desc + ' ' + (item.tags || []).join(' ')).toLowerCase();
+        var optText = (item.options || []).map(function (o) { return o.name + ' ' + o.note; }).join(' ');
+        var hay = (item.title + ' ' + item.desc + ' ' + optText + ' ' + (item.tags || []).join(' ')).toLowerCase();
         if (hay.indexOf(q) !== -1) results.push({ item: item, day: day });
       });
     });
