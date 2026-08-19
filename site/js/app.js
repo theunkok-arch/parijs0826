@@ -14,6 +14,13 @@
     'kan-ter-plekke': 'Kan ter plekke'
   };
 
+  var ICONS = {
+    pin: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>',
+    route: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 21 4l-7.5 18-2.3-8.2L3 11.5z"/></svg>',
+    globe: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+    ticket: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2.5a1.5 1.5 0 0 0 0 3V16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2.5a1.5 1.5 0 0 0 0-3V8z"/></svg>'
+  };
+
   function $(sel) { return document.querySelector(sel); }
 
   function esc(s) {
@@ -37,7 +44,7 @@
     var h = '<article class="card">';
 
     if (showDayLabel) {
-      h += '<span class="day-label bg-' + esc(day.color) + '">' + esc(day.emoji) + ' ' + esc(day.label) + '</span>';
+      h += '<span class="day-label bg-' + esc(day.color) + '">' + esc(day.label) + '</span>';
     }
 
     h += '<div class="card-top">';
@@ -46,14 +53,14 @@
     h += '</div>';
 
     h += '<p class="desc">' + esc(item.desc) + '</p>';
-    if (item.address) h += '<p class="address">📍 ' + esc(item.address) + '</p>';
-    if (item.warn) h += '<div class="warn">⚠️ ' + esc(item.warn) + '</div>';
+    if (item.address) h += '<p class="address">' + esc(item.address) + '</p>';
+    if (item.warn) h += '<div class="warn"><strong>Let op:</strong> ' + esc(item.warn) + '</div>';
 
     var btns = '';
-    if (item.mapsUrl) btns += '<a class="btn" href="' + esc(item.mapsUrl) + '" target="_blank" rel="noopener">📍 Kaart</a>';
-    if (item.routeUrl) btns += '<a class="btn" href="' + esc(item.routeUrl) + '" target="_blank" rel="noopener">🛵 Route</a>';
-    if (item.web) btns += '<a class="btn" href="' + esc(item.web) + '" target="_blank" rel="noopener">🌐 Site</a>';
-    if (item.ticketRef) btns += '<button class="btn" type="button" data-ticketref="' + esc(item.ticketRef) + '">🎟️ Ticket</button>';
+    if (item.mapsUrl) btns += '<a class="btn" href="' + esc(item.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
+    if (item.routeUrl) btns += '<a class="btn" href="' + esc(item.routeUrl) + '" target="_blank" rel="noopener">' + ICONS.route + 'Route</a>';
+    if (item.web) btns += '<a class="btn" href="' + esc(item.web) + '" target="_blank" rel="noopener">' + ICONS.globe + 'Site</a>';
+    if (item.ticketRef) btns += '<button class="btn" type="button" data-ticketref="' + esc(item.ticketRef) + '">' + ICONS.ticket + 'Ticket</button>';
     if (btns) h += '<div class="btnrow">' + btns + '</div>';
 
     h += '</article>';
@@ -67,7 +74,7 @@
     h += '<p class="ticket-meta"><strong>Wanneer:</strong> ' + esc(t.when) + '</p>';
     h += '<p class="ticket-meta"><strong>Prijs:</strong> ' + esc(t.price) + '</p>';
     h += '<p class="ticket-note">' + esc(t.note) + '</p>';
-    h += '<a class="btn-book" href="' + esc(t.url) + '" target="_blank" rel="noopener">🎟️ Boek tickets</a>';
+    h += '<a class="btn-book" href="' + esc(t.url) + '" target="_blank" rel="noopener">Boek tickets</a>';
     h += '</article>';
     return h;
   }
@@ -84,9 +91,9 @@
     var h = '';
     DATA.days.forEach(function (day) {
       h += '<button class="daytab" type="button" data-view="' + esc(day.id) + '" data-color="' + esc(day.color) + '">'
-        + esc(dayShort(day.label)) + ' ' + esc(day.emoji) + '</button>';
+        + esc(dayShort(day.label)) + '</button>';
     });
-    h += '<button class="daytab" type="button" data-view="tickets" data-color="tickets">Tickets 🎟️</button>';
+    h += '<button class="daytab" type="button" data-view="tickets" data-color="tickets">Tickets</button>';
     $('#daynav').innerHTML = h;
   }
 
@@ -94,8 +101,9 @@
     var h = '';
     DATA.days.forEach(function (day) {
       h += '<div class="day-section" id="day-' + esc(day.id) + '" hidden>';
-      h += '<div class="day-header bg-' + esc(day.color) + '">';
-      h += '<h2>' + esc(day.emoji) + ' ' + esc(day.label) + ' ' + esc(formatDate(day.date)) + '</h2>';
+      h += '<div class="day-header">';
+      h += '<h2>' + esc(day.label) + ' <span class="day-date">' + esc(formatDate(day.date)) + '</span></h2>';
+      h += '<span class="day-accent bg-' + esc(day.color) + '"></span>';
       h += '<p class="day-sub">' + esc(day.sub) + '</p>';
       h += '</div>';
       day.items.forEach(function (item) { h += itemCard(item, day, false); });
@@ -109,15 +117,15 @@
       return URGENCY_ORDER.indexOf(a.urgency) - URGENCY_ORDER.indexOf(b.urgency);
     });
 
-    var h = '<h2 class="section-title">🎟️ Tickets</h2>';
+    var h = '<h2 class="section-title">Tickets</h2>';
     sorted.forEach(function (t) { h += ticketCard(t); });
 
-    h += '<h2 class="section-title">🧭 Praktisch</h2>';
+    h += '<h2 class="section-title">Praktisch</h2>';
     DATA.praktisch.forEach(function (p) {
       h += '<div class="praktisch-card"><h3>' + esc(p.title) + '</h3><p>' + esc(p.text) + '</p></div>';
     });
 
-    h += '<h2 class="section-title">💶 Budget per dag</h2>';
+    h += '<h2 class="section-title">Budget per dag</h2>';
     h += '<div class="praktisch-card">';
     var total = 0;
     DATA.budget.perDag.forEach(function (row) {
@@ -126,7 +134,7 @@
     });
     h += '<div class="budget-total"><span>Totaal per dag</span><span>€ ' + total + '</span></div>';
     h += '<p class="budget-extra">' + esc(DATA.budget.tickets) + '</p>';
-    h += '<p class="budget-extra">💡 ' + esc(DATA.budget.tip) + '</p>';
+    h += '<p class="budget-extra">' + esc(DATA.budget.tip) + '</p>';
     h += '</div>';
 
     $('#tickets-view').innerHTML = h;
@@ -183,7 +191,7 @@
       });
     });
 
-    var h = '<h2 class="section-title">🔍 ' + results.length + ' resultaat' + (results.length === 1 ? '' : 'en') + '</h2>';
+    var h = '<h2 class="section-title">' + results.length + ' resultaat' + (results.length === 1 ? '' : 'en') + '</h2>';
     if (results.length === 0) {
       h += '<div class="search-empty">Niets gevonden voor "' + esc(query) + '". Probeer bijvoorbeeld: nike, entrecote, versailles.</div>';
     } else {

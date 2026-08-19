@@ -2,9 +2,11 @@
 
 :root {
   --ink: #2B2B3F;
-  --ink-soft: #5A5A72;
-  --bg: #FAF7F3;
+  --ink-soft: #4E4E64;
+  --ink-mute: #8A8A9C;
+  --bg: #FBFAF7;
   --card: #FFFFFF;
+  --line: #ECE7DF;
   --pink: #FFE1EA;
   --pink-deep: #C42A4D;
   --blue: #DCEBFF;
@@ -16,7 +18,7 @@
   --gold: #FFF3C9;
   --gold-deep: #8A6D1A;
   --radius: 20px;
-  --shadow: 0 4px 16px rgba(43, 43, 63, 0.08);
+  --shadow: 0 1px 3px rgba(43, 43, 63, 0.06);
 }
 
 * { box-sizing: border-box; }
@@ -39,9 +41,15 @@ body {
   padding: 0 16px 40px;
 }
 
+.ic {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
 /* ---------- Header ---------- */
 
-.header { padding: 20px 4px 12px; }
+.header { padding: 20px 4px 10px; }
 
 .header-row {
   display: flex;
@@ -55,12 +63,13 @@ body {
   font-size: 26px;
   font-weight: 900;
   line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .subtitle {
   margin: 4px 0 0;
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
 }
 
 .btn-translate {
@@ -69,8 +78,9 @@ body {
   align-items: center;
   min-height: 44px;
   padding: 8px 16px;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--blue);
+  background: var(--card);
   color: var(--ink);
   font-weight: 700;
   font-size: 15px;
@@ -86,11 +96,9 @@ body {
   z-index: 10;
   display: flex;
   gap: 8px;
-  padding: 10px 4px;
+  padding: 10px 16px;
   margin: 0 -16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background: rgba(250, 247, 243, 0.92);
+  background: rgba(251, 250, 247, 0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   overflow-x: auto;
@@ -100,12 +108,11 @@ body {
 
 .daytab {
   flex: 1 0 auto;
-  min-height: 48px;
-  padding: 8px 14px;
-  border: 2px solid transparent;
+  min-height: 46px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--card);
-  box-shadow: var(--shadow);
   font-family: inherit;
   font-size: 15px;
   font-weight: 800;
@@ -122,42 +129,56 @@ body {
 
 /* ---------- Zoeken ---------- */
 
-.searchbar { padding: 4px 4px 8px; }
+.searchbar { padding: 2px 4px 8px; }
 
 #search {
   width: 100%;
-  min-height: 48px;
+  min-height: 46px;
   padding: 10px 18px;
-  border: 2px solid #E8E2DA;
+  border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--card);
   font-family: inherit;
   font-size: 16px;
   color: var(--ink);
 }
+#search::placeholder { color: var(--ink-mute); }
 #search:focus {
   outline: none;
-  border-color: var(--ink-soft);
+  border-color: var(--ink-mute);
 }
 
 /* ---------- Dag-secties ---------- */
 
-.day-section { padding-top: 8px; }
+.day-section { padding-top: 4px; }
 
-.day-header {
-  border-radius: var(--radius);
-  padding: 18px 20px;
-  margin: 8px 0 16px;
-}
+.day-header { padding: 12px 4px 14px; }
+
 .day-header h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
+  letter-spacing: -0.01em;
 }
+
+.day-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink-mute);
+}
+
+.day-accent {
+  display: block;
+  width: 44px;
+  height: 5px;
+  border-radius: 999px;
+  margin-top: 8px;
+}
+
 .day-header .day-sub {
-  margin: 2px 0 0;
+  margin: 8px 0 0;
   font-size: 15px;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
 }
 
 .bg-pink  { background: var(--pink); }
@@ -169,10 +190,11 @@ body {
 
 .card {
   background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 16px;
-  margin-bottom: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
 }
 
 .card-top {
@@ -186,11 +208,12 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 58px;
-  padding: 6px 10px;
+  min-width: 62px;
+  padding: 5px 10px;
   border-radius: 999px;
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
 }
 .chip-pink  { background: var(--pink);  color: var(--pink-deep); }
 .chip-blue  { background: var(--blue);  color: var(--blue-deep); }
@@ -198,16 +221,16 @@ body {
 .chip-mint  { background: var(--mint);  color: var(--mint-deep); }
 
 .card h3 {
-  margin: 2px 0 0;
-  font-size: 17px;
+  margin: 3px 0 0;
+  font-size: 16px;
   font-weight: 800;
   line-height: 1.3;
 }
 
 .day-label {
   display: inline-block;
-  margin-bottom: 6px;
-  padding: 3px 12px;
+  margin-bottom: 8px;
+  padding: 2px 12px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 800;
@@ -220,9 +243,9 @@ body {
 }
 
 .card .address {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   font-size: 13px;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
 }
 
 .warn {
@@ -246,13 +269,14 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   min-height: 44px;
-  padding: 8px 16px;
-  border: none;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--bg);
+  background: var(--card);
   font-family: inherit;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--ink);
   text-decoration: none;
@@ -263,17 +287,19 @@ body {
 /* ---------- Tickets ---------- */
 
 .section-title {
-  margin: 20px 4px 12px;
+  margin: 22px 4px 12px;
   font-size: 22px;
   font-weight: 900;
+  letter-spacing: -0.01em;
 }
 
 .ticket-card {
   background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 18px;
-  margin-bottom: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
   transition: box-shadow 0.4s;
 }
 
@@ -283,7 +309,7 @@ body {
 
 .badge {
   display: inline-block;
-  padding: 4px 14px;
+  padding: 3px 13px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 900;
@@ -297,7 +323,7 @@ body {
 
 .ticket-card h3 {
   margin: 10px 0 4px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
 }
 
@@ -311,7 +337,7 @@ body {
 .ticket-note {
   margin: 8px 0 0;
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
 }
 
 .btn-book {
@@ -319,12 +345,12 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 52px;
+  min-height: 50px;
   margin-top: 14px;
   border-radius: 999px;
   background: var(--ink);
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   text-decoration: none;
 }
@@ -333,14 +359,15 @@ body {
 
 .praktisch-card {
   background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .praktisch-card h3 {
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
 }
 .praktisch-card p {
@@ -354,8 +381,9 @@ body {
   justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
-  border-bottom: 1px solid #F0EAE2;
+  border-bottom: 1px solid #F2EEE7;
   font-size: 15px;
+  font-variant-numeric: tabular-nums;
 }
 .budget-row:last-of-type { border-bottom: none; }
 .budget-row .bedrag { font-weight: 800; white-space: nowrap; }
@@ -367,12 +395,13 @@ body {
   padding: 10px 0 0;
   font-size: 16px;
   font-weight: 900;
+  font-variant-numeric: tabular-nums;
 }
 
 .budget-extra {
   margin: 10px 0 0;
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
 }
 
 /* ---------- Zoekresultaten ---------- */
@@ -380,7 +409,7 @@ body {
 .search-empty {
   padding: 30px 16px;
   text-align: center;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
   font-size: 15px;
 }
 
@@ -390,7 +419,7 @@ body {
   padding: 24px 4px 8px;
   text-align: center;
   font-size: 13px;
-  color: var(--ink-soft);
+  color: var(--ink-mute);
 }
 
 /* ---------- Groter scherm ---------- */
