@@ -340,6 +340,45 @@ body {
   box-shadow: 0 0 0 3px var(--pink-deep), var(--shadow);
 }
 
+.booked-counter {
+  margin: -4px 4px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-mute);
+}
+
+.ticket-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.booked-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-mute);
+  cursor: pointer;
+}
+.booked-toggle .ic { opacity: 0.35; }
+
+.ticket-card.booked { border-color: var(--mint-deep); }
+.ticket-card.booked .booked-toggle {
+  background: var(--mint);
+  border-color: var(--mint-deep);
+  color: var(--mint-deep);
+}
+.ticket-card.booked .booked-toggle .ic { opacity: 1; }
+
 .badge {
   display: inline-block;
   padding: 3px 13px;

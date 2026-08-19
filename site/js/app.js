@@ -14,7 +14,10 @@
     'kan-ter-plekke': 'Kan ter plekke'
   };
 
+  var BOOKED_KEY = 'parijs0826-geboekt';
+
   var ICONS = {
+    check: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 10 18 20 6"/></svg>',
     pin: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>',
     route: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 21 4l-7.5 18-2.3-8.2L3 11.5z"/></svg>',
     globe: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
@@ -85,9 +88,21 @@
     return h;
   }
 
+  function getBooked() {
+    try { return JSON.parse(localStorage.getItem(BOOKED_KEY)) || []; }
+    catch (e) { return []; }
+  }
+
+  function saveBooked(ids) {
+    try { localStorage.setItem(BOOKED_KEY, JSON.stringify(ids)); } catch (e) { /* private mode */ }
+  }
+
   function ticketCard(t) {
     var h = '<article class="ticket-card" id="ticket-' + esc(t.id) + '">';
+    h += '<div class="ticket-head">';
     h += '<span class="badge badge-' + esc(t.urgency) + '">' + esc(URGENCY_LABEL[t.urgency] || t.urgency) + '</span>';
+    h += '<button class="booked-toggle" type="button" data-booked="' + esc(t.id) + '" aria-pressed="false">' + ICONS.check + 'Geboekt</button>';
+    h += '</div>';
     h += '<h3>' + esc(t.title) + '</h3>';
     h += '<p class="ticket-meta"><strong>Wanneer:</strong> ' + esc(t.when) + '</p>';
     h += '<p class="ticket-meta"><strong>Prijs:</strong> ' + esc(t.price) + '</p>';
@@ -144,6 +159,7 @@
     });
 
     var h = '<h2 class="section-title">Tickets</h2>';
+    h += '<p class="booked-counter" id="booked-counter"></p>';
     sorted.forEach(function (t) { h += ticketCard(t); });
 
     h += '<h2 class="section-title">Praktisch</h2>';
@@ -152,6 +168,32 @@
     });
 
     $('#tickets-view').innerHTML = h;
+    updateBookedUI();
+  }
+
+  function updateBookedUI() {
+    var booked = getBooked();
+    var valid = booked.filter(function (id) {
+      return DATA.tickets.some(function (t) { return t.id === id; });
+    });
+    DATA.tickets.forEach(function (t) {
+      var card = $('#ticket-' + t.id);
+      if (!card) return;
+      var isBooked = valid.indexOf(t.id) !== -1;
+      card.classList.toggle('booked', isBooked);
+      var btn = card.querySelector('.booked-toggle');
+      if (btn) btn.setAttribute('aria-pressed', isBooked ? 'true' : 'false');
+    });
+    var counter = $('#booked-counter');
+    if (counter) counter.textContent = valid.length + ' van ' + DATA.tickets.length + ' geregeld';
+  }
+
+  function toggleBooked(id) {
+    var booked = getBooked();
+    var i = booked.indexOf(id);
+    if (i === -1) booked.push(id); else booked.splice(i, 1);
+    saveBooked(booked);
+    updateBookedUI();
   }
 
   /* ---------- Views ---------- */
@@ -232,7 +274,9 @@
 
     document.body.addEventListener('click', function (e) {
       var btn = e.target.closest('[data-ticketref]');
-      if (btn) goToTicket(btn.getAttribute('data-ticketref'));
+      if (btn) { goToTicket(btn.getAttribute('data-ticketref')); return; }
+      var toggle = e.target.closest('[data-booked]');
+      if (toggle) toggleBooked(toggle.getAttribute('data-booked'));
     });
 
     $('#search').addEventListener('input', function (e) {
