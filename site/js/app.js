@@ -230,6 +230,42 @@
     }, 60);
   }
 
+  /* ---------- NU/STRAKS tijdens het weekend zelf ---------- */
+
+  function todayIso() {
+    var n = new Date();
+    var m = n.getMonth() + 1, d = n.getDate();
+    return n.getFullYear() + '-' + (m < 10 ? '0' : '') + m + '-' + (d < 10 ? '0' : '') + d;
+  }
+
+  function markToday() {
+    var day = null;
+    DATA.days.forEach(function (d) { if (d.date === todayIso()) day = d; });
+    if (!day) return null;
+
+    var n = new Date();
+    var nowMin = n.getHours() * 60 + n.getMinutes();
+    var nowIdx = -1;
+    day.items.forEach(function (item, i) {
+      var p = item.time.split(':');
+      if (parseInt(p[0], 10) * 60 + parseInt(p[1], 10) <= nowMin) nowIdx = i;
+    });
+    var nextIdx = nowIdx + 1 < day.items.length ? nowIdx + 1 : -1;
+
+    var cards = document.querySelectorAll('#day-' + day.id + ' .card');
+    var target = null;
+    if (nowIdx >= 0 && cards[nowIdx]) {
+      cards[nowIdx].classList.add('is-now');
+      cards[nowIdx].querySelector('.card-top').insertAdjacentHTML('afterbegin', '<span class="live-badge live-now">NU</span>');
+      target = cards[nowIdx];
+    }
+    if (nextIdx >= 0 && cards[nextIdx]) {
+      cards[nextIdx].querySelector('.card-top').insertAdjacentHTML('afterbegin', '<span class="live-badge live-next">STRAKS</span>');
+      if (!target) target = cards[nextIdx];
+    }
+    return { day: day, target: target };
+  }
+
   /* ---------- Zoeken ---------- */
 
   function runSearch(query) {
@@ -296,7 +332,13 @@
       renderDays();
       renderTickets();
       bindEvents();
-      showView(DATA.days[0].id);
+      var live = markToday();
+      showView(live ? live.day.id : DATA.days[0].id);
+      if (live && live.target) {
+        setTimeout(function () {
+          live.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 250);
+      }
     })
     .catch(function (err) {
       $('#main').innerHTML = '<div class="search-empty">Er ging iets mis bij het laden van het programma. Ververs de pagina.<br><small>' + esc(err.message) + '</small></div>';

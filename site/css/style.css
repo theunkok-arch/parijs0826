@@ -220,6 +220,25 @@ body {
 .chip-lilac { background: var(--lilac); color: var(--lilac-deep); }
 .chip-mint  { background: var(--mint);  color: var(--mint-deep); }
 
+.card.is-now { border-color: var(--ink); }
+
+.live-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.live-now { background: var(--ink); color: #fff; }
+.live-next {
+  background: var(--card);
+  color: var(--ink-mute);
+  border: 1px solid var(--line);
+}
+
 .card h3 {
   margin: 3px 0 0;
   font-size: 16px;
