@@ -93,16 +93,12 @@
       "items": [
         {
           "time": "08:30",
-          "title": "Koffie & croissants bij Carette",
-          "desc": "6 minuten lopen, open vanaf 07:00. Reken op 10-14 euro pp. Goedkoper: Boulangerie Bonon (14 rue de Longchamp). Meer uitzicht: Cafe du Trocadero.",
-          "address": "4 Place du Trocadero, 75116",
-          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Carette+4+Place+du+Trocadero+Paris",
+          "title": "Ontbijt in het hotel",
+          "desc": "Zit bij de boeking inbegrepen. Om 09:00 vertrekken we.",
           "tags": [
             "vrijdag",
             "ontbijt",
-            "croissant",
-            "koffie",
-            "carette"
+            "hotel"
           ]
         },
         {
@@ -291,14 +287,12 @@
       "items": [
         {
           "time": "08:30",
-          "title": "Koffie & croissants",
-          "desc": "Carette (vanaf 07:30) of Boulangerie Bonon (za tot 15:00).",
-          "address": "4 Place du Trocadero, 75116",
-          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Carette+4+Place+du+Trocadero+Paris",
+          "title": "Ontbijt in het hotel",
+          "desc": "Zit bij de boeking inbegrepen. Om 09:15 vertrekken we.",
           "tags": [
             "zaterdag",
             "ontbijt",
-            "croissant"
+            "hotel"
           ]
         },
         {
