@@ -98,7 +98,8 @@
           "why": "20.000 lampjes, vijf minuten per uur. De hele wereld filmt dit, jullie zien het vanaf het beste plein, gratis.",
           "img": "img/do-2300-fonkeling.jpg"
         }
-      ]
+      ],
+      "intro": "Vanavond maar twee missies: inchecken en de beste entrecote van Parijs. Een menukaart is er niet, de saus is geheim, de friet is onbeperkt. En op de terugweg fonkelt de Eiffeltoren speciaal voor jullie (nou ja, en voor 20.000 anderen)."
     },
     {
       "id": "vrijdag",
@@ -405,7 +406,8 @@
           ],
           "img": "img/vr-2030-diner.jpg"
         }
-      ]
+      ],
+      "intro": "Vandaag het Parijs waar iedereen voor komt, maar dan slim: eerst het 780 jaar oude glas van de Sainte-Chapelle als de rijen nog kort zijn, dan de herbouwde Notre-Dame, ijs op een eiland, koffie op de stoel van Hemingway en De Denker in een tuin. Afsluiten op een gratis rooftop met de hele stad aan je voeten."
     },
     {
       "id": "zaterdag",
@@ -693,7 +695,8 @@
             "champselysees"
           ]
         }
-      ]
+      ],
+      "intro": "Shopdag. Een shot cultuur vooraf (het Pantheon, waar Marie Curie ligt en een slinger bewijst dat de aarde draait), daarna van Labubu naar de grootste AMI ter wereld naar de Champs-Elysees. Finale: Sephora tot laat en een doos Laduree-macarons voor morgen."
     },
     {
       "id": "zondag",
@@ -863,7 +866,8 @@
             "naar huis"
           ]
         }
-      ]
+      ],
+      "intro": "De grote finale. Om 9 uur staan jullie op de top van de Eiffeltoren, voordat de stad wakker is. Daarna het paleis van de Zonnekoning: 2.300 kamers, 357 spiegels en de tuinen met muziek. Macarons open op de achterbank, en naar huis."
     }
   ],
   "tickets": [

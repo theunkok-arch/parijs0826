@@ -189,6 +189,13 @@ body {
   color: var(--ink-mute);
 }
 
+.day-intro {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
 .bg-pink  { background: var(--pink); }
 .bg-blue  { background: var(--blue); }
 .bg-lilac { background: var(--lilac); }

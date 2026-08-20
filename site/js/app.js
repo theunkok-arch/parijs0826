@@ -278,6 +278,7 @@
       h += '<h2>' + esc(day.label) + ' <span class="day-date">' + esc(formatDate(day.date)) + '</span></h2>';
       h += '<span class="day-accent bg-' + esc(day.color) + '"></span>';
       h += '<p class="day-sub">' + esc(day.sub) + '</p>';
+      if (day.intro) h += '<p class="day-intro">' + esc(day.intro) + '</p>';
       h += '</div>';
       day.items.forEach(function (item) { h += itemCard(item, day, false); });
       h += '</div>';
@@ -425,8 +426,10 @@
     var results = [];
     DATA.days.forEach(function (day) {
       day.items.forEach(function (item) {
-        var optText = (item.options || []).map(function (o) { return o.name + ' ' + o.note; }).join(' ');
-        var hay = (item.title + ' ' + item.desc + ' ' + optText + ' ' + (item.tags || []).join(' ')).toLowerCase();
+        var optText = (item.options || []).map(function (o) { return o.name + ' ' + o.note + ' ' + (o.why || ''); }).join(' ');
+        var whyText = Array.isArray(item.why) ? item.why.join(' ') : (item.why || '');
+        var pbText = item.planB ? (typeof item.planB === 'string' ? item.planB : item.planB.text) : '';
+        var hay = (item.title + ' ' + item.desc + ' ' + whyText + ' ' + (item.warn || '') + ' ' + pbText + ' ' + optText + ' ' + (item.tags || []).join(' ')).toLowerCase();
         if (hay.indexOf(q) !== -1) results.push({ item: item, day: day });
       });
     });
