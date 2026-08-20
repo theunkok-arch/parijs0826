@@ -550,6 +550,25 @@ body {
   color: var(--ink-soft);
 }
 
+.zin {
+  padding: 8px 0;
+  border-bottom: 1px solid #F2EEE7;
+}
+.zin:last-child { border-bottom: none; padding-bottom: 0; }
+
+.zin-nl {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-mute);
+}
+
+.zin-fr {
+  margin: 2px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
 /* ---------- Zoekresultaten ---------- */
 
 .search-empty {

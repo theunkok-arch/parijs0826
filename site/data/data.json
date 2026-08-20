@@ -917,5 +917,47 @@
       "title": "OV-verstoringen deze dagen",
       "text": "Metro 8 dicht (Balard-Concorde, 20-27 aug), RER C dicht tot 22 aug (lijn Champ de Mars). Op de scooter geen probleem, wel goed te weten bij regen."
     }
+  ],
+  "zinnen": [
+    {
+      "nl": "Een tafel voor vier, alstublieft.",
+      "fr": "Une table pour quatre, s'il vous plaît."
+    },
+    {
+      "nl": "Mogen we de kaart?",
+      "fr": "La carte, s'il vous plaît."
+    },
+    {
+      "nl": "Twee cola en twee glazen water, alstublieft.",
+      "fr": "Deux cocas et deux verres d'eau, s'il vous plaît."
+    },
+    {
+      "nl": "De rekening, alstublieft.",
+      "fr": "L'addition, s'il vous plaît."
+    },
+    {
+      "nl": "Waar is de wc?",
+      "fr": "Où sont les toilettes ?"
+    },
+    {
+      "nl": "Hoeveel kost dit?",
+      "fr": "Combien ça coûte ?"
+    },
+    {
+      "nl": "Heeft u dit in maat 38?",
+      "fr": "Vous l'avez en taille 38 ?"
+    },
+    {
+      "nl": "Kan ik met kaart betalen?",
+      "fr": "Je peux payer par carte ?"
+    },
+    {
+      "nl": "Ik spreek geen Frans, spreekt u Engels?",
+      "fr": "Je ne parle pas français, parlez-vous anglais ?"
+    },
+    {
+      "nl": "Help! Bel de politie!",
+      "fr": "Au secours ! Appelez la police !"
+    }
   ]
 }

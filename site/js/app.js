@@ -195,6 +195,14 @@
       h += '<div class="praktisch-card"><h3>' + esc(p.title) + '</h3><p>' + esc(p.text) + '</p></div>';
     });
 
+    if (DATA.zinnen) {
+      h += '<div class="praktisch-card"><h3>Handige zinnen</h3>';
+      DATA.zinnen.forEach(function (z) {
+        h += '<div class="zin"><p class="zin-nl">' + esc(z.nl) + '</p><p class="zin-fr">' + esc(z.fr) + '</p></div>';
+      });
+      h += '</div>';
+    }
+
     $('#tickets-view').innerHTML = h;
     updateBookedUI();
   }
