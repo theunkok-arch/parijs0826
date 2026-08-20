@@ -414,6 +414,146 @@ body {
   color: var(--pink-deep);
 }
 
+/* ---------- Afvinken ---------- */
+
+.check-btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  margin-top: -6px;
+  margin-right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: transparent;
+  cursor: pointer;
+}
+.check-btn .ic { width: 18px; height: 18px; }
+
+.card.done { border-color: var(--mint-deep); }
+.card.done .check-btn {
+  background: var(--mint);
+  border-color: var(--mint-deep);
+  color: var(--mint-deep);
+}
+
+.tab-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Onze trip ---------- */
+
+.no-scroll { overflow: hidden; }
+
+.trip-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(43, 43, 63, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.trip-panel {
+  width: 100%;
+  max-width: 720px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--card);
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 20px 20px 28px;
+}
+
+.trip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.trip-head h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.trip-close {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.trip-total {
+  margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.trip-victory {
+  margin: 8px 0 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--mint);
+  color: var(--mint-deep);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.trip-day {
+  margin: 18px 0 4px;
+  font-size: 15px;
+  font-weight: 900;
+}
+.trip-day-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.trip-empty {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-mute);
+}
+
+.trip-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.trip-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #F2EEE7;
+  font-size: 14px;
+  font-weight: 600;
+}
+.trip-list li:last-child { border-bottom: none; }
+.trip-time {
+  display: inline-block;
+  min-width: 44px;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.trip-foot {
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+
 /* ---------- Inklappen (Meer/Minder) ---------- */
 
 .card-more {

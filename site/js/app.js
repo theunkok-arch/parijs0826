@@ -15,6 +15,7 @@
   };
 
   var BOOKED_KEY = 'parijs0826-geboekt';
+  var DONE_KEY = 'parijs0826-gedaan';
 
   var ICONS = {
     check: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 10 18 20 6"/></svg>',
@@ -78,6 +79,7 @@
     h += '<div class="card-top">';
     h += '<span class="time-chip chip-' + esc(day.color) + '">' + esc(item.time) + '</span>';
     h += '<h3>' + esc(item.title) + '</h3>';
+    h += '<button class="check-btn" type="button" data-check="' + esc(item.id) + '" aria-pressed="false" aria-label="Afvinken: ' + esc(item.title) + '">' + ICONS.check + '</button>';
     h += '</div>';
 
     if (item.why) {
@@ -182,10 +184,90 @@
     var h = '';
     DATA.days.forEach(function (day) {
       h += '<button class="daytab" type="button" data-view="' + esc(day.id) + '" data-color="' + esc(day.color) + '">'
-        + esc(dayShort(day.label)) + '</button>';
+        + esc(dayShort(day.label)) + ' <span class="tab-count" data-daycount="' + esc(day.id) + '"></span></button>';
     });
     h += '<button class="daytab" type="button" data-view="tickets" data-color="tickets">Tickets</button>';
     $('#daynav').innerHTML = h;
+  }
+
+  /* ---------- Afvinken + Onze trip ---------- */
+
+  function getDone() {
+    try { return JSON.parse(localStorage.getItem(DONE_KEY)) || []; }
+    catch (e) { return []; }
+  }
+
+  function saveDone(ids) {
+    try { localStorage.setItem(DONE_KEY, JSON.stringify(ids)); } catch (e) { /* private mode */ }
+  }
+
+  function allItemIds() {
+    var ids = [];
+    DATA.days.forEach(function (day) { day.items.forEach(function (it) { ids.push(it.id); }); });
+    return ids;
+  }
+
+  function updateDoneUI() {
+    var valid = allItemIds();
+    var done = getDone().filter(function (id) { return valid.indexOf(id) !== -1; });
+
+    document.querySelectorAll('.card[data-itemid]').forEach(function (card) {
+      var isDone = done.indexOf(card.getAttribute('data-itemid')) !== -1;
+      card.classList.toggle('done', isDone);
+      var btn = card.querySelector('.check-btn');
+      if (btn) btn.setAttribute('aria-pressed', isDone ? 'true' : 'false');
+    });
+
+    DATA.days.forEach(function (day) {
+      var count = day.items.filter(function (it) { return done.indexOf(it.id) !== -1; }).length;
+      var el = document.querySelector('[data-daycount="' + day.id + '"]');
+      if (el) el.textContent = count + '/' + day.items.length;
+    });
+  }
+
+  function toggleDone(id) {
+    var done = getDone();
+    var i = done.indexOf(id);
+    if (i === -1) done.push(id); else done.splice(i, 1);
+    saveDone(done);
+    updateDoneUI();
+    if (!$('#trip-overlay').hidden) renderTrip();
+  }
+
+  function renderTrip() {
+    var valid = allItemIds();
+    var done = getDone().filter(function (id) { return valid.indexOf(id) !== -1; });
+    var total = valid.length;
+
+    var h = '<p class="trip-total">Jullie hebben ' + done.length + ' van de ' + total + ' plekken gedaan.</p>';
+    if (total > 0 && done.length / total > 0.8) {
+      h += '<p class="trip-victory">Parijs is officieel veroverd</p>';
+    }
+    DATA.days.forEach(function (day) {
+      var checked = day.items.filter(function (it) { return done.indexOf(it.id) !== -1; });
+      h += '<h3 class="trip-day">' + esc(day.label) + ' <span class="trip-day-count">' + checked.length + '/' + day.items.length + '</span></h3>';
+      if (checked.length === 0) {
+        h += '<p class="trip-empty">Nog niets afgevinkt.</p>';
+      } else {
+        h += '<ul class="trip-list">';
+        checked.forEach(function (it) {
+          h += '<li><span class="trip-time">' + esc(it.time) + '</span> ' + esc(it.title) + '</li>';
+        });
+        h += '</ul>';
+      }
+    });
+    $('#trip-body').innerHTML = h;
+  }
+
+  function openTrip() {
+    renderTrip();
+    $('#trip-overlay').hidden = false;
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeTrip() {
+    $('#trip-overlay').hidden = true;
+    document.body.classList.remove('no-scroll');
   }
 
   function renderDays() {
@@ -361,6 +443,7 @@
     var sv = $('#search-view');
     sv.innerHTML = h;
     sv.hidden = false;
+    updateDoneUI();
   }
 
   /* ---------- Init ---------- */
@@ -378,6 +461,8 @@
       if (btn) { goToTicket(btn.getAttribute('data-ticketref')); return; }
       var toggle = e.target.closest('[data-booked]');
       if (toggle) { toggleBooked(toggle.getAttribute('data-booked')); return; }
+      var check = e.target.closest('[data-check]');
+      if (check) { toggleDone(check.getAttribute('data-check')); return; }
       var more = e.target.closest('[data-more]');
       if (more) {
         var card = more.closest('.card');
@@ -389,6 +474,12 @@
 
     $('#search').addEventListener('input', function (e) {
       runSearch(e.target.value);
+    });
+
+    $('#trip-btn').addEventListener('click', openTrip);
+    $('#trip-close').addEventListener('click', closeTrip);
+    $('#trip-overlay').addEventListener('click', function (e) {
+      if (e.target === this) closeTrip();
     });
 
     $('#share-btn').addEventListener('click', function () {
@@ -434,6 +525,7 @@
       renderDays();
       renderTickets();
       bindEvents();
+      updateDoneUI();
       var live = markToday();
       showView(live ? live.day.id : DATA.days[0].id);
       if (live && live.target) {

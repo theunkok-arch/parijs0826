@@ -20,6 +20,7 @@
           <p id="site-subtitle" class="subtitle"></p>
         </div>
         <div class="header-actions">
+          <button class="btn-translate" id="trip-btn" type="button">Onze trip</button>
           <button class="btn-translate" id="share-btn" type="button">Deel</button>
           <a class="btn-translate" href="https://translate.google.com/?sl=nl&amp;tl=fr&amp;op=translate" target="_blank" rel="noopener">Vertaal FR</a>
         </div>
@@ -37,6 +38,17 @@
       <section id="tickets-view" hidden></section>
       <section id="search-view" hidden></section>
     </main>
+
+    <div class="trip-overlay" id="trip-overlay" hidden>
+      <div class="trip-panel">
+        <div class="trip-head">
+          <h2>Onze trip</h2>
+          <button class="trip-close" id="trip-close" type="button" aria-label="Sluiten">&#215;</button>
+        </div>
+        <div id="trip-body"></div>
+        <p class="trip-foot">Vinkjes worden op deze telefoon bewaard.</p>
+      </div>
+    </div>
 
     <footer class="footer">
       <p id="footer-checked"></p>
