@@ -104,6 +104,14 @@
     btns += socialBtns(item.social);
     if (btns) h += '<div class="btnrow">' + btns + '</div>';
 
+    if (item.planB) {
+      var pbText = typeof item.planB === 'string' ? item.planB : item.planB.text;
+      h += '<details class="planb"><summary>Plan B</summary><div class="planb-body">';
+      h += '<p>' + esc(pbText) + '</p>';
+      if (item.planB.mapsUrl) h += '<a class="btn" href="' + esc(item.planB.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
+      h += '</div></details>';
+    }
+
     h += '</article>';
     return h;
   }

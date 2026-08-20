@@ -380,6 +380,45 @@ body {
   color: var(--pink-deep);
 }
 
+/* ---------- Plan B ---------- */
+
+.planb {
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.planb summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink-mute);
+  cursor: pointer;
+  list-style: none;
+}
+.planb summary::-webkit-details-marker { display: none; }
+.planb summary::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-right: 2px solid var(--ink-mute);
+  border-bottom: 2px solid var(--ink-mute);
+  transform: rotate(-45deg);
+  transition: transform 0.15s;
+}
+.planb[open] summary::before { transform: rotate(45deg); }
+
+.planb-body p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+.planb-body .btn { margin-top: 8px; }
+
 /* ---------- Tickets ---------- */
 
 .section-title {

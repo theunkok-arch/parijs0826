@@ -69,7 +69,8 @@
             "tiktok": "https://www.tiktok.com/tag/relaisdelentrecote",
             "insta": "https://www.instagram.com/explore/tags/relaisdelentrecote/"
           },
-          "why": "Een menukaart bestaat hier niet: iedereen krijgt hetzelfde. De saus is al 60 jaar geheim, alleen de familie kent het recept."
+          "why": "Een menukaart bestaat hier niet: iedereen krijgt hetzelfde. De saus is al 60 jaar geheim, alleen de familie kent het recept.",
+          "planB": "Vestiging 101 bd du Montparnasse heeft de kortste rij, of reserveer Le Malakoff op Trocadero."
         },
         {
           "time": "23:00",
@@ -156,7 +157,8 @@
               "label": "Glas-in-lood van de Sainte-Chapelle"
             }
           },
-          "why": "Je staat hier in een doos van 780 jaar oud gekleurd glas, gebouwd door een koning die de doornenkroon van Jezus had gekocht. 1.113 bijbelscenes in glas, en het overleefde de Revolutie en twee wereldoorlogen."
+          "why": "Je staat hier in een doos van 780 jaar oud gekleurd glas, gebouwd door een koning die de doornenkroon van Jezus had gekocht. 1.113 bijbelscenes in glas, en het overleefde de Revolutie en twee wereldoorlogen.",
+          "planB": "Draai het om: eerst Notre-Dame, dan Sainte-Chapelle na 17:00 (open tot 19:00, veel rustiger)."
         },
         {
           "time": "10:50",
@@ -176,7 +178,8 @@
             "tiktok": "https://www.tiktok.com/tag/notredamedeparis",
             "insta": "https://www.instagram.com/explore/tags/notredamedeparis/"
           },
-          "why": "In 2019 stond dit hele dak in brand, de wereld keek live mee. 2.000 vakmensen bouwden het in vijf jaar terug zoals het in de middeleeuwen was. En ja, dit is de kerk van de Klokkenluider."
+          "why": "In 2019 stond dit hele dak in brand, de wereld keek live mee. 2.000 vakmensen bouwden het in vijf jaar terug zoals het in de middeleeuwen was. En ja, dit is de kerk van de Klokkenluider.",
+          "planB": "Zonder slot is de rij in de ochtend het kortst. Lukt het niet: kom vrijdag na 18:00 terug, dan is de piek voorbij."
         },
         {
           "time": "11:45",
@@ -196,7 +199,8 @@
             "tiktok": "https://www.tiktok.com/tag/berthillon",
             "insta": "https://www.instagram.com/explore/tags/berthillon/"
           },
-          "why": "Het beroemdste ijs van Parijs, familierecept sinds 1954. Fransen staan hier gewoon in de rij, dat zegt genoeg."
+          "why": "Het beroemdste ijs van Parijs, familierecept sinds 1954. Fransen staan hier gewoon in de rij, dat zegt genoeg.",
+          "planB": "De moederzaak sluit 's zomers, maar half Ile Saint-Louis verkoopt Berthillon-ijs: let op de bordjes."
         },
         {
           "time": "12:45",
@@ -226,7 +230,11 @@
             "wandelen",
             "saintgermain"
           ],
-          "why": "De straat waar kunsthandelaren al 100 jaar zitten. Zelfs met de helft dicht is dit het mooiste stukje etalage-Parijs."
+          "why": "De straat waar kunsthandelaren al 100 jaar zitten. Zelfs met de helft dicht is dit het mooiste stukje etalage-Parijs.",
+          "planB": {
+            "text": "Alles dicht? Scooter naar rue de Rivoli: BHV Marais en de hele winkelstraat zijn in augustus gewoon open, 10 minuten rijden.",
+            "mapsUrl": "https://www.google.com/maps/search/?api=1&query=BHV+Marais+52+Rue+de+Rivoli+Paris"
+          }
         },
         {
           "time": "15:30",
@@ -271,7 +279,8 @@
           "why": [
             "De Denker ken je van elke meme, hier staat het echte beeld gewoon in een tuin. Rodin gaf al zijn kunst aan Frankrijk in ruil voor dit huis.",
             "Achter deze muur woont de Franse premier. Meer dan de poort en de gendarmes krijg je niet te zien, en juist dat is het verhaal."
-          ]
+          ],
+          "planB": "Neem alleen het tuinticket: De Denker en de Hellepoort staan buiten, en de tuin heeft nooit rij."
         },
         {
           "time": "18:30",
@@ -293,7 +302,8 @@
             "tiktok": "https://www.tiktok.com/tag/galerieslafayette",
             "insta": "https://www.instagram.com/explore/tags/galerieslafayette/"
           },
-          "why": "Een glas-in-lood koepel uit 1912 boven een warenhuis, en een gratis rooftop met het beste uitzicht van de stad. Sunset-content zonder entree."
+          "why": "Een glas-in-lood koepel uit 1912 boven een warenhuis, en een gratis rooftop met het beste uitzicht van de stad. Sunset-content zonder entree.",
+          "planB": "Printemps ernaast heeft ook een gratis rooftop-terras, twee minuten lopen."
         },
         {
           "time": "19:45",
@@ -417,7 +427,8 @@
             "tiktok": "https://www.tiktok.com/tag/pantheonparis",
             "insta": "https://www.instagram.com/explore/tags/pantheonparis/"
           },
-          "why": "De eregalerij van Frankrijk: hier liggen Marie Curie, Voltaire en Josephine Baker. En de slinger in het midden bewijst al 170 jaar live dat de aarde draait."
+          "why": "De eregalerij van Frankrijk: hier liggen Marie Curie, Voltaire en Josephine Baker. En de slinger in het midden bewijst al 170 jaar live dat de aarde draait.",
+          "planB": "Jardin du Luxembourg ligt om de hoek: het mooiste park van Parijs, gratis, met de groene stoeltjes voor de foto."
         },
         {
           "time": "11:15",
@@ -443,7 +454,8 @@
               "label": "Alle Pop Mart winkels in Parijs"
             }
           },
-          "why": "Dit is waar de Labubu-hype vandaan komt. Blind boxes: je weet pas wat je hebt als je hem opent."
+          "why": "Dit is waar de Labubu-hype vandaan komt. Blind boxes: je weet pas wat je hebt als je hem opent.",
+          "planB": "Zelfde winkel, kortere rij: Pop Mart Opera, 19 avenue de l'Opera, 6 minuten met de scooter."
         },
         {
           "time": "12:00",
@@ -484,7 +496,8 @@
             "tiktok": "https://www.tiktok.com/tag/marchedesenfantsrouges",
             "insta": "https://www.instagram.com/explore/tags/marchedesenfantsrouges/"
           },
-          "why": "De oudste markt van Parijs, 1615. Iedereen kiest zijn eigen keuken, niemand hoeft te overleggen."
+          "why": "De oudste markt van Parijs, 1615. Iedereen kiest zijn eigen keuken, niemand hoeft te overleggen.",
+          "planB": "Chez Janou, 2 rue Roger Verlomme: Provencaals terras onder een olijfboom, 5 minuten lopen."
         },
         {
           "time": "14:00",
@@ -559,7 +572,8 @@
             "tiktok": "https://www.tiktok.com/tag/kithparis",
             "insta": "https://www.instagram.com/explore/tags/kithparis/"
           },
-          "why": "De mooiste sneakerwinkel van Parijs met een ijsbar die op TikTok viral ging. Bestel, film, post."
+          "why": "De mooiste sneakerwinkel van Parijs met een ijsbar die op TikTok viral ging. Bestel, film, post.",
+          "planB": "Loop 200 meter naar Laduree op nr 75 en draai de volgorde om."
         },
         {
           "time": "18:45",
@@ -707,7 +721,8 @@
               "label": "Mee in de lift naar de top"
             }
           },
-          "why": "330 meter, gebouwd als tijdelijke attractie voor 20 jaar, nooit meer weggehaald. In de zomer groeit hij 15 centimeter door de warmte. Jullie staan op het hoogste punt van Parijs voordat de stad wakker is."
+          "why": "330 meter, gebouwd als tijdelijke attractie voor 20 jaar, nooit meer weggehaald. In de zomer groeit hij 15 centimeter door de warmte. Jullie staan op het hoogste punt van Parijs voordat de stad wakker is.",
+          "planB": "Neem het trap-plus-lift-ticket ter plekke (kortere rij) of de lift naar de 2e verdieping: het zicht op de stad is daar zelfs beter."
         },
         {
           "time": "11:15",
@@ -761,7 +776,8 @@
               "label": "Rick Steves toont de Spiegelzaal"
             }
           },
-          "why": "2.300 kamers, gebouwd door een koning die zichzelf de Zon noemde. In de Spiegelzaal (357 spiegels) werd in 1919 de Eerste Wereldoorlog officieel beeindigd. Marie-Antoinette woonde hier, jullie lopen door haar huis."
+          "why": "2.300 kamers, gebouwd door een koning die zichzelf de Zon noemde. In de Spiegelzaal (357 spiegels) werd in 1919 de Eerste Wereldoorlog officieel beeindigd. Marie-Antoinette woonde hier, jullie lopen door haar huis.",
+          "planB": "Gewoon het 13:30-tijdslot nemen en de gratis officiele app als audiotour gebruiken, werkt prima."
         },
         {
           "time": "15:15",
