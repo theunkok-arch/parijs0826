@@ -354,6 +354,36 @@
     $('#search').addEventListener('input', function (e) {
       runSearch(e.target.value);
     });
+
+    $('#share-btn').addEventListener('click', function () {
+      var btn = this;
+      var url = 'https://parijs0826.netlify.app';
+
+      function copied() {
+        btn.textContent = 'Gekopieerd';
+        setTimeout(function () { btn.textContent = 'Deel'; }, 2000);
+      }
+
+      function legacyCopy() {
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); copied(); } catch (e) { /* stil */ }
+        document.body.removeChild(ta);
+      }
+
+      if (navigator.share) {
+        navigator.share({ title: DATA.meta.title, text: DATA.meta.subtitle, url: url }).catch(function () { /* geannuleerd */ });
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(copied, legacyCopy);
+      } else {
+        legacyCopy();
+      }
+    });
   }
 
   fetch('data/data.json')

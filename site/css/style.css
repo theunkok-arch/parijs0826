@@ -72,8 +72,16 @@ body {
   color: var(--ink-mute);
 }
 
+.header-actions {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
 .btn-translate {
   flex-shrink: 0;
+  font-family: inherit;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
