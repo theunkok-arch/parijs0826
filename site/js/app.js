@@ -108,6 +108,7 @@
         if (o.why) h += '<p class="option-why">' + esc(o.why) + '</p>';
         var ob = '';
         if (o.mapsUrl) ob += '<a class="btn" href="' + esc(o.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
+        if (o.routeUrl) ob += '<a class="btn" href="' + esc(o.routeUrl) + '" target="_blank" rel="noopener">' + ICONS.route + 'Route</a>';
         if (o.web) ob += '<a class="btn" href="' + esc(o.web) + '" target="_blank" rel="noopener">' + ICONS.globe + 'Reserveer</a>';
         ob += socialBtns(o.social);
         if (ob) h += '<div class="btnrow option-btns">' + ob + '</div>';

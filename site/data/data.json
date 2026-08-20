@@ -353,7 +353,7 @@
           "id": "vr-2030-diner",
           "time": "20:30",
           "title": "Diner bij Opera (na de rooftop)",
-          "desc": "Drie opties bij Opera, of twee op loopafstand van het hotel.",
+          "desc": "Geen kaartje voor een voorstelling, maar dineren in de operabuurt: de straten rond het Palais Garnier, het operagebouw van Parijs. Jullie zijn er na de rooftop al bijna: vanaf Galeries Lafayette loop je in 2 minuten naar het Palais Garnier (mooie foto-stop aan de voorkant), en de drie opties hieronder liggen op 5 tot 12 minuten lopen. Laat de scooters staan waar ze geparkeerd zijn, na het diner rijden jullie terug naar het hotel.",
           "options": [
             {
               "group": "Bij Opera",
@@ -364,14 +364,16 @@
               "social": {
                 "tiktok": "https://www.tiktok.com/tag/daroco",
                 "insta": "https://www.instagram.com/explore/tags/daroco/"
-              }
+              },
+              "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Galeries+Lafayette+Haussmann+40+Boulevard+Haussmann+Paris&destination=Daroco+6+Rue+Vivienne+Paris&travelmode=walking"
             },
             {
               "group": "Bij Opera",
               "name": "Le Grand Cafe Capucines",
               "note": "Belle-epoque brasserie bij de Opera, klassiekers en zeevruchten, ca. 40-60 pp, dagelijks tot 01:00, reserveerbaar.",
               "web": "https://www.legrandcafe.com/en/",
-              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Grand+Cafe+Capucines+4+Boulevard+des+Capucines+Paris"
+              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Grand+Cafe+Capucines+4+Boulevard+des+Capucines+Paris",
+              "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Galeries+Lafayette+Haussmann+40+Boulevard+Haussmann+Paris&destination=Le+Grand+Cafe+Capucines+4+Boulevard+des+Capucines+Paris&travelmode=walking"
             },
             {
               "group": "Bij Opera",
@@ -383,21 +385,24 @@
                 "tiktok": "https://www.tiktok.com/tag/bouillonchartier",
                 "insta": "https://www.instagram.com/explore/tags/bouillonchartier/"
               },
-              "why": "Sinds 1896, de ober schrijft je rekening op het tafelkleed. Eten waar Parijzenaars zelf heen gaan als ze weinig willen betalen."
+              "why": "Sinds 1896, de ober schrijft je rekening op het tafelkleed. Eten waar Parijzenaars zelf heen gaan als ze weinig willen betalen.",
+              "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Galeries+Lafayette+Haussmann+40+Boulevard+Haussmann+Paris&destination=Bouillon+Chartier+7+Rue+du+Faubourg+Montmartre+Paris&travelmode=walking"
             },
             {
               "group": "Op loopafstand van het hotel",
               "name": "Le Petit Retro",
               "note": "Art-nouveau bistro, 8 min lopen, ca. 40-55 pp, 7/7 open, online reserveren.",
               "web": "https://www.petitretro.fr/",
-              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Petit+Retro+5+Rue+Mesnil+Paris"
+              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Le+Petit+Retro+5+Rue+Mesnil+Paris",
+              "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris&destination=Le+Petit+Retro+5+Rue+Mesnil+Paris&travelmode=walking"
             },
             {
               "group": "Op loopafstand van het hotel",
               "name": "Conti",
               "note": "Chic klassiek Italiaans, 10 min lopen, ca. 45-60 pp, dagelijks diner 19:30-23:30.",
               "web": "https://leconti.fr/en/conti-restaurant-en/",
-              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Conti+72+Rue+Lauriston+Paris"
+              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Conti+72+Rue+Lauriston+Paris",
+              "routeUrl": "https://www.google.com/maps/dir/?api=1&origin=Plaza+Tour+Eiffel,+32+Rue+Greuze,+75116+Paris&destination=Conti+72+Rue+Lauriston+Paris&travelmode=walking"
             }
           ],
           "tags": [
