@@ -471,6 +471,7 @@ body {
   align-items: flex-end;
   justify-content: center;
 }
+.trip-overlay[hidden] { display: none; }
 
 .trip-panel {
   width: 100%;
