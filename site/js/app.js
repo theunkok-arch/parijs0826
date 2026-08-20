@@ -286,6 +286,14 @@
     $('#days').innerHTML = h;
   }
 
+  var ticketsRendered = false;
+
+  function ensureTickets() {
+    if (ticketsRendered) return;
+    ticketsRendered = true;
+    renderTickets();
+  }
+
   function renderTickets() {
     var sorted = DATA.tickets.slice().sort(function (a, b) {
       return URGENCY_ORDER.indexOf(a.urgency) - URGENCY_ORDER.indexOf(b.urgency);
@@ -341,6 +349,7 @@
 
   function showView(id) {
     activeView = id;
+    if (id === 'tickets') ensureTickets();
     $('#search-view').hidden = true;
     $('#tickets-view').hidden = (id !== 'tickets');
     $('#days').hidden = (id === 'tickets');
@@ -526,11 +535,11 @@
       renderHeader();
       renderNav();
       renderDays();
-      renderTickets();
       bindEvents();
       updateDoneUI();
       var live = markToday();
       showView(live ? live.day.id : DATA.days[0].id);
+      setTimeout(ensureTickets, 300);
       if (live && live.target) {
         setTimeout(function () {
           live.target.scrollIntoView({ behavior: 'smooth', block: 'center' });

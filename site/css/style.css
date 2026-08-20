@@ -41,6 +41,9 @@ body {
   padding: 0 16px 40px;
 }
 
+/* voorkomt layout-shift van de footer terwijl de content nog rendert */
+#main { min-height: 85vh; }
+
 .ic {
   width: 15px;
   height: 15px;
@@ -53,8 +56,7 @@ body {
 
 .header-row {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -73,9 +75,9 @@ body {
 }
 
 .header-actions {
-  flex-shrink: 0;
   display: flex;
   gap: 8px;
+  min-height: 44px;
 }
 
 .btn-translate {
@@ -104,6 +106,7 @@ body {
   z-index: 10;
   display: flex;
   gap: 8px;
+  min-height: 66px;
   padding: 10px 16px;
   margin: 0 -16px;
   background: rgba(251, 250, 247, 0.94);
