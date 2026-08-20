@@ -43,6 +43,17 @@
 
   /* ---------- Cards ---------- */
 
+  function socialBtns(social) {
+    if (!social) return '';
+    var h = '';
+    if (social.tiktok) h += '<a class="btn btn-social" href="' + esc(social.tiktok) + '" target="_blank" rel="noopener">TikTok</a>';
+    if (social.insta) h += '<a class="btn btn-social" href="' + esc(social.insta) + '" target="_blank" rel="noopener">Instagram</a>';
+    if (social.featured && social.featured.url) {
+      h += '<a class="btn btn-viral" href="' + esc(social.featured.url) + '" target="_blank" rel="noopener" title="' + esc(social.featured.label || '') + '">Viral</a>';
+    }
+    return h;
+  }
+
   function itemCard(item, day, showDayLabel) {
     var h = '<article class="card">';
 
@@ -72,6 +83,7 @@
         var ob = '';
         if (o.mapsUrl) ob += '<a class="btn" href="' + esc(o.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
         if (o.web) ob += '<a class="btn" href="' + esc(o.web) + '" target="_blank" rel="noopener">' + ICONS.globe + 'Reserveer</a>';
+        ob += socialBtns(o.social);
         if (ob) h += '<div class="btnrow option-btns">' + ob + '</div>';
         h += '</div>';
       });
@@ -82,6 +94,7 @@
     if (item.routeUrl) btns += '<a class="btn" href="' + esc(item.routeUrl) + '" target="_blank" rel="noopener">' + ICONS.route + 'Route</a>';
     if (item.web) btns += '<a class="btn" href="' + esc(item.web) + '" target="_blank" rel="noopener">' + ICONS.globe + 'Site</a>';
     if (item.ticketRef) btns += '<button class="btn" type="button" data-ticketref="' + esc(item.ticketRef) + '">' + ICONS.ticket + 'Ticket</button>';
+    btns += socialBtns(item.social);
     if (btns) h += '<div class="btnrow">' + btns + '</div>';
 
     h += '</article>';

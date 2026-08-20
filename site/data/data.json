@@ -64,7 +64,11 @@
             "eten",
             "entrecote",
             "steak"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/relaisdelentrecote",
+            "insta": "https://www.instagram.com/explore/tags/relaisdelentrecote/"
+          }
         },
         {
           "time": "23:00",
@@ -79,7 +83,11 @@
             "foto",
             "gratis",
             "trocadero"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/trocadero",
+            "insta": "https://www.instagram.com/explore/tags/trocadero/"
+          }
         }
       ]
     },
@@ -137,7 +145,11 @@
             "saintechapelle",
             "kerk",
             "glasinlood"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/saintechapelle",
+            "insta": "https://www.instagram.com/explore/tags/saintechapelle/"
+          }
         },
         {
           "time": "10:50",
@@ -152,7 +164,11 @@
             "attractie",
             "notredame",
             "kathedraal"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/notredamedeparis",
+            "insta": "https://www.instagram.com/explore/tags/notredamedeparis/"
+          }
         },
         {
           "time": "11:45",
@@ -167,7 +183,11 @@
             "berthillon",
             "winkel",
             "boeken"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/berthillon",
+            "insta": "https://www.instagram.com/explore/tags/berthillon/"
+          }
         },
         {
           "time": "12:45",
@@ -210,7 +230,11 @@
             "koffie",
             "deuxmagots",
             "historie"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/lesdeuxmagots",
+            "insta": "https://www.instagram.com/explore/tags/lesdeuxmagots/"
+          }
         },
         {
           "time": "16:15",
@@ -228,7 +252,11 @@
             "matignon",
             "tuin",
             "attractie"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/museerodin",
+            "insta": "https://www.instagram.com/explore/tags/museerodin/"
+          }
         },
         {
           "time": "18:30",
@@ -245,7 +273,11 @@
             "uitzicht",
             "gratis",
             "galerieslafayette"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/galerieslafayette",
+            "insta": "https://www.instagram.com/explore/tags/galerieslafayette/"
+          }
         },
         {
           "time": "19:45",
@@ -271,7 +303,11 @@
               "name": "Daroco Bourse",
               "note": "Italiaans, houtoven-pizza en verse pasta in een oud Gaultier-modehuis, ca. 30-45 pp, heel augustus open, online reserveren.",
               "web": "https://www.daroco.com/en/",
-              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Daroco+6+Rue+Vivienne+Paris"
+              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Daroco+6+Rue+Vivienne+Paris",
+              "social": {
+                "tiktok": "https://www.tiktok.com/tag/daroco",
+                "insta": "https://www.instagram.com/explore/tags/daroco/"
+              }
             },
             {
               "group": "Bij Opera",
@@ -285,7 +321,11 @@
               "name": "Bouillon Chartier",
               "note": "Historische bouillon uit 1896, klassiek Frans, ca. 20-25 pp, 365 dagen open, geen reservering: rij van 20-45 min die snel doorloopt.",
               "web": "https://www.bouillon-chartier.com/en/",
-              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bouillon+Chartier+7+Rue+du+Faubourg+Montmartre+Paris"
+              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bouillon+Chartier+7+Rue+du+Faubourg+Montmartre+Paris",
+              "social": {
+                "tiktok": "https://www.tiktok.com/tag/bouillonchartier",
+                "insta": "https://www.instagram.com/explore/tags/bouillonchartier/"
+              }
             },
             {
               "group": "Op loopafstand van het hotel",
@@ -355,7 +395,11 @@
             "pantheon",
             "historie",
             "cultuur"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/pantheonparis",
+            "insta": "https://www.instagram.com/explore/tags/pantheonparis/"
+          }
         },
         {
           "time": "11:15",
@@ -372,7 +416,11 @@
             "labubu",
             "viral",
             "merk"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/labubu",
+            "insta": "https://www.instagram.com/explore/tags/labubu/"
+          }
         },
         {
           "time": "12:00",
@@ -388,7 +436,11 @@
             "samaritaine",
             "warenhuis",
             "architectuur"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/lasamaritaine",
+            "insta": "https://www.instagram.com/explore/tags/lasamaritaine/"
+          }
         },
         {
           "time": "12:45",
@@ -403,7 +455,11 @@
             "lunch",
             "markt",
             "marais"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/marchedesenfantsrouges",
+            "insta": "https://www.instagram.com/explore/tags/marchedesenfantsrouges/"
+          }
         },
         {
           "time": "14:00",
@@ -421,7 +477,11 @@
             "courreges",
             "marais",
             "boutique"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/amiparis",
+            "insta": "https://www.instagram.com/explore/tags/amiparis/"
+          }
         },
         {
           "time": "15:45",
@@ -467,7 +527,11 @@
             "sneakers",
             "viral",
             "merk"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/kithparis",
+            "insta": "https://www.instagram.com/explore/tags/kithparis/"
+          }
         },
         {
           "time": "18:45",
@@ -481,7 +545,11 @@
             "sephora",
             "beauty",
             "merk"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/sephora",
+            "insta": "https://www.instagram.com/explore/tags/sephora/"
+          }
         },
         {
           "time": "20:15",
@@ -566,7 +634,11 @@
             "attractie",
             "uitzicht",
             "top"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/toureiffel",
+            "insta": "https://www.instagram.com/explore/tags/toureiffel/"
+          }
         },
         {
           "time": "09:00",
@@ -578,7 +650,11 @@
             "eiffeltoren",
             "top",
             "tickets"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/toureiffel",
+            "insta": "https://www.instagram.com/explore/tags/toureiffel/"
+          }
         },
         {
           "time": "11:15",
@@ -623,7 +699,11 @@
             "historie",
             "kasteel",
             "cultuur"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/chateaudeversailles",
+            "insta": "https://www.instagram.com/explore/tags/chateaudeversailles/"
+          }
         },
         {
           "time": "15:15",
@@ -635,7 +715,11 @@
             "versailles",
             "tuin",
             "spiegelzaal"
-          ]
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/chateaudeversailles",
+            "insta": "https://www.instagram.com/explore/tags/chateaudeversailles/"
+          }
         },
         {
           "time": "16:15",

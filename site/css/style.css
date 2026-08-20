@@ -336,6 +336,19 @@ body {
 }
 .btn:active { transform: scale(0.97); }
 
+.btn-social {
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--bg);
+}
+
+.btn-viral {
+  font-size: 13px;
+  background: var(--pink);
+  border-color: var(--pink-deep);
+  color: var(--pink-deep);
+}
+
 /* ---------- Tickets ---------- */
 
 .section-title {
