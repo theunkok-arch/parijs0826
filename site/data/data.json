@@ -552,6 +552,25 @@
           }
         },
         {
+          "time": "19:45",
+          "title": "Macarons halen bij Laduree",
+          "desc": "De beroemdste macarons ter wereld, sinds 1862. Haal een doos voor onderweg morgen: de flagship op nr 75 is tot 21:30 open.",
+          "why": "Laduree bedacht de macaron zoals je hem nu kent: twee schelpen met vulling. Kies je eigen doos, morgen op de achterbank testen welke smaak wint.",
+          "address": "75 Avenue des Champs-Elysees, 75008",
+          "web": "https://laduree.com",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laduree+75+Avenue+des+Champs-Elysees+Paris",
+          "tags": [
+            "zaterdag",
+            "laduree",
+            "macarons",
+            "merk"
+          ],
+          "social": {
+            "tiktok": "https://www.tiktok.com/tag/laduree",
+            "insta": "https://www.instagram.com/explore/tags/laduree/"
+          }
+        },
+        {
           "time": "20:15",
           "title": "Diner bij de Champs-Elysees",
           "desc": "Twee opties bij de avenue, plus een backup bij het hotel. Vroeg naar bed: morgen 08:20 vertrekken.",
