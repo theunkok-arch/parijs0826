@@ -414,6 +414,32 @@ body {
   color: var(--pink-deep);
 }
 
+/* ---------- Inklappen (Meer/Minder) ---------- */
+
+.card-more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.card.open .card-more { max-height: 1400px; }
+
+.card-more-inner { padding-top: 2px; }
+
+.more-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink-mute);
+  cursor: pointer;
+}
+
 /* ---------- Plan B ---------- */
 
 .planb {

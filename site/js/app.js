@@ -65,9 +65,9 @@
     return '<div class="card-media ph ph-' + esc(day.color) + '" aria-hidden="true"><span>' + esc(item.title.charAt(0)) + '</span></div>';
   }
 
-  function itemCard(item, day, showDayLabel) {
+  function itemCard(item, day, showDayLabel, expanded) {
     var flat = isFlat(item);
-    var h = '<article class="card' + (flat ? ' flat' : '') + '">';
+    var h = '<article class="card' + (flat ? ' flat' : '') + (expanded && !flat ? ' open' : '') + '" data-itemid="' + esc(item.id) + '">';
 
     if (showDayLabel) {
       h += '<span class="day-label bg-' + esc(day.color) + '">' + esc(day.label) + '</span>';
@@ -80,13 +80,16 @@
     h += '<h3>' + esc(item.title) + '</h3>';
     h += '</div>';
 
-    h += '<p class="desc">' + esc(item.desc) + '</p>';
     if (item.why) {
       var whys = Array.isArray(item.why) ? item.why : [item.why];
       h += '<div class="why bg-' + esc(day.color) + '"><p class="why-label">Waarom hierheen</p>';
       whys.forEach(function (w) { h += '<p class="why-text">' + esc(w) + '</p>'; });
       h += '</div>';
     }
+
+    if (!flat) h += '<div class="card-more"><div class="card-more-inner">';
+
+    h += '<p class="desc">' + esc(item.desc) + '</p>';
     if (item.address) h += '<p class="address">' + esc(item.address) + '</p>';
     if (item.warn) h += '<div class="warn"><strong>Let op:</strong> ' + esc(item.warn) + '</div>';
 
@@ -124,6 +127,11 @@
       h += '<p>' + esc(pbText) + '</p>';
       if (item.planB.mapsUrl) h += '<a class="btn" href="' + esc(item.planB.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
       h += '</div></details>';
+    }
+
+    if (!flat) {
+      h += '</div></div>';
+      h += '<button class="more-btn" type="button" data-more aria-expanded="' + (expanded ? 'true' : 'false') + '">' + (expanded ? 'Minder' : 'Meer') + '</button>';
     }
 
     h += '</article>';
@@ -304,9 +312,16 @@
 
     var cards = document.querySelectorAll('#day-' + day.id + ' .card');
     var target = null;
+    function openCard(card) {
+      if (card.classList.contains('flat')) return;
+      card.classList.add('open');
+      var btn = card.querySelector('[data-more]');
+      if (btn) { btn.textContent = 'Minder'; btn.setAttribute('aria-expanded', 'true'); }
+    }
     if (nowIdx >= 0 && cards[nowIdx]) {
       cards[nowIdx].classList.add('is-now');
       cards[nowIdx].querySelector('.card-top').insertAdjacentHTML('afterbegin', '<span class="live-badge live-now">NU</span>');
+      openCard(cards[nowIdx]);
       target = cards[nowIdx];
     }
     if (nextIdx >= 0 && cards[nextIdx]) {
@@ -338,7 +353,7 @@
     if (results.length === 0) {
       h += '<div class="search-empty">Niets gevonden voor "' + esc(query) + '". Probeer bijvoorbeeld: nike, entrecote, versailles.</div>';
     } else {
-      results.forEach(function (r) { h += itemCard(r.item, r.day, true); });
+      results.forEach(function (r) { h += itemCard(r.item, r.day, true, true); });
     }
 
     $('#days').hidden = true;
@@ -362,7 +377,14 @@
       var btn = e.target.closest('[data-ticketref]');
       if (btn) { goToTicket(btn.getAttribute('data-ticketref')); return; }
       var toggle = e.target.closest('[data-booked]');
-      if (toggle) toggleBooked(toggle.getAttribute('data-booked'));
+      if (toggle) { toggleBooked(toggle.getAttribute('data-booked')); return; }
+      var more = e.target.closest('[data-more]');
+      if (more) {
+        var card = more.closest('.card');
+        var open = card.classList.toggle('open');
+        more.textContent = open ? 'Minder' : 'Meer';
+        more.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
     });
 
     $('#search').addEventListener('input', function (e) {
