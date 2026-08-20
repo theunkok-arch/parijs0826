@@ -67,6 +67,12 @@
     h += '</div>';
 
     h += '<p class="desc">' + esc(item.desc) + '</p>';
+    if (item.why) {
+      var whys = Array.isArray(item.why) ? item.why : [item.why];
+      h += '<div class="why bg-' + esc(day.color) + '"><p class="why-label">Waarom hierheen</p>';
+      whys.forEach(function (w) { h += '<p class="why-text">' + esc(w) + '</p>'; });
+      h += '</div>';
+    }
     if (item.address) h += '<p class="address">' + esc(item.address) + '</p>';
     if (item.warn) h += '<div class="warn"><strong>Let op:</strong> ' + esc(item.warn) + '</div>';
 
@@ -80,6 +86,7 @@
         h += '<div class="option">';
         h += '<p class="option-name">' + esc(o.name) + '</p>';
         h += '<p class="option-note">' + esc(o.note) + '</p>';
+        if (o.why) h += '<p class="option-why">' + esc(o.why) + '</p>';
         var ob = '';
         if (o.mapsUrl) ob += '<a class="btn" href="' + esc(o.mapsUrl) + '" target="_blank" rel="noopener">' + ICONS.pin + 'Kaart</a>';
         if (o.web) ob += '<a class="btn" href="' + esc(o.web) + '" target="_blank" rel="noopener">' + ICONS.globe + 'Reserveer</a>';

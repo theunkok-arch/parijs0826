@@ -68,7 +68,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/relaisdelentrecote",
             "insta": "https://www.instagram.com/explore/tags/relaisdelentrecote/"
-          }
+          },
+          "why": "Een menukaart bestaat hier niet: iedereen krijgt hetzelfde. De saus is al 60 jaar geheim, alleen de familie kent het recept."
         },
         {
           "time": "23:00",
@@ -87,7 +88,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/trocadero",
             "insta": "https://www.instagram.com/explore/tags/trocadero/"
-          }
+          },
+          "why": "20.000 lampjes, vijf minuten per uur. De hele wereld filmt dit, jullie zien het vanaf het beste plein, gratis."
         }
       ]
     },
@@ -153,7 +155,8 @@
               "url": "https://www.tiktok.com/@ricksteveseurope/video/7628316665775803661",
               "label": "Glas-in-lood van de Sainte-Chapelle"
             }
-          }
+          },
+          "why": "Je staat hier in een doos van 780 jaar oud gekleurd glas, gebouwd door een koning die de doornenkroon van Jezus had gekocht. 1.113 bijbelscenes in glas, en het overleefde de Revolutie en twee wereldoorlogen."
         },
         {
           "time": "10:50",
@@ -172,7 +175,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/notredamedeparis",
             "insta": "https://www.instagram.com/explore/tags/notredamedeparis/"
-          }
+          },
+          "why": "In 2019 stond dit hele dak in brand, de wereld keek live mee. 2.000 vakmensen bouwden het in vijf jaar terug zoals het in de middeleeuwen was. En ja, dit is de kerk van de Klokkenluider."
         },
         {
           "time": "11:45",
@@ -191,7 +195,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/berthillon",
             "insta": "https://www.instagram.com/explore/tags/berthillon/"
-          }
+          },
+          "why": "Het beroemdste ijs van Parijs, familierecept sinds 1954. Fransen staan hier gewoon in de rij, dat zegt genoeg."
         },
         {
           "time": "12:45",
@@ -220,7 +225,8 @@
             "galerie",
             "wandelen",
             "saintgermain"
-          ]
+          ],
+          "why": "De straat waar kunsthandelaren al 100 jaar zitten. Zelfs met de helft dicht is dit het mooiste stukje etalage-Parijs."
         },
         {
           "time": "15:30",
@@ -238,7 +244,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/lesdeuxmagots",
             "insta": "https://www.instagram.com/explore/tags/lesdeuxmagots/"
-          }
+          },
+          "why": "Hemingway schreef hier, Picasso tekende hier, Sartre en De Beauvoir hadden hier hun vaste tafel. Je koffie kost drie keer zoveel, maar je zit op de stoel van een genie."
         },
         {
           "time": "16:15",
@@ -260,7 +267,11 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/museerodin",
             "insta": "https://www.instagram.com/explore/tags/museerodin/"
-          }
+          },
+          "why": [
+            "De Denker ken je van elke meme, hier staat het echte beeld gewoon in een tuin. Rodin gaf al zijn kunst aan Frankrijk in ruil voor dit huis.",
+            "Achter deze muur woont de Franse premier. Meer dan de poort en de gendarmes krijg je niet te zien, en juist dat is het verhaal."
+          ]
         },
         {
           "time": "18:30",
@@ -281,7 +292,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/galerieslafayette",
             "insta": "https://www.instagram.com/explore/tags/galerieslafayette/"
-          }
+          },
+          "why": "Een glas-in-lood koepel uit 1912 boven een warenhuis, en een gratis rooftop met het beste uitzicht van de stad. Sunset-content zonder entree."
         },
         {
           "time": "19:45",
@@ -329,7 +341,8 @@
               "social": {
                 "tiktok": "https://www.tiktok.com/tag/bouillonchartier",
                 "insta": "https://www.instagram.com/explore/tags/bouillonchartier/"
-              }
+              },
+              "why": "Sinds 1896, de ober schrijft je rekening op het tafelkleed. Eten waar Parijzenaars zelf heen gaan als ze weinig willen betalen."
             },
             {
               "group": "Op loopafstand van het hotel",
@@ -403,7 +416,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/pantheonparis",
             "insta": "https://www.instagram.com/explore/tags/pantheonparis/"
-          }
+          },
+          "why": "De eregalerij van Frankrijk: hier liggen Marie Curie, Voltaire en Josephine Baker. En de slinger in het midden bewijst al 170 jaar live dat de aarde draait."
         },
         {
           "time": "11:15",
@@ -428,7 +442,8 @@
               "url": "https://www.tiktok.com/@kellyannshuman/video/7472048822911487278",
               "label": "Alle Pop Mart winkels in Parijs"
             }
-          }
+          },
+          "why": "Dit is waar de Labubu-hype vandaan komt. Blind boxes: je weet pas wat je hebt als je hem opent."
         },
         {
           "time": "12:00",
@@ -448,7 +463,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/lasamaritaine",
             "insta": "https://www.instagram.com/explore/tags/lasamaritaine/"
-          }
+          },
+          "why": "Zestien jaar dicht geweest, toen voor 750 miljoen verbouwd. Loop naar boven voor het pauwenfresco en het art-nouveau trappenhuis."
         },
         {
           "time": "12:45",
@@ -467,7 +483,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/marchedesenfantsrouges",
             "insta": "https://www.instagram.com/explore/tags/marchedesenfantsrouges/"
-          }
+          },
+          "why": "De oudste markt van Parijs, 1615. Iedereen kiest zijn eigen keuken, niemand hoeft te overleggen."
         },
         {
           "time": "14:00",
@@ -489,7 +506,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/amiparis",
             "insta": "https://www.instagram.com/explore/tags/amiparis/"
-          }
+          },
+          "why": "De grootste AMI-winkel ter wereld, in de wijk waar de kleine merken zitten die je over twee jaar overal ziet."
         },
         {
           "time": "15:45",
@@ -519,7 +537,8 @@
             "polene",
             "flagship",
             "champselysees"
-          ]
+          ],
+          "why": "Een kilometer met de duurste etalages van Europa. Kijken is gratis, en Zara zit er ook."
         },
         {
           "time": "18:00",
@@ -539,7 +558,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/kithparis",
             "insta": "https://www.instagram.com/explore/tags/kithparis/"
-          }
+          },
+          "why": "De mooiste sneakerwinkel van Parijs met een ijsbar die op TikTok viral ging. Bestel, film, post."
         },
         {
           "time": "18:45",
@@ -557,7 +577,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/sephora",
             "insta": "https://www.instagram.com/explore/tags/sephora/"
-          }
+          },
+          "why": "Het grootste beautywalhalla van Europa, tot 23:30 open. Merken die in Nederland niet liggen."
         },
         {
           "time": "19:45",
@@ -685,7 +706,8 @@
               "url": "https://www.tiktok.com/@adventuresinheels/video/7492070707740904747",
               "label": "Mee in de lift naar de top"
             }
-          }
+          },
+          "why": "330 meter, gebouwd als tijdelijke attractie voor 20 jaar, nooit meer weggehaald. In de zomer groeit hij 15 centimeter door de warmte. Jullie staan op het hoogste punt van Parijs voordat de stad wakker is."
         },
         {
           "time": "11:15",
@@ -738,7 +760,8 @@
               "url": "https://www.tiktok.com/@ricksteveseurope/video/7515489428702334254",
               "label": "Rick Steves toont de Spiegelzaal"
             }
-          }
+          },
+          "why": "2.300 kamers, gebouwd door een koning die zichzelf de Zon noemde. In de Spiegelzaal (357 spiegels) werd in 1919 de Eerste Wereldoorlog officieel beeindigd. Marie-Antoinette woonde hier, jullie lopen door haar huis."
         },
         {
           "time": "15:15",
