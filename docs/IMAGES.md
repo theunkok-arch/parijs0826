@@ -13,7 +13,7 @@ Alle foto's komen van Wikimedia Commons, bijgesneden naar 960x540 (16:9) webp. L
 - **enfants-rouges.webp** — [Marché des Enfants-Rouges, Paris July 2014.jpg](https://commons.wikimedia.org/wiki/File%3AMarch%C3%A9_des_Enfants-Rouges%2C_Paris_July_2014.jpg) — maker: Connie Ma from Chicago, United States of America — licentie: CC BY-SA 2.0
 - **entrecote.webp** — [Entrecôte à la bordelaise et frites.jpg](https://commons.wikimedia.org/wiki/File%3AEntrec%C3%B4te_%C3%A0_la_bordelaise_et_frites.jpg) — maker: Leon Brocard — licentie: CC BY 2.0
 - **galette.webp** — [GaletteCidre.JPG](https://commons.wikimedia.org/wiki/File%3AGaletteCidre.JPG) — maker: Ji-Elle — licentie: Public domain
-- **hotel-trocadero.webp** — [Paris - Palais de Chaillot (26804113684).jpg](https://commons.wikimedia.org/wiki/File%3AParis_-_Palais_de_Chaillot_%2826804113684%29.jpg) — maker: Fred Romero from Paris, F — licentie: CC BY 2.0
+- **plaza-tour-eiffel.jpg** — eigen aangeleverde kamerfoto van hotel Plaza Tour Eiffel (promotiemateriaal van het hotel, geen Wikimedia Commons); alleen voor deze eigen reisgids gebruikt.
 - **ile-saint-louis.webp** — [29 rue Saint-Louis-en-L'Ile, Paris.jpg](https://commons.wikimedia.org/wiki/File%3A29_rue_Saint-Louis-en-L%27Ile%2C_Paris.jpg) — maker: Jbdeparis — licentie: CC BY-SA 4.0
 - **karamell.webp** — [Colorful candy.jpg](https://commons.wikimedia.org/wiki/File%3AColorful_candy.jpg) — maker: Jakez — licentie: CC BY-SA 3.0
 - **labubu.webp** — [Labubu Pop Mart store in New York City.jpg](https://commons.wikimedia.org/wiki/File%3ALabubu_Pop_Mart_store_in_New_York_City.jpg) — maker: <a href="//commons.wikimedia.org/w/index.php?title=User:Thelabubucollector&amp;action=edit&amp;redlink=1" class="new" title="User:Thelabubucollector ( — licentie: CC BY 4.0
