@@ -37,7 +37,7 @@
             "hotel",
             "trocadero"
           ],
-          "ph": true
+          "img": "img/hotel-trocadero.webp"
         },
         {
           "id": "do-2045-scooter",
@@ -74,7 +74,8 @@
             "insta": "https://www.instagram.com/explore/tags/relaisdelentrecote/"
           },
           "why": "Een menukaart bestaat hier niet: iedereen krijgt hetzelfde. De saus is al 60 jaar geheim, alleen de familie kent het recept.",
-          "planB": "Vestiging 101 bd du Montparnasse heeft de kortste rij, of reserveer Le Malakoff op Trocadero."
+          "planB": "Vestiging 101 bd du Montparnasse heeft de kortste rij, of reserveer Le Malakoff op Trocadero.",
+          "img": "img/entrecote.webp"
         },
         {
           "id": "do-2300-fonkeling",
@@ -96,7 +97,7 @@
             "insta": "https://www.instagram.com/explore/tags/trocadero/"
           },
           "why": "20.000 lampjes, vijf minuten per uur. De hele wereld filmt dit, jullie zien het vanaf het beste plein, gratis.",
-          "img": "img/do-2300-fonkeling.jpg"
+          "img": "img/eiffel-nacht.webp"
         }
       ],
       "intro": "Vanavond maar twee missies: inchecken en de beste entrecote van Parijs. Een menukaart is er niet, de saus is geheim, de friet is onbeperkt. En op de terugweg fonkelt de Eiffeltoren speciaal voor jullie (nou ja, en voor 20.000 anderen)."
@@ -118,7 +119,8 @@
             "vrijdag",
             "ontbijt",
             "hotel"
-          ]
+          ],
+          "img": "img/croissant.webp"
         },
         {
           "id": "vr-0900-notredameslot",
@@ -170,7 +172,7 @@
           },
           "why": "Je staat hier in een doos van 780 jaar oud gekleurd glas, gebouwd door een koning die de doornenkroon van Jezus had gekocht. 1.113 bijbelscenes in glas, en het overleefde de Revolutie en twee wereldoorlogen.",
           "planB": "Draai het om: eerst Notre-Dame, dan Sainte-Chapelle na 17:00 (open tot 19:00, veel rustiger).",
-          "img": "img/vr-0950-saintechapelle.jpg"
+          "img": "img/sainte-chapelle.webp"
         },
         {
           "id": "vr-1050-notredame",
@@ -193,7 +195,7 @@
           },
           "why": "In 2019 stond dit hele dak in brand, de wereld keek live mee. 2.000 vakmensen bouwden het in vijf jaar terug zoals het in de middeleeuwen was. En ja, dit is de kerk van de Klokkenluider.",
           "planB": "Zonder slot is de rij in de ochtend het kortst. Lukt het niet: kom vrijdag na 18:00 terug, dan is de piek voorbij.",
-          "img": "img/vr-1050-notredame.jpg"
+          "img": "img/notre-dame.webp"
         },
         {
           "id": "vr-1145-berthillon",
@@ -216,7 +218,7 @@
           },
           "why": "Het beroemdste ijs van Parijs, familierecept sinds 1954. Fransen staan hier gewoon in de rij, dat zegt genoeg.",
           "planB": "De moederzaak sluit 's zomers, maar half Ile Saint-Louis verkoopt Berthillon-ijs: let op de bordjes.",
-          "img": "img/vr-1145-berthillon.jpg"
+          "img": "img/ile-saint-louis.webp"
         },
         {
           "id": "vr-1245-breizh",
@@ -232,7 +234,8 @@
             "eten",
             "lunch",
             "crepes"
-          ]
+          ],
+          "img": "img/galette.webp"
         },
         {
           "id": "vr-1415-saintgermain",
@@ -253,7 +256,7 @@
             "text": "Alles dicht? Scooter naar rue de Rivoli: BHV Marais en de hele winkelstraat zijn in augustus gewoon open, 10 minuten rijden.",
             "mapsUrl": "https://www.google.com/maps/search/?api=1&query=BHV+Marais+52+Rue+de+Rivoli+Paris"
           },
-          "img": "img/vr-1415-saintgermain.jpg"
+          "img": "img/rue-de-seine.webp"
         },
         {
           "id": "vr-1530-deuxmagots",
@@ -274,7 +277,7 @@
             "insta": "https://www.instagram.com/explore/tags/lesdeuxmagots/"
           },
           "why": "Hemingway schreef hier, Picasso tekende hier, Sartre en De Beauvoir hadden hier hun vaste tafel. Je koffie kost drie keer zoveel, maar je zit op de stoel van een genie.",
-          "img": "img/vr-1530-deuxmagots.jpg"
+          "img": "img/deux-magots.webp"
         },
         {
           "id": "vr-1615-rodin",
@@ -303,7 +306,7 @@
             "Achter deze muur woont de Franse premier. Meer dan de poort en de gendarmes krijg je niet te zien, en juist dat is het verhaal."
           ],
           "planB": "Neem alleen het tuinticket: De Denker en de Hellepoort staan buiten, en de tuin heeft nooit rij.",
-          "img": "img/vr-1615-rodin.jpg"
+          "img": "img/rodin.webp"
         },
         {
           "id": "vr-1830-lafayette",
@@ -328,7 +331,7 @@
           },
           "why": "Een glas-in-lood koepel uit 1912 boven een warenhuis, en een gratis rooftop met het beste uitzicht van de stad. Sunset-content zonder entree.",
           "planB": "Printemps ernaast heeft ook een gratis rooftop-terras, twee minuten lopen.",
-          "img": "img/vr-1830-lafayette.jpg"
+          "img": "img/lafayette-koepel.webp"
         },
         {
           "id": "vr-1945-karamell",
@@ -343,7 +346,8 @@
             "snoep",
             "viral",
             "winkel"
-          ]
+          ],
+          "img": "img/karamell.webp"
         },
         {
           "id": "vr-2030-diner",
@@ -404,7 +408,7 @@
             "italiaans",
             "opera"
           ],
-          "img": "img/vr-2030-diner.jpg"
+          "img": "img/chartier.webp"
         }
       ],
       "intro": "Vandaag het Parijs waar iedereen voor komt, maar dan slim: eerst het 780 jaar oude glas van de Sainte-Chapelle als de rijen nog kort zijn, dan de herbouwde Notre-Dame, ijs op een eiland, koffie op de stoel van Hemingway en De Denker in een tuin. Afsluiten op een gratis rooftop met de hele stad aan je voeten."
@@ -426,7 +430,8 @@
             "zaterdag",
             "ontbijt",
             "hotel"
-          ]
+          ],
+          "img": "img/croissant.webp"
         },
         {
           "id": "za-0930-scooter",
@@ -461,7 +466,7 @@
           },
           "why": "De eregalerij van Frankrijk: hier liggen Marie Curie, Voltaire en Josephine Baker. En de slinger in het midden bewijst al 170 jaar live dat de aarde draait.",
           "planB": "Jardin du Luxembourg ligt om de hoek: het mooiste park van Parijs, gratis, met de groene stoeltjes voor de foto.",
-          "img": "img/za-1000-pantheon.jpg"
+          "img": "img/pantheon.webp"
         },
         {
           "id": "za-1115-popmart",
@@ -489,7 +494,8 @@
             }
           },
           "why": "Dit is waar de Labubu-hype vandaan komt. Blind boxes: je weet pas wat je hebt als je hem opent.",
-          "planB": "Zelfde winkel, kortere rij: Pop Mart Opera, 19 avenue de l'Opera, 6 minuten met de scooter."
+          "planB": "Zelfde winkel, kortere rij: Pop Mart Opera, 19 avenue de l'Opera, 6 minuten met de scooter.",
+          "img": "img/labubu.webp"
         },
         {
           "id": "za-1200-samaritaine",
@@ -512,7 +518,7 @@
             "insta": "https://www.instagram.com/explore/tags/lasamaritaine/"
           },
           "why": "Zestien jaar dicht geweest, toen voor 750 miljoen verbouwd. Loop naar boven voor het pauwenfresco en het art-nouveau trappenhuis.",
-          "img": "img/za-1200-samaritaine.jpg"
+          "img": "img/samaritaine.webp"
         },
         {
           "id": "za-1245-enfantsrouges",
@@ -535,7 +541,7 @@
           },
           "why": "De oudste markt van Parijs, 1615. Iedereen kiest zijn eigen keuken, niemand hoeft te overleggen.",
           "planB": "Chez Janou, 2 rue Roger Verlomme: Provencaals terras onder een olijfboom, 5 minuten lopen.",
-          "img": "img/za-1245-enfantsrouges.jpg"
+          "img": "img/enfants-rouges.webp"
         },
         {
           "id": "za-1400-marais",
@@ -559,7 +565,8 @@
             "tiktok": "https://www.tiktok.com/tag/amiparis",
             "insta": "https://www.instagram.com/explore/tags/amiparis/"
           },
-          "why": "De grootste AMI-winkel ter wereld, in de wijk waar de kleine merken zitten die je over twee jaar overal ziet."
+          "why": "De grootste AMI-winkel ter wereld, in de wijk waar de kleine merken zitten die je over twee jaar overal ziet.",
+          "img": "img/marais.webp"
         },
         {
           "id": "za-1545-scooter",
@@ -593,7 +600,7 @@
             "champselysees"
           ],
           "why": "Een kilometer met de duurste etalages van Europa. Kijken is gratis, en Zara zit er ook.",
-          "img": "img/za-1600-flagshiprun.jpg"
+          "img": "img/champs-elysees.webp"
         },
         {
           "id": "za-1800-kith",
@@ -616,7 +623,8 @@
             "insta": "https://www.instagram.com/explore/tags/kithparis/"
           },
           "why": "De mooiste sneakerwinkel van Parijs met een ijsbar die op TikTok viral ging. Bestel, film, post.",
-          "planB": "Loop 200 meter naar Laduree op nr 75 en draai de volgorde om."
+          "planB": "Loop 200 meter naar Laduree op nr 75 en draai de volgorde om.",
+          "img": "img/sneakers.webp"
         },
         {
           "id": "za-1845-sephora",
@@ -636,7 +644,8 @@
             "tiktok": "https://www.tiktok.com/tag/sephora",
             "insta": "https://www.instagram.com/explore/tags/sephora/"
           },
-          "why": "Het grootste beautywalhalla van Europa, tot 23:30 open. Merken die in Nederland niet liggen."
+          "why": "Het grootste beautywalhalla van Europa, tot 23:30 open. Merken die in Nederland niet liggen.",
+          "img": "img/sephora.webp"
         },
         {
           "id": "za-1945-laduree",
@@ -656,7 +665,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/laduree",
             "insta": "https://www.instagram.com/explore/tags/laduree/"
-          }
+          },
+          "img": "img/macarons.webp"
         },
         {
           "id": "za-2015-diner",
@@ -693,7 +703,8 @@
             "bistro",
             "entrecote",
             "champselysees"
-          ]
+          ],
+          "img": "img/bistro.webp"
         }
       ],
       "intro": "Shopdag. Een shot cultuur vooraf (het Pantheon, waar Marie Curie ligt en een slinger bewijst dat de aarde draait), daarna van Labubu naar de grootste AMI ter wereld naar de Champs-Elysees. Finale: Sephora tot laat en een doos Laduree-macarons voor morgen."
@@ -715,7 +726,8 @@
             "zondag",
             "ontbijt",
             "hotel"
-          ]
+          ],
+          "img": "img/croissant.webp"
         },
         {
           "id": "zo-0820-uitchecken",
@@ -751,7 +763,7 @@
             "tiktok": "https://www.tiktok.com/tag/toureiffel",
             "insta": "https://www.instagram.com/explore/tags/toureiffel/"
           },
-          "img": "img/zo-0900-eiffeltop.jpg"
+          "img": "img/eiffel-ochtend.webp"
         },
         {
           "id": "zo-0900-eiffeltop",
@@ -775,7 +787,7 @@
           },
           "why": "330 meter, gebouwd als tijdelijke attractie voor 20 jaar, nooit meer weggehaald. In de zomer groeit hij 15 centimeter door de warmte. Jullie staan op het hoogste punt van Parijs voordat de stad wakker is.",
           "planB": "Neem het trap-plus-lift-ticket ter plekke (kortere rij) of de lift naar de 2e verdieping: het zicht op de stad is daar zelfs beter.",
-          "img": "img/zo-0900-eiffeltop.jpg"
+          "img": "img/eiffel-uitzicht.webp"
         },
         {
           "id": "zo-1115-auto",
@@ -803,7 +815,8 @@
             "eten",
             "lunch",
             "versailles"
-          ]
+          ],
+          "img": "img/versailles-stad.webp"
         },
         {
           "id": "zo-1330-versailles",
@@ -834,7 +847,7 @@
           },
           "why": "2.300 kamers, gebouwd door een koning die zichzelf de Zon noemde. In de Spiegelzaal (357 spiegels) werd in 1919 de Eerste Wereldoorlog officieel beeindigd. Marie-Antoinette woonde hier, jullie lopen door haar huis.",
           "planB": "Gewoon het 13:30-tijdslot nemen en de gratis officiele app als audiotour gebruiken, werkt prima.",
-          "img": "img/zo-1330-versailles.jpg"
+          "img": "img/spiegelzaal.webp"
         },
         {
           "id": "zo-1515-spiegelzaal",
@@ -852,7 +865,7 @@
             "tiktok": "https://www.tiktok.com/tag/chateaudeversailles",
             "insta": "https://www.instagram.com/explore/tags/chateaudeversailles/"
           },
-          "img": "img/zo-1515-spiegelzaal.jpg"
+          "img": "img/versailles-tuin.webp"
         },
         {
           "id": "zo-1615-naarhuis",
@@ -864,7 +877,8 @@
             "zondag",
             "auto",
             "naar huis"
-          ]
+          ],
+          "img": "img/macarons.webp"
         }
       ],
       "intro": "De grote finale. Om 9 uur staan jullie op de top van de Eiffeltoren, voordat de stad wakker is. Daarna het paleis van de Zonnekoning: 2.300 kamers, 357 spiegels en de tuinen met muziek. Macarons open op de achterbank, en naar huis."

@@ -61,7 +61,7 @@
 
   function mediaBlock(item, day) {
     if (item.img) {
-      return '<img class="card-media" src="' + esc(item.img) + '" alt="" width="500" height="281" loading="lazy">';
+      return '<img class="card-media" src="' + esc(item.img) + '" alt="" width="960" height="540" loading="lazy">';
     }
     return '<div class="card-media ph ph-' + esc(day.color) + '" aria-hidden="true"><span>' + esc(item.title.charAt(0)) + '</span></div>';
   }

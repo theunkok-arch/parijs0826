@@ -1,25 +1,33 @@
 # Fotoverantwoording
 
-Alle foto's komen van Wikimedia Commons en zijn geschaald naar max 500px breed, max 80 KB per stuk.
-De Eiffeltoren-foto wordt gebruikt voor zowel zo-0845-eiffelentree als zo-0900-eiffeltop.
+Alle foto's komen van Wikimedia Commons, bijgesneden naar 960x540 (16:9) webp. Licenties: Public Domain, CC0, CC BY of CC BY-SA; bij CC-licenties is naamsvermelding vereist, die staat hieronder en wordt in de site-footer kort genoemd.
 
-| Bestand | Bron | Auteur | Licentie |
-|---|---|---|---|
-| img/do-2300-fonkeling.jpg | [Eiffel Tower by night, seen from Trocadero (3094100190).jpg](https://commons.wikimedia.org/wiki/File:Eiffel_Tower_by_night,_seen_from_Trocadero_(3094100190).jpg) | Ivo Jansch from Netherlands | CC BY-SA 2.0 |
-| img/vr-0950-saintechapelle.jpg | [Santa Capilla, París, Francia, 2022-11-01, DD 80-82 HDR.jpg](https://commons.wikimedia.org/wiki/File:Santa_Capilla,_Par%C3%ADs,_Francia,_2022-11-01,_DD_80-82_HDR.jpg) | Diego Delso | CC BY-SA 4.0 |
-| img/vr-1050-notredame.jpg | [Notre Dame Paris front facade lower.jpg](https://commons.wikimedia.org/wiki/File:Notre_Dame_Paris_front_facade_lower.jpg) | Benh LIEU SONG | CC BY-SA 3.0 |
-| img/vr-1145-berthillon.jpg | [Paris ile Cite ile Saint Louis pont Tournelle.jpg](https://commons.wikimedia.org/wiki/File:Paris_ile_Cite_ile_Saint_Louis_pont_Tournelle.jpg) | Myrabella | CC BY-SA 4.0 |
-| img/vr-1415-saintgermain.jpg | [Rue de Furstemberg, Paris 8 April 2017.jpg](https://commons.wikimedia.org/wiki/File:Rue_de_Furstemberg,_Paris_8_April_2017.jpg) | Bobo Boom | CC BY 2.0 |
-| img/vr-1530-deuxmagots.jpg | [Les Deux Magots, 25 September 2019.jpg](https://commons.wikimedia.org/wiki/File:Les_Deux_Magots,_25_September_2019.jpg) | Cheng-en Cheng from Taichung City, Taiwan | CC BY-SA 2.0 |
-| img/vr-1615-rodin.jpg | [Rodin Le Penseur.JPG](https://commons.wikimedia.org/wiki/File:Rodin_Le_Penseur.JPG) | BKP | CC BY-SA 3.0 |
-| img/vr-1830-lafayette.jpg | [Under the dome @ Galeries Lafayette @ Paris (34474942263).jpg](https://commons.wikimedia.org/wiki/File:Under_the_dome_@_Galeries_Lafayette_@_Paris_(34474942263).jpg) | Guilhem Vellut from Paris, France | CC BY 2.0 |
-| img/vr-2030-diner.jpg | [Panneau Bouillon Chartier Grands Boulevards (août 2023).JPG](https://commons.wikimedia.org/wiki/File:Panneau_Bouillon_Chartier_Grands_Boulevards_(ao%C3%BBt_2023).JPG) | Benoît Prieur | CC0 |
-| img/za-1000-pantheon.jpg | [Pantheon of Paris 003.jpg](https://commons.wikimedia.org/wiki/File:Pantheon_of_Paris_003.jpg) | Moonik | CC BY-SA 3.0 |
-| img/za-1200-samaritaine.jpg | [Samaritaine Paris.jpg](https://commons.wikimedia.org/wiki/File:Samaritaine_Paris.jpg) | En-bateau | CC BY-SA 3.0 |
-| img/za-1245-enfantsrouges.jpg | [Marché des Enfants-Rouges, Paris May 2016.jpg](https://commons.wikimedia.org/wiki/File:March%C3%A9_des_Enfants-Rouges,_Paris_May_2016.jpg) | besopha | CC BY 2.0 |
-| img/za-1600-flagshiprun.jpg | [Arc de Triomphe, Avenue des Champs-Élysées, Paris, France ( Ank Kumar , Infosys Limited ) 02.jpg](https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe,_Avenue_des_Champs-%C3%89lys%C3%A9es,_Paris,_France_(_Ank_Kumar_,_Infosys_Limited_)_02.jpg) | Ank Kumar | CC BY-SA 4.0 |
-| img/zo-0900-eiffeltop.jpg | [Eiffel Tower as seen from the Champ de Mars, Paris May 2014.jpg](https://commons.wikimedia.org/wiki/File:Eiffel_Tower_as_seen_from_the_Champ_de_Mars,_Paris_May_2014.jpg) | missbossy from Singapore, Singapore | CC BY 2.0 |
-| img/zo-1330-versailles.jpg | [Water reflection of the Orangerie garden and Palace of Versailles with blue sky in France.jpg](https://commons.wikimedia.org/wiki/File:Water_reflection_of_the_Orangerie_garden_and_Palace_of_Versailles_with_blue_sky_in_France.jpg) | Basile Morin | CC BY-SA 4.0 |
-| img/zo-1515-spiegelzaal.jpg | [Chateau Versailles Galerie des Glaces.jpg](https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg) | Myrabella | CC BY-SA 3.0 |
-
-Totaal: 16 bestanden, 890 KB.
+- **bistro.webp** — [Bavette's Steakhouse & Bar - March 2022 - Sarah Stierch 05 (cropped).jpg](https://commons.wikimedia.org/wiki/File%3ABavette%27s_Steakhouse_%26_Bar_-_March_2022_-_Sarah_Stierch_05_%28cropped%29.jpg) — maker: Missvain — licentie: CC BY 4.0
+- **champs-elysees.webp** — [Arc de Triomphe, Avenue des Champs-Élysées, Paris, France ( Ank Kumar , Infosys Limited ) 01.jpg](https://commons.wikimedia.org/wiki/File%3AArc_de_Triomphe%2C_Avenue_des_Champs-%C3%89lys%C3%A9es%2C_Paris%2C_France_%28_Ank_Kumar_%2C_Infosys_Limited_%29_01.jpg) — maker: Ank Kumar — licentie: CC BY-SA 4.0
+- **chartier.webp** — [Bouillon Chartier -2.JPG](https://commons.wikimedia.org/wiki/File%3ABouillon_Chartier_-2.JPG) — maker: MOSSOT — licentie: CC BY 3.0
+- **croissant.webp** — [00 Croissant. Yum.jpg](https://commons.wikimedia.org/wiki/File%3A00_Croissant._Yum.jpg) — maker: Mark Mitchell — licentie: CC BY 2.0
+- **deux-magots.webp** — [Cafe Les Deux Magots, Paris - 2011.JPG](https://commons.wikimedia.org/wiki/File%3ACafe_Les_Deux_Magots%2C_Paris_-_2011.JPG) — maker: The original uploader was DIMSFIKAS at <a href — licentie: CC BY-SA 3.0
+- **eiffel-nacht.webp** — [Eiffel Tower and Pont Alexandre III at night.jpg](https://commons.wikimedia.org/wiki/File%3AEiffel_Tower_and_Pont_Alexandre_III_at_night.jpg) — maker: Getfunky Paris — licentie: CC BY 2.0
+- **eiffel-ochtend.webp** — [Tour Eiffel 1er étage vu du Champ de Mars.jpg](https://commons.wikimedia.org/wiki/File%3ATour_Eiffel_1er_%C3%A9tage_vu_du_Champ_de_Mars.jpg) — maker: Jebulon — licentie: CC0
+- **eiffel-uitzicht.webp** — [Aerial View of Paris from Eiffel, Jul 2018.jpg](https://commons.wikimedia.org/wiki/File%3AAerial_View_of_Paris_from_Eiffel%2C_Jul_2018.jpg) — maker: <a href="//commons.wikimedia.org/w/index.php?title=User:A_Chinese_user&amp;action=edit&amp;redlink=1" class="new" title="User:A Chinese user (page doe — licentie: CC BY-SA 4.0
+- **enfants-rouges.webp** — [Marché des Enfants-Rouges, Paris July 2014.jpg](https://commons.wikimedia.org/wiki/File%3AMarch%C3%A9_des_Enfants-Rouges%2C_Paris_July_2014.jpg) — maker: Connie Ma from Chicago, United States of America — licentie: CC BY-SA 2.0
+- **entrecote.webp** — [Entrecôte à la bordelaise et frites.jpg](https://commons.wikimedia.org/wiki/File%3AEntrec%C3%B4te_%C3%A0_la_bordelaise_et_frites.jpg) — maker: Leon Brocard — licentie: CC BY 2.0
+- **galette.webp** — [GaletteCidre.JPG](https://commons.wikimedia.org/wiki/File%3AGaletteCidre.JPG) — maker: Ji-Elle — licentie: Public domain
+- **hotel-trocadero.webp** — [Paris - Palais de Chaillot (26804113684).jpg](https://commons.wikimedia.org/wiki/File%3AParis_-_Palais_de_Chaillot_%2826804113684%29.jpg) — maker: Fred Romero from Paris, F — licentie: CC BY 2.0
+- **ile-saint-louis.webp** — [29 rue Saint-Louis-en-L'Ile, Paris.jpg](https://commons.wikimedia.org/wiki/File%3A29_rue_Saint-Louis-en-L%27Ile%2C_Paris.jpg) — maker: Jbdeparis — licentie: CC BY-SA 4.0
+- **karamell.webp** — [Colorful candy.jpg](https://commons.wikimedia.org/wiki/File%3AColorful_candy.jpg) — maker: Jakez — licentie: CC BY-SA 3.0
+- **labubu.webp** — [Labubu Pop Mart store in New York City.jpg](https://commons.wikimedia.org/wiki/File%3ALabubu_Pop_Mart_store_in_New_York_City.jpg) — maker: <a href="//commons.wikimedia.org/w/index.php?title=User:Thelabubucollector&amp;action=edit&amp;redlink=1" class="new" title="User:Thelabubucollector ( — licentie: CC BY 4.0
+- **lafayette-koepel.webp** — [Under the dome @ Galeries Lafayette @ Paris (34474942263).jpg](https://commons.wikimedia.org/wiki/File%3AUnder_the_dome_%40_Galeries_Lafayette_%40_Paris_%2834474942263%29.jpg) — maker: Guilhem Vellut from Paris, — licentie: CC BY 2.0
+- **macarons.webp** — [Box of Macarons.jpg](https://commons.wikimedia.org/wiki/File%3ABox_of_Macarons.jpg) — maker: AlphaLemur — licentie: CC BY-SA 4.0
+- **marais.webp** — [P1000987 Paris IV Rue des Francs-Bourgeois Rue de Sévigné Boutique d'angle MH.JPG](https://commons.wikimedia.org/wiki/File%3AP1000987_Paris_IV_Rue_des_Francs-Bourgeois_Rue_de_S%C3%A9vign%C3%A9_Boutique_d%27angle_MH.JPG) — maker: Mbzt — licentie: CC BY-SA 3.0
+- **notre-dame.webp** — [Paris, Notre Dame -- 2014 -- 1435.jpg](https://commons.wikimedia.org/wiki/File%3AParis%2C_Notre_Dame_--_2014_--_1435.jpg) — maker: <span title="German photographe — licentie: CC BY-SA 4.0
+- **pantheon.webp** — [Foucault pendulum at the Panthéon de Paris, 2012.jpg](https://commons.wikimedia.org/wiki/File%3AFoucault_pendulum_at_the_Panth%C3%A9on_de_Paris%2C_2012.jpg) — maker: Marko Kudjerski from Toron — licentie: CC BY 2.0
+- **rodin.webp** — [Rodin Le Penseur.JPG](https://commons.wikimedia.org/wiki/File%3ARodin_Le_Penseur.JPG) — maker: BKP — licentie: CC BY-SA 3.0
+- **rue-de-seine.webp** — [Place Furstemberg.jpg](https://commons.wikimedia.org/wiki/File%3APlace_Furstemberg.jpg) — maker: ParisSharing — licentie: CC BY 2.0
+- **sainte-chapelle.webp** — [Sainte-Chapelle, Paris, upper chapel detail.jpg](https://commons.wikimedia.org/wiki/File%3ASainte-Chapelle%2C_Paris%2C_upper_chapel_detail.jpg) — maker: Gerda Arendt — licentie: CC0
+- **samaritaine.webp** — [La Samaritaine (art nouveau, Paris) (51665574439).jpg](https://commons.wikimedia.org/wiki/File%3ALa_Samaritaine_%28art_nouveau%2C_Paris%29_%2851665574439%29.jpg) — maker: Jean-Pierre Dalbéra — licentie: CC BY 2.0
+- **sephora.webp** — [20211212 Sephora at MixC Zhengzhou.jpg](https://commons.wikimedia.org/wiki/File%3A20211212_Sephora_at_MixC_Zhengzhou.jpg) — maker: Windmemories — licentie: CC BY-SA 4.0
+- **sneakers.webp** — [Nike Factory Store interior (2023-12-03).jpg](https://commons.wikimedia.org/wiki/File%3ANike_Factory_Store_interior_%282023-12-03%29.jpg) — maker: PaulGorduiz10 — licentie: CC BY-SA 4.0
+- **spiegelzaal.webp** — [Chateau Versailles Galerie des Glaces.jpg](https://commons.wikimedia.org/wiki/File%3AChateau_Versailles_Galerie_des_Glaces.jpg) — maker: Myrabella — licentie: CC BY-SA 3.0
+- **versailles-stad.webp** — [Place Marché André Damien - Versailles (FR78) - 2025-07-26 - 1.jpg](https://commons.wikimedia.org/wiki/File%3APlace_March%C3%A9_Andr%C3%A9_Damien_-_Versailles_%28FR78%29_-_2025-07-26_-_1.jpg) — maker: Chabe01 — licentie: CC BY-SA 4.0
+- **versailles-tuin.webp** — [Front view of the Latona Fountain a sunny afternoon at golden hour in France.jpg](https://commons.wikimedia.org/wiki/File%3AFront_view_of_the_Latona_Fountain_a_sunny_afternoon_at_golden_hour_in_France.jpg) — maker: Basile Morin — licentie: CC BY-SA 4.0
