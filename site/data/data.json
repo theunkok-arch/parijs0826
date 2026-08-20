@@ -148,7 +148,11 @@
           ],
           "social": {
             "tiktok": "https://www.tiktok.com/tag/saintechapelle",
-            "insta": "https://www.instagram.com/explore/tags/saintechapelle/"
+            "insta": "https://www.instagram.com/explore/tags/saintechapelle/",
+            "featured": {
+              "url": "https://www.tiktok.com/@ricksteveseurope/video/7628316665775803661",
+              "label": "Glas-in-lood van de Sainte-Chapelle"
+            }
           }
         },
         {
@@ -419,7 +423,11 @@
           ],
           "social": {
             "tiktok": "https://www.tiktok.com/tag/labubu",
-            "insta": "https://www.instagram.com/explore/tags/labubu/"
+            "insta": "https://www.instagram.com/explore/tags/labubu/",
+            "featured": {
+              "url": "https://www.tiktok.com/@kellyannshuman/video/7472048822911487278",
+              "label": "Alle Pop Mart winkels in Parijs"
+            }
           }
         },
         {
@@ -672,7 +680,11 @@
           ],
           "social": {
             "tiktok": "https://www.tiktok.com/tag/toureiffel",
-            "insta": "https://www.instagram.com/explore/tags/toureiffel/"
+            "insta": "https://www.instagram.com/explore/tags/toureiffel/",
+            "featured": {
+              "url": "https://www.tiktok.com/@adventuresinheels/video/7492070707740904747",
+              "label": "Mee in de lift naar de top"
+            }
           }
         },
         {
@@ -721,7 +733,11 @@
           ],
           "social": {
             "tiktok": "https://www.tiktok.com/tag/chateaudeversailles",
-            "insta": "https://www.instagram.com/explore/tags/chateaudeversailles/"
+            "insta": "https://www.instagram.com/explore/tags/chateaudeversailles/",
+            "featured": {
+              "url": "https://www.tiktok.com/@ricksteveseurope/video/7515489428702334254",
+              "label": "Rick Steves toont de Spiegelzaal"
+            }
           }
         },
         {
