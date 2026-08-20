@@ -54,12 +54,26 @@
     return h;
   }
 
+  function isFlat(item) {
+    return !item.img && !item.ph && !item.why && !item.options && !item.warn && !item.ticketRef && !item.social && !item.planB;
+  }
+
+  function mediaBlock(item, day) {
+    if (item.img) {
+      return '<img class="card-media" src="' + esc(item.img) + '" alt="" width="500" height="281" loading="lazy">';
+    }
+    return '<div class="card-media ph ph-' + esc(day.color) + '" aria-hidden="true"><span>' + esc(item.title.charAt(0)) + '</span></div>';
+  }
+
   function itemCard(item, day, showDayLabel) {
-    var h = '<article class="card">';
+    var flat = isFlat(item);
+    var h = '<article class="card' + (flat ? ' flat' : '') + '">';
 
     if (showDayLabel) {
       h += '<span class="day-label bg-' + esc(day.color) + '">' + esc(day.label) + '</span>';
     }
+
+    if (!flat) h += mediaBlock(item, day);
 
     h += '<div class="card-top">';
     h += '<span class="time-chip chip-' + esc(day.color) + '">' + esc(item.time) + '</span>';

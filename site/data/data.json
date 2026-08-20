@@ -36,7 +36,8 @@
             "donderdag",
             "hotel",
             "trocadero"
-          ]
+          ],
+          "ph": true
         },
         {
           "id": "do-2045-scooter",
@@ -94,7 +95,8 @@
             "tiktok": "https://www.tiktok.com/tag/trocadero",
             "insta": "https://www.instagram.com/explore/tags/trocadero/"
           },
-          "why": "20.000 lampjes, vijf minuten per uur. De hele wereld filmt dit, jullie zien het vanaf het beste plein, gratis."
+          "why": "20.000 lampjes, vijf minuten per uur. De hele wereld filmt dit, jullie zien het vanaf het beste plein, gratis.",
+          "img": "img/do-2300-fonkeling.jpg"
         }
       ]
     },
@@ -166,7 +168,8 @@
             }
           },
           "why": "Je staat hier in een doos van 780 jaar oud gekleurd glas, gebouwd door een koning die de doornenkroon van Jezus had gekocht. 1.113 bijbelscenes in glas, en het overleefde de Revolutie en twee wereldoorlogen.",
-          "planB": "Draai het om: eerst Notre-Dame, dan Sainte-Chapelle na 17:00 (open tot 19:00, veel rustiger)."
+          "planB": "Draai het om: eerst Notre-Dame, dan Sainte-Chapelle na 17:00 (open tot 19:00, veel rustiger).",
+          "img": "img/vr-0950-saintechapelle.jpg"
         },
         {
           "id": "vr-1050-notredame",
@@ -188,7 +191,8 @@
             "insta": "https://www.instagram.com/explore/tags/notredamedeparis/"
           },
           "why": "In 2019 stond dit hele dak in brand, de wereld keek live mee. 2.000 vakmensen bouwden het in vijf jaar terug zoals het in de middeleeuwen was. En ja, dit is de kerk van de Klokkenluider.",
-          "planB": "Zonder slot is de rij in de ochtend het kortst. Lukt het niet: kom vrijdag na 18:00 terug, dan is de piek voorbij."
+          "planB": "Zonder slot is de rij in de ochtend het kortst. Lukt het niet: kom vrijdag na 18:00 terug, dan is de piek voorbij.",
+          "img": "img/vr-1050-notredame.jpg"
         },
         {
           "id": "vr-1145-berthillon",
@@ -210,7 +214,8 @@
             "insta": "https://www.instagram.com/explore/tags/berthillon/"
           },
           "why": "Het beroemdste ijs van Parijs, familierecept sinds 1954. Fransen staan hier gewoon in de rij, dat zegt genoeg.",
-          "planB": "De moederzaak sluit 's zomers, maar half Ile Saint-Louis verkoopt Berthillon-ijs: let op de bordjes."
+          "planB": "De moederzaak sluit 's zomers, maar half Ile Saint-Louis verkoopt Berthillon-ijs: let op de bordjes.",
+          "img": "img/vr-1145-berthillon.jpg"
         },
         {
           "id": "vr-1245-breizh",
@@ -246,7 +251,8 @@
           "planB": {
             "text": "Alles dicht? Scooter naar rue de Rivoli: BHV Marais en de hele winkelstraat zijn in augustus gewoon open, 10 minuten rijden.",
             "mapsUrl": "https://www.google.com/maps/search/?api=1&query=BHV+Marais+52+Rue+de+Rivoli+Paris"
-          }
+          },
+          "img": "img/vr-1415-saintgermain.jpg"
         },
         {
           "id": "vr-1530-deuxmagots",
@@ -266,7 +272,8 @@
             "tiktok": "https://www.tiktok.com/tag/lesdeuxmagots",
             "insta": "https://www.instagram.com/explore/tags/lesdeuxmagots/"
           },
-          "why": "Hemingway schreef hier, Picasso tekende hier, Sartre en De Beauvoir hadden hier hun vaste tafel. Je koffie kost drie keer zoveel, maar je zit op de stoel van een genie."
+          "why": "Hemingway schreef hier, Picasso tekende hier, Sartre en De Beauvoir hadden hier hun vaste tafel. Je koffie kost drie keer zoveel, maar je zit op de stoel van een genie.",
+          "img": "img/vr-1530-deuxmagots.jpg"
         },
         {
           "id": "vr-1615-rodin",
@@ -294,7 +301,8 @@
             "De Denker ken je van elke meme, hier staat het echte beeld gewoon in een tuin. Rodin gaf al zijn kunst aan Frankrijk in ruil voor dit huis.",
             "Achter deze muur woont de Franse premier. Meer dan de poort en de gendarmes krijg je niet te zien, en juist dat is het verhaal."
           ],
-          "planB": "Neem alleen het tuinticket: De Denker en de Hellepoort staan buiten, en de tuin heeft nooit rij."
+          "planB": "Neem alleen het tuinticket: De Denker en de Hellepoort staan buiten, en de tuin heeft nooit rij.",
+          "img": "img/vr-1615-rodin.jpg"
         },
         {
           "id": "vr-1830-lafayette",
@@ -318,7 +326,8 @@
             "insta": "https://www.instagram.com/explore/tags/galerieslafayette/"
           },
           "why": "Een glas-in-lood koepel uit 1912 boven een warenhuis, en een gratis rooftop met het beste uitzicht van de stad. Sunset-content zonder entree.",
-          "planB": "Printemps ernaast heeft ook een gratis rooftop-terras, twee minuten lopen."
+          "planB": "Printemps ernaast heeft ook een gratis rooftop-terras, twee minuten lopen.",
+          "img": "img/vr-1830-lafayette.jpg"
         },
         {
           "id": "vr-1945-karamell",
@@ -393,7 +402,8 @@
             "bistro",
             "italiaans",
             "opera"
-          ]
+          ],
+          "img": "img/vr-2030-diner.jpg"
         }
       ]
     },
@@ -448,7 +458,8 @@
             "insta": "https://www.instagram.com/explore/tags/pantheonparis/"
           },
           "why": "De eregalerij van Frankrijk: hier liggen Marie Curie, Voltaire en Josephine Baker. En de slinger in het midden bewijst al 170 jaar live dat de aarde draait.",
-          "planB": "Jardin du Luxembourg ligt om de hoek: het mooiste park van Parijs, gratis, met de groene stoeltjes voor de foto."
+          "planB": "Jardin du Luxembourg ligt om de hoek: het mooiste park van Parijs, gratis, met de groene stoeltjes voor de foto.",
+          "img": "img/za-1000-pantheon.jpg"
         },
         {
           "id": "za-1115-popmart",
@@ -498,7 +509,8 @@
             "tiktok": "https://www.tiktok.com/tag/lasamaritaine",
             "insta": "https://www.instagram.com/explore/tags/lasamaritaine/"
           },
-          "why": "Zestien jaar dicht geweest, toen voor 750 miljoen verbouwd. Loop naar boven voor het pauwenfresco en het art-nouveau trappenhuis."
+          "why": "Zestien jaar dicht geweest, toen voor 750 miljoen verbouwd. Loop naar boven voor het pauwenfresco en het art-nouveau trappenhuis.",
+          "img": "img/za-1200-samaritaine.jpg"
         },
         {
           "id": "za-1245-enfantsrouges",
@@ -520,7 +532,8 @@
             "insta": "https://www.instagram.com/explore/tags/marchedesenfantsrouges/"
           },
           "why": "De oudste markt van Parijs, 1615. Iedereen kiest zijn eigen keuken, niemand hoeft te overleggen.",
-          "planB": "Chez Janou, 2 rue Roger Verlomme: Provencaals terras onder een olijfboom, 5 minuten lopen."
+          "planB": "Chez Janou, 2 rue Roger Verlomme: Provencaals terras onder een olijfboom, 5 minuten lopen.",
+          "img": "img/za-1245-enfantsrouges.jpg"
         },
         {
           "id": "za-1400-marais",
@@ -577,7 +590,8 @@
             "flagship",
             "champselysees"
           ],
-          "why": "Een kilometer met de duurste etalages van Europa. Kijken is gratis, en Zara zit er ook."
+          "why": "Een kilometer met de duurste etalages van Europa. Kijken is gratis, en Zara zit er ook.",
+          "img": "img/za-1600-flagshiprun.jpg"
         },
         {
           "id": "za-1800-kith",
@@ -733,7 +747,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/toureiffel",
             "insta": "https://www.instagram.com/explore/tags/toureiffel/"
-          }
+          },
+          "img": "img/zo-0900-eiffeltop.jpg"
         },
         {
           "id": "zo-0900-eiffeltop",
@@ -756,7 +771,8 @@
             }
           },
           "why": "330 meter, gebouwd als tijdelijke attractie voor 20 jaar, nooit meer weggehaald. In de zomer groeit hij 15 centimeter door de warmte. Jullie staan op het hoogste punt van Parijs voordat de stad wakker is.",
-          "planB": "Neem het trap-plus-lift-ticket ter plekke (kortere rij) of de lift naar de 2e verdieping: het zicht op de stad is daar zelfs beter."
+          "planB": "Neem het trap-plus-lift-ticket ter plekke (kortere rij) of de lift naar de 2e verdieping: het zicht op de stad is daar zelfs beter.",
+          "img": "img/zo-0900-eiffeltop.jpg"
         },
         {
           "id": "zo-1115-auto",
@@ -814,7 +830,8 @@
             }
           },
           "why": "2.300 kamers, gebouwd door een koning die zichzelf de Zon noemde. In de Spiegelzaal (357 spiegels) werd in 1919 de Eerste Wereldoorlog officieel beeindigd. Marie-Antoinette woonde hier, jullie lopen door haar huis.",
-          "planB": "Gewoon het 13:30-tijdslot nemen en de gratis officiele app als audiotour gebruiken, werkt prima."
+          "planB": "Gewoon het 13:30-tijdslot nemen en de gratis officiele app als audiotour gebruiken, werkt prima.",
+          "img": "img/zo-1330-versailles.jpg"
         },
         {
           "id": "zo-1515-spiegelzaal",
@@ -831,7 +848,8 @@
           "social": {
             "tiktok": "https://www.tiktok.com/tag/chateaudeversailles",
             "insta": "https://www.instagram.com/explore/tags/chateaudeversailles/"
-          }
+          },
+          "img": "img/zo-1515-spiegelzaal.jpg"
         },
         {
           "id": "zo-1615-naarhuis",
