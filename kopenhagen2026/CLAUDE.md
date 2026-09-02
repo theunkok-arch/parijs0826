@@ -16,7 +16,7 @@ Eigenaar: Dominique. Mobile-first is heilig, ontworpen op 390px breed.
 
 ## Strikt gescheiden van het Parijs-project
 Deze map is een op zichzelf staand project met een eigen `netlify.toml` en een eigen
-Netlify-site (`kopenhagen2026`). Raak niets aan buiten `kopenhagen2026/`: de root
+Netlify-site (`cph2026`, op cph2026.netlify.app). Raak niets aan buiten `kopenhagen2026/`: de root
 `netlify.toml`, `site/`, `docs/` en `prompts/` horen bij de Parijs-site.
 
 ## Structuur
