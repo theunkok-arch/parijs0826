@@ -3,7 +3,7 @@
 Reisgids-site voor de campertrip Amsterdam naar Kopenhagen, 9 t/m 14 september 2026.
 Mobile-first, puur statisch: geen build-stap, geen npm, geen dependencies.
 
-Live (na koppeling in Netlify): https://kopenhagen2026.netlify.app
+Live: https://cph2026.netlify.app
 
 ## Mappen
 
@@ -118,8 +118,8 @@ eigen Netlify-site, eigen site-ID. Aan de Parijs-configuratie verandert niets.
 2. Kies de repo waar deze map in staat.
 3. Zet **Base directory** op `kopenhagen2026`. Publish directory vult zich vanzelf
    als `site` via `netlify.toml`. Build command laat je leeg.
-4. Deploy, daarna Site configuration, Change site name, `kopenhagen2026`.
-5. Open kopenhagen2026.netlify.app op je telefoon en zet hem op je beginscherm.
+4. Deploy, daarna Site configuration, Change site name. De site heet `cph2026`.
+5. Open cph2026.netlify.app op je telefoon en zet hem op je beginscherm.
 
 Wil je de Kopenhagen-site in een eigen repo? Dan kopieer je deze map naar een lege
 map, `git init`, pushen naar een nieuwe repo, en in stap 3 hoef je geen base directory
