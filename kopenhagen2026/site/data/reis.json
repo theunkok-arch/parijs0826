@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "title": "Kopenhagen 2026",
+    "short": "KBH 2026",
+    "subtitle": "Amsterdam naar Kopenhagen met de camper en de e-bikes.",
+    "dates": "9 t/m 14 september 2026",
+    "url": "https://kopenhagen2026.netlify.app",
+    "themeColor": "#DCEBFF",
+    "status": "Werkversie. Tijden en activiteiten kunnen nog wijzigen."
+  },
+  "overview": {
+    "headline": "Zes dagen, een camper, vier e-bikes.",
+    "intro": "Op dinsdag rijden we in een dag van Amsterdam naar Kopenhagen. Daarna staat de camper stil op CityCamp en doen we de stad en de kust op de fiets. Zaterdag rijden we terug, met karten in Vandel als tussenstop.",
+    "stats": [
+      {
+        "label": "Dagen",
+        "value": "6"
+      },
+      {
+        "label": "Wanneer",
+        "value": "9 t/m 14 sept"
+      },
+      {
+        "label": "Basis",
+        "value": "CityCamp"
+      }
+    ],
+    "highlights": [
+      "Reffen streetfood en Nyhavn op de eerste avond",
+      "De stad per e-bike: Nyhavn, Amalienborg, Kastellet, Torvehallerne",
+      "Kustpad Hornbæk naar Gilleleje, vis eten aan de haven",
+      "Karten bij Vandel Gokart op de terugweg"
+    ]
+  },
+  "days": [
+    {
+      "id": "di-9",
+      "date": "2026-09-09",
+      "label": "Dinsdag",
+      "short": "Di",
+      "accent": "sky",
+      "sub": "Rijden en aankomen",
+      "intro": "Lange rijdag. Als we op tijd binnen zijn, pakken we de fietsen nog voor Reffen en Nyhavn.",
+      "route": {
+        "title": "Amsterdam naar CityCamp Kopenhagen",
+        "summary": "Rijdag met de camper. Tol over de Storebæltbrug, zie Praktisch.",
+        "embedUrl": null,
+        "gpxUrl": null,
+        "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Amsterdam&destination=CityCamp+Copenhagen&travelmode=driving"
+      },
+      "items": [
+        {
+          "id": "di-vertrek",
+          "time": "08:00",
+          "title": "Vertrek Amsterdam",
+          "desc": "Camper geladen, e-bikes vast, accu's vol. Onderweg zelf de pauzes en tankstops bepalen.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "di-aankomst",
+          "time": "18:00",
+          "title": "Aankomst CityCamp Kopenhagen",
+          "desc": "Aankomst tussen 18:00 en 19:00. Check-in kan tot 21:30, dus we hebben marge als het onderweg tegenzit.",
+          "address": "CityCamp, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=CityCamp+Copenhagen",
+          "check": "Aankomsttijd doorgeven aan CityCamp, gegevens staan bij Praktisch.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "di-reffen",
+          "time": "Avond",
+          "title": "Reffen streetfood",
+          "desc": "Streetfoodmarkt op Refshaleøen, buiten aan het water. Op de fiets vanaf de camping, iedereen kiest zijn eigen kraam.",
+          "address": "Refshalevej, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Reffen+Copenhagen+Street+Food",
+          "check": "Openingsdagen en sluitingstijd in september checken, Reffen is seizoensgebonden.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "di-nyhavn",
+          "time": "Avond",
+          "title": "Nyhavn per fiets",
+          "desc": "Rondje langs de gekleurde huizen aan de gracht om de trip in te luiden. Kort en simpel, morgen is de echte stadsdag.",
+          "address": "Nyhavn, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "wo-10",
+      "date": "2026-09-10",
+      "label": "Woensdag",
+      "short": "Wo",
+      "accent": "mint",
+      "sub": "De stad per e-bike",
+      "intro": "Hele dag op de fiets. Kopenhagen is vlak en heeft overal fietspaden, dus alles ligt dicht bij elkaar.",
+      "route": {
+        "title": "Stadsronde per e-bike",
+        "summary": "Nyhavn, Amalienborg, Kastellet, Torvehallerne, Vesterbro.",
+        "embedUrl": null,
+        "gpxUrl": null,
+        "mapsUrl": ""
+      },
+      "items": [
+        {
+          "id": "wo-nyhavn",
+          "time": "Ochtend",
+          "title": "Nyhavn",
+          "desc": "Startpunt van de dag. Bij daglicht en zonder de avonddrukte zijn de foto's een stuk beter.",
+          "address": "Nyhavn, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "wo-amalienborg",
+          "time": "Ochtend",
+          "title": "Amalienborg",
+          "desc": "Het paleisplein met de wacht. Vanaf Nyhavn een paar minuten fietsen.",
+          "address": "Amalienborg Slotsplads, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amalienborg+Copenhagen",
+          "check": "Tijd van de wisseling van de wacht checken als we die willen zien.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "wo-kastellet",
+          "time": "Ochtend",
+          "title": "Kastellet",
+          "desc": "Stervormig fort met wallen, gras en molens. Rustig stuk fietsen en lopen, vlak bij het water.",
+          "address": "Kastellet, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kastellet+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "wo-torvehallerne",
+          "time": "Lunch",
+          "title": "Torvehallerne",
+          "desc": "Overdekte foodmarket met losse kramen. Iedereen pakt wat hij wil, buiten zitten kan ook.",
+          "address": "Frederiksborggade 21, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Torvehallerne+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "wo-vesterbro",
+          "time": "Middag",
+          "title": "Vesterbro en Meatpacking District",
+          "desc": "Oude slachthuiswijk (Kødbyen) met witte hallen, galeries en bars. Rondje fietsen en rondkijken in de winkelstraten van Vesterbro.",
+          "address": "Kødbyen, Vesterbro, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kodbyen+Vesterbro+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "wo-diner",
+          "time": "Avond",
+          "title": "Diner in Vesterbro",
+          "desc": "We blijven in de wijk eten. Restaurant nog kiezen.",
+          "address": "Vesterbro, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vesterbro+Copenhagen+restaurants",
+          "check": "Restaurant kiezen en reserveren, woensdagavond kan vol zitten.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "do-11",
+      "date": "2026-09-11",
+      "label": "Donderdag",
+      "short": "Do",
+      "accent": "lilac",
+      "sub": "Strand en festival",
+      "intro": "Rustige ochtend aan zee, daarna het festival. De avond houden we vrij.",
+      "route": {
+        "title": "CityCamp naar Amager Strandpark",
+        "summary": "Korte rit per e-bike langs het water.",
+        "embedUrl": null,
+        "gpxUrl": null,
+        "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=CityCamp+Copenhagen&destination=Amager+Strandpark&travelmode=bicycling"
+      },
+      "items": [
+        {
+          "id": "do-strand",
+          "time": "Ochtend",
+          "title": "Amager Strandpark",
+          "desc": "Breed zandstrand met duinen en een lagune, op de fiets vanaf de camping. Zwemkleding mee.",
+          "address": "Amager Strandpark, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amager+Strandpark+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "do-lunch",
+          "time": "Lunch",
+          "title": "Lunch aan zee",
+          "desc": "Eten bij het strand of zelf iets meenemen vanaf de camper.",
+          "address": "Amager Strandpark, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amager+Strandpark+cafe",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "do-festival",
+          "time": "15:00",
+          "title": "Festival",
+          "desc": "Start om 15:00. Naam, locatie en tickets nog invullen.",
+          "check": "Locatie, tickets, eindtijd en of de fietsen daar kunnen staan.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "do-avond",
+          "time": "Avond",
+          "title": "Avond vrij",
+          "desc": "Geen plan. Terug naar de camper, of nog iets in de stad als iedereen er zin in heeft.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "vr-12",
+      "date": "2026-09-12",
+      "label": "Vrijdag",
+      "short": "Vr",
+      "accent": "sand",
+      "sub": "Noordkust en Nørrebro",
+      "intro": "Met de camper naar de noordkust, daar het kustpad fietsen. Terug in de stad eindigen we in Nørrebro.",
+      "route": {
+        "title": "Kustpad Hornbæk naar Gilleleje",
+        "summary": "Fietsen via Dronningmølle. Camper blijft bij Hornbæk staan.",
+        "embedUrl": null,
+        "gpxUrl": null,
+        "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Hornbaek&destination=Gilleleje&waypoints=Dronningmolle&travelmode=bicycling"
+      },
+      "items": [
+        {
+          "id": "vr-hornbaek",
+          "time": "Ochtend",
+          "title": "Met de camper naar Hornbæk",
+          "desc": "Badplaats aan de noordkust. Daar parkeren en de e-bikes eraf.",
+          "address": "Hornbæk, Denemarken",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hornbaek+Denmark",
+          "check": "Camperparkeerplek in Hornbæk checken, niet elke parkeerplaats is hoog genoeg.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "vr-kustpad",
+          "time": "Middag",
+          "title": "Kustpad Hornbæk, Dronningmølle, Gilleleje",
+          "desc": "Fietsen langs de kust met de zee aan de rechterkant. Onderweg stoppen waar het mooi is.",
+          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Hornbaek&destination=Gilleleje&waypoints=Dronningmolle&travelmode=bicycling",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "vr-gilleleje",
+          "time": "Namiddag",
+          "title": "Vis eten in Gilleleje",
+          "desc": "Vissershaven aan de noordpunt. Verse vis eten bij de haven voordat we terugfietsen naar de camper.",
+          "address": "Gilleleje Havn, Denemarken",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gilleleje+Havn",
+          "check": "Sluitingstijd van de viskraam of het havenrestaurant.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "vr-norrebro",
+          "time": "Avond",
+          "title": "Nørrebro",
+          "desc": "Terug in Kopenhagen de avond in Nørrebro. Levendige wijk, veel kleine zaken bij elkaar.",
+          "address": "Nørrebro, Kopenhagen",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Norrebro+Copenhagen",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "za-13",
+      "date": "2026-09-13",
+      "label": "Zaterdag",
+      "short": "Za",
+      "accent": "pink",
+      "sub": "Karten en terugrijden",
+      "intro": "Vroeg weg, karten in Vandel en dan door naar huis. Dit is de dag waarop de tijden echt kloppen moeten.",
+      "route": {
+        "title": "CityCamp naar Vandel naar Amsterdam",
+        "summary": "Twee etappes met karten ertussen. Tol over de Storebæltbrug, zie Praktisch.",
+        "embedUrl": null,
+        "gpxUrl": null,
+        "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=CityCamp+Copenhagen&destination=Amsterdam&waypoints=Vandel+Denmark&travelmode=driving"
+      },
+      "items": [
+        {
+          "id": "za-vertrek",
+          "time": "07:00",
+          "title": "Vertrek CityCamp",
+          "desc": "Camper de avond ervoor klaarzetten en fietsen vastzetten, zodat we om 07:00 echt kunnen rijden.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "za-vandel-aankomst",
+          "time": "09:45",
+          "title": "Aankomst Vandel Gokart",
+          "desc": "Ruim voor de starttijd binnen, zodat er tijd is voor inschrijven en instructie.",
+          "address": "Vandel, Denemarken",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vandel+Gokart+Denmark",
+          "check": "Alleen de noordelijke ingang bij het dorp gebruiken, zie Praktisch.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "za-karten",
+          "time": "10:30",
+          "title": "Karten",
+          "desc": "Van 10:30 tot 12:30 op de baan. Reserveren is verplicht, minimaal een dag van tevoren.",
+          "check": "Reservering bevestigen, minimaal 1 dag vooraf.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "za-lunch",
+          "time": "12:30",
+          "title": "Lunch",
+          "desc": "Eten na het karten, voordat we het tweede stuk rijden.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "za-terug",
+          "time": "13:30",
+          "title": "Vertrek richting Amsterdam",
+          "desc": "Laatste etappe. Wie rijdt welk stuk, van tevoren afspreken.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        },
+        {
+          "id": "za-thuis",
+          "time": "20:00",
+          "title": "Thuis in Amsterdam",
+          "desc": "Aankomst tussen 20:00 en 20:30. Alleen uitladen wat mee naar binnen moet, de rest blijft in de camper.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "zo-14",
+      "date": "2026-09-14",
+      "label": "Zondag",
+      "short": "Zo",
+      "accent": "sea",
+      "sub": "Camper inleveren",
+      "intro": "Korte dag. Alleen de camper leeg, schoon en op tijd terug.",
+      "route": {
+        "title": "Naar het verhuuradres",
+        "summary": "Adres en route nog invullen.",
+        "embedUrl": null,
+        "gpxUrl": null,
+        "mapsUrl": ""
+      },
+      "items": [
+        {
+          "id": "zo-inleveren",
+          "time": "Voor 09:00",
+          "title": "Camper inleveren",
+          "desc": "Voor 09:00 terug. Tanken, watertank en toilet legen en alles eruit halen voordat we wegrijden.",
+          "check": "Inleveradres, openingstijd en of hij vol getankt terug moet.",
+          "links": {
+            "web": "",
+            "insta": "",
+            "tiktok": ""
+          }
+        }
+      ]
+    }
+  ],
+  "praktisch": [
+    {
+      "id": "citycamp",
+      "title": "CityCamp Kopenhagen",
+      "text": "Onze basis voor vier nachten. Check-in kan tot 21:30, dus een latere aankomst op dinsdag is geen probleem. Let op: het seizoen sluit op 13 september, precies de dag dat wij vertrekken.",
+      "rows": [
+        {
+          "label": "Check-in",
+          "value": "tot 21:30"
+        },
+        {
+          "label": "Seizoen sluit",
+          "value": "13 september"
+        },
+        {
+          "label": "Mail",
+          "value": "citycampcph@hotmail.com",
+          "href": "mailto:citycampcph@hotmail.com"
+        },
+        {
+          "label": "Telefoon",
+          "value": "+45 61 71 82 55",
+          "href": "tel:+4561718255"
+        }
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=CityCamp+Copenhagen"
+    },
+    {
+      "id": "vandel",
+      "title": "Vandel Gokart",
+      "text": "Reserveren is verplicht en moet minimaal een dag van tevoren. Rij naar de noordelijke ingang bij het dorp, dat is de enige ingang die we mogen gebruiken.",
+      "rows": [
+        {
+          "label": "Reserveren",
+          "value": "verplicht, minimaal 1 dag vooraf"
+        },
+        {
+          "label": "Ingang",
+          "value": "alleen de noordelijke ingang bij het dorp"
+        },
+        {
+          "label": "Ons tijdslot",
+          "value": "zaterdag 13 september, 10:30 tot 12:30"
+        }
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vandel+Gokart+Denmark"
+    },
+    {
+      "id": "storebaelt",
+      "title": "Storebæltbrug: tol 2x",
+      "text": "We passeren de Storebæltbrug op de heenweg en op de terugweg. Reken dus twee keer tol, en houd er rekening mee dat het tarief voor een camper hoger ligt dan voor een personenauto.",
+      "rows": [
+        {
+          "label": "Heenweg",
+          "value": "dinsdag 9 september"
+        },
+        {
+          "label": "Terugweg",
+          "value": "zaterdag 13 september"
+        },
+        {
+          "label": "Tarief",
+          "value": "afhankelijk van lengte en hoogte van de camper"
+        }
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Storebaeltsbroen"
+    }
+  ]
+}

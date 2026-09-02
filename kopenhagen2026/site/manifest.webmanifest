@@ -1,0 +1,13 @@
+{
+  "name": "Kopenhagen 2026",
+  "short_name": "KBH 2026",
+  "description": "Campertrip Amsterdam naar Kopenhagen, 9 t/m 14 september 2026.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FBFAF7",
+  "theme_color": "#DCEBFF",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
