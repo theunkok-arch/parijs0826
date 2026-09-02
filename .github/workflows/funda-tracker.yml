@@ -1,0 +1,64 @@
+name: Funda tracker
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 Nederlandse zomertijd, 07:00 wintertijd
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: funda-tracker
+  cancel-in-progress: false
+
+jobs:
+  meting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Parser testen
+        run: node tracker/test-parser.mjs
+
+      - name: Cijfers ophalen van funda
+        id: ophalen
+        continue-on-error: true
+        run: node tracker/funda-tracker.mjs fetch
+
+      - name: Overzicht tonen in de log
+        if: always()
+        run: node tracker/funda-tracker.mjs report
+
+      - name: Meting committen
+        if: always()
+        run: |
+          git config user.name "funda-tracker"
+          git config user.email "actions@github.com"
+          git add tracker/data/funda-stats.json
+          if git diff --staged --quiet; then
+            echo "Niets veranderd, geen commit."
+          else
+            git commit -m "chore(tracker): funda-meting $(date -u +%F) [skip netlify]"
+            git push
+          fi
+
+      - name: Ruwe pagina bewaren als het parsen mislukte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funda-debug-${{ github.run_id }}
+          path: tracker/.debug/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Run rood maken als het ophalen mislukte
+        if: steps.ophalen.outcome == 'failure'
+        run: |
+          echo "Het ophalen van funda is mislukt, zie de log en het debug-artifact."
+          exit 1
