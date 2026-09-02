@@ -57,3 +57,7 @@ trend te zien.
 De geplande run start pas als deze branch op `main` staat. GitHub draait
 `schedule`-workflows alleen vanaf de default branch. Je kunt hem daarna ook
 handmatig starten via Actions, knop "Run workflow".
+
+Op een pull request draait alleen een proefmeting: die kijkt of funda bereikbaar
+is en of de parser de cijfers eruit haalt, maar schrijft niets weg en maakt de
+run nooit rood. Het resultaat staat in de samenvatting van de Action-run.

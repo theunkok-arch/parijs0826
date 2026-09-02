@@ -5,16 +5,62 @@ on:
     # 06:00 UTC = 08:00 Nederlandse zomertijd, 07:00 wintertijd
     - cron: "0 6 * * *"
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "tracker/**"
+      - ".github/workflows/funda-tracker.yml"
 
 permissions:
   contents: write
 
 concurrency:
-  group: funda-tracker
+  group: funda-tracker-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
+  # Draait op de PR: alleen kijken of funda bereikbaar is en of de parser de
+  # cijfers eruit haalt. Schrijft niets weg en maakt de run nooit rood, want
+  # een blokkade van funda is geen fout in deze code.
+  proefmeting:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Parser testen
+        run: node tracker/test-parser.mjs
+
+      - name: Proefmeting bij funda
+        run: |
+          if node tracker/funda-tracker.mjs fetch; then
+            echo "### Proefmeting geslaagd" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            node tracker/funda-tracker.mjs report >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Proefmeting mislukt" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Funda gaf geen bruikbare pagina terug. Zie de log hierboven en het debug-artifact." >> "$GITHUB_STEP_SUMMARY"
+            echo "Werk de patronen bij in tracker/funda-tracker.mjs, of gebruik het vangnet met 'add'." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Ruwe pagina bewaren als het parsen mislukte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funda-debug-proef-${{ github.run_id }}
+          path: tracker/.debug/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # De echte dagelijkse meting, die wel wegschrijft en commit.
   meting:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
