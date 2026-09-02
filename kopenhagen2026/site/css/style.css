@@ -1,0 +1,595 @@
+/* Kopenhagen 2026 - mobile-first, ontworpen op 390px breed. */
+
+:root {
+  --ink: #2B2B3F;
+  --ink-soft: #4E4E64;
+  --ink-mute: #8A8A9C;
+  --bg: #FBFAF7;
+  --card: #FFFFFF;
+  --line: #ECE7DF;
+  --line-soft: #F4F0EA;
+  --radius: 20px;
+  --shadow: 0 1px 3px rgba(43, 43, 63, 0.06);
+
+  /* standaard accent, wordt per view overschreven via [data-accent] */
+  --accent: #DCEBFF;
+  --accent-deep: #2B5D9E;
+  --accent-soft: #F0F7FF;
+}
+
+/* Een dag een andere kleur geven? Zet het accent in reis.json en voeg
+   hier één regel toe. Alle chips, balken en kaders volgen automatisch. */
+[data-accent="sky"]   { --accent: #DCEBFF; --accent-deep: #2B5D9E; --accent-soft: #F1F7FF; }
+[data-accent="mint"]  { --accent: #DFF5E9; --accent-deep: #1F7A4D; --accent-soft: #F2FBF6; }
+[data-accent="lilac"] { --accent: #EADCFF; --accent-deep: #6B42A8; --accent-soft: #F8F3FF; }
+[data-accent="sand"]  { --accent: #FFF3C9; --accent-deep: #8A6D1A; --accent-soft: #FFFBEC; }
+[data-accent="pink"]  { --accent: #FFE1EA; --accent-deep: #C42A4D; --accent-soft: #FFF4F7; }
+[data-accent="sea"]   { --accent: #D5F0F1; --accent-deep: #1B6E75; --accent-soft: #F0FBFB; }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+#main { min-height: 80vh; }
+
+.ic {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.loading {
+  padding: 40px 16px;
+  text-align: center;
+  color: var(--ink-mute);
+}
+
+/* ---------- Header ---------- */
+
+.header { padding: 20px 4px 10px; }
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--ink-mute);
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* ---------- Navigatie ---------- */
+
+.daynav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  margin: 0 -16px 8px;
+  background: rgba(251, 250, 247, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.daynav::-webkit-scrollbar { display: none; }
+
+.daytab {
+  flex: 0 0 auto;
+  min-height: 46px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.daytab.active {
+  background: var(--accent);
+  border-color: var(--accent-deep);
+  color: var(--accent-deep);
+}
+
+.daytab.is-today::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 7px;
+  border-radius: 999px;
+  background: var(--ink);
+  vertical-align: middle;
+}
+
+/* ---------- Views ---------- */
+
+.view[hidden] { display: none; }
+
+.view-head { padding: 12px 4px 14px; }
+
+.view-head h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.view-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink-mute);
+}
+
+.accent-bar {
+  display: block;
+  width: 44px;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.view-sub {
+  margin: 8px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.view-intro {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-mute);
+}
+
+.section-title {
+  margin: 24px 4px 12px;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Home ---------- */
+
+.hero {
+  padding: 20px;
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, var(--accent), var(--accent-soft));
+}
+
+.hero-dates {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.hero h2 {
+  margin: 8px 0 0;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero-intro {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.stat-value {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin-top: auto;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.daylist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daycard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  min-height: 44px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.daycard:active { transform: scale(0.99); }
+
+.daycard-date {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.daycard-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.daycard-count {
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+.highlights {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.highlights li {
+  position: relative;
+  padding: 8px 0 8px 22px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.highlights li:last-child { border-bottom: none; }
+.highlights li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent-deep);
+  opacity: 0.5;
+}
+
+/* ---------- Kaarten ---------- */
+
+.card {
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.time-chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 66px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-deep);
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.card h3 {
+  margin: 3px 0 0;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.card .desc {
+  margin: 8px 0 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.card .address {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+.check {
+  margin: 10px 0 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: #FFF9E3;
+  color: #7A5F12;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.check strong { font-weight: 800; }
+
+/* ---------- Praktisch-rijen ---------- */
+
+.rows {
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.row:last-child { border-bottom: none; }
+
+.row dt {
+  flex: 0 0 38%;
+  font-size: 14px;
+  color: var(--ink-mute);
+}
+
+.row dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.row dd a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink);
+  text-decoration-color: var(--ink-mute);
+  text-underline-offset: 3px;
+}
+
+/* ---------- Routekaart ---------- */
+
+.routecard {
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+
+.route-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.routecard h3 {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.route-summary {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.route-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  aspect-ratio: 16 / 10;
+  margin-top: 12px;
+  padding: 16px;
+  border: 2px dashed rgba(43, 43, 63, 0.18);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.route-empty span {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink-mute);
+}
+
+.route-empty small {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-mute);
+  opacity: 0.85;
+}
+
+.route-empty code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+}
+
+.route-embed {
+  aspect-ratio: 16 / 10;
+  margin-top: 12px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--card);
+}
+.route-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Knoppen ---------- */
+
+.btnrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.btnrow:empty { display: none; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-maps {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-deep);
+}
+
+.btn-social {
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--ink-soft);
+}
+
+/* leeg linkslot: wel zichtbaar, niet klikbaar */
+.btn-slot {
+  min-height: 38px;
+  padding: 6px 13px;
+  font-size: 12px;
+  border-style: dashed;
+  border-color: rgba(43, 43, 63, 0.16);
+  background: transparent;
+  color: var(--ink-mute);
+  opacity: 0.7;
+  cursor: default;
+}
+.btn-slot:active { transform: none; }
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding: 24px 4px 8px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+/* ---------- Groter scherm ---------- */
+
+@media (min-width: 480px) {
+  .header h1 { font-size: 30px; }
+  .hero h2 { font-size: 28px; }
+}
+
+@media (min-width: 720px) {
+  .daylist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:active, .daycard:active { transform: none; }
+}

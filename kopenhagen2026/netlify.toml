@@ -1,0 +1,17 @@
+# Eigen Netlify-config voor de Kopenhagen-site.
+# Zet in Netlify de base directory op "kopenhagen2026", dan wordt dit bestand
+# gelezen en is "site" de publish-map. De Parijs-site heeft zijn eigen
+# netlify.toml in de root en staat hier volledig los van.
+
+[build]
+  publish = "site"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
