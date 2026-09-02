@@ -6,6 +6,7 @@
  *   node tracker/funda-tracker.mjs fetch     haal de cijfers op van funda en sla ze op
  *   node tracker/funda-tracker.mjs add --bekeken 1234 --bewaard 56 [--datum 2026-09-02]
  *   node tracker/funda-tracker.mjs report    print het overzicht (dit draait bij "update mij")
+ *   node tracker/funda-tracker.mjs diagnose  laat zien wat funda terugstuurt (voor als de parser mist)
  *
  * Geen dependencies, draait op Node 18+.
  */
@@ -92,6 +93,18 @@ export function parseStats(html) {
   };
 }
 
+/**
+ * Een nul is geen meting maar een misser: een woning die live staat is altijd
+ * minstens een keer bekeken. Nul betekent dus dat de parser de verkeerde plek
+ * pakt, of dat we een blokkade- of consentpagina te pakken hebben.
+ */
+export function filterOnwaarschijnlijk(ruw) {
+  return {
+    bekeken: ruw.bekeken !== null && ruw.bekeken > 0 ? ruw.bekeken : null,
+    bewaard: ruw.bewaard !== null && ruw.bewaard > 0 ? ruw.bewaard : null,
+  };
+}
+
 // ---------------------------------------------------------------- ophalen
 
 const BROWSER_HEADERS = {
@@ -149,15 +162,18 @@ async function commandoFetch() {
 
   try {
     const html = await haalPagina(url);
-    const stats = parseStats(html);
+    const ruw = parseStats(html);
+    const stats = filterOnwaarschijnlijk(ruw);
 
     if (stats.bekeken === null && stats.bewaard === null) {
       mkdirSync(DEBUG_MAP, { recursive: true });
       const dump = join(DEBUG_MAP, `funda-${vandaag()}.html`);
       writeFileSync(dump, html, 'utf8');
       throw new Error(
-        `Geen cijfers gevonden in de pagina (${html.length} tekens). ` +
-          `Ruwe HTML weggeschreven naar ${dump} zodat de patronen bijgewerkt kunnen worden.`,
+        `Geen bruikbare cijfers gevonden in de pagina (${html.length} tekens, ` +
+          `ruwe parser gaf bekeken=${ruw.bekeken} bewaard=${ruw.bewaard}). ` +
+          `Ruwe HTML weggeschreven naar ${dump} zodat de patronen bijgewerkt kunnen worden. ` +
+          `Draai "diagnose" om te zien wat er wel op de pagina staat.`,
       );
     }
 
@@ -206,6 +222,44 @@ function commandoAdd(args) {
   };
   schrijfStore(store);
   console.log(`Handmatige meting opgeslagen voor ${datum}: bekeken=${bekeken}, bewaard=${bewaard}`);
+}
+
+/**
+ * Laat zien wat funda daadwerkelijk terugstuurt, zodat de patronen bijgesteld
+ * kunnen worden zonder de hele pagina te hoeven downloaden.
+ */
+async function commandoDiagnose() {
+  const store = leesStore();
+  const res = await fetch(store.woning.url, { headers: BROWSER_HEADERS, redirect: 'follow' });
+  const html = await res.text();
+
+  console.log(`HTTP ${res.status} ${res.statusText}`);
+  console.log(`Eind-URL: ${res.url}`);
+  console.log(`Lengte: ${html.length} tekens`);
+  const titel = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+  console.log(`Titel: ${titel ? titel[1].trim().slice(0, 160) : 'geen'}`);
+
+  const tekst = striptTags(html);
+  for (const woord of ['bekeken', 'bewaard', 'opgeslagen', 'belangstelling']) {
+    const treffers = [...tekst.matchAll(new RegExp(woord, 'gi'))].slice(0, 5);
+    console.log(`\nZichtbare tekst rond "${woord}" (${treffers.length} treffers, max 5):`);
+    if (treffers.length === 0) console.log('  niet gevonden');
+    for (const t of treffers) {
+      const start = Math.max(0, t.index - 90);
+      console.log(`  ...${tekst.slice(start, t.index + 70).trim()}...`);
+    }
+  }
+
+  const sleutelPatroon =
+    /"(\w*(?:[Vv]iew|[Ss]ave|[Bb]ekeken|[Bb]ewaard|[Oo]pgeslagen|[Ff]avo|[Bb]ookmark)\w*)"\s*:\s*("?[\w.-]{1,20}"?)/g;
+  const sleutels = [...html.matchAll(sleutelPatroon)].slice(0, 40);
+  console.log(`\nJSON-sleutels die op views of saves lijken (${sleutels.length}, max 40):`);
+  if (sleutels.length === 0) console.log('  geen gevonden');
+  for (const s of sleutels) console.log(`  ${s[1]} = ${s[2]}`);
+
+  const stats = parseStats(html);
+  console.log(`\nHuidige parser levert: bekeken=${stats.bekeken} bewaard=${stats.bewaard}`);
+  console.log(`Gebruikte patronen: ${JSON.stringify(stats.patronen)}`);
 }
 
 // ---------------------------------------------------------------- rapport
@@ -317,13 +371,16 @@ if (direct) {
     case 'add':
       commandoAdd(args);
       break;
+    case 'diagnose':
+      await commandoDiagnose();
+      break;
     case 'report':
     case undefined:
       commandoReport();
       break;
     default:
       console.error(`Onbekend commando: ${commando}`);
-      console.error('Gebruik: fetch | add --bekeken N --bewaard N | report');
+      console.error('Gebruik: fetch | add --bekeken N --bewaard N | report | diagnose');
       process.exitCode = 1;
   }
 }

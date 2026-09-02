@@ -2,7 +2,7 @@
  * Mini-test voor de parser. Draaien met: node tracker/test-parser.mjs
  * Geen testframework nodig.
  */
-import { parseStats } from './funda-tracker.mjs';
+import { parseStats, filterOnwaarschijnlijk } from './funda-tracker.mjs';
 
 const gevallen = [
   ['zichtbare tekst', '<div><span>1.412</span> keer bekeken</div><div><span>65</span> keer bewaard</div>', 1412, 65],
@@ -15,6 +15,19 @@ const gevallen = [
 let gezakt = 0;
 for (const [naam, html, bekeken, bewaard] of gevallen) {
   const r = parseStats(html);
+  const ok = r.bekeken === bekeken && r.bewaard === bewaard;
+  if (!ok) gezakt++;
+  console.log(`${ok ? 'OK  ' : 'FOUT'} ${naam.padEnd(22)} bekeken=${r.bekeken} bewaard=${r.bewaard}`);
+}
+
+// Nullen zijn geen meting maar een misser, die moeten eruit gefilterd worden.
+const nulGevallen = [
+  ['nullen worden geweigerd', { bekeken: 0, bewaard: 0 }, null, null],
+  ['alleen bewaard bruikbaar', { bekeken: 0, bewaard: 12 }, null, 12],
+  ['echte cijfers blijven staan', { bekeken: 1412, bewaard: 65 }, 1412, 65],
+];
+for (const [naam, ruw, bekeken, bewaard] of nulGevallen) {
+  const r = filterOnwaarschijnlijk(ruw);
   const ok = r.bekeken === bekeken && r.bewaard === bewaard;
   if (!ok) gezakt++;
   console.log(`${ok ? 'OK  ' : 'FOUT'} ${naam.padEnd(22)} bekeken=${r.bekeken} bewaard=${r.bewaard}`);

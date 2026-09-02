@@ -34,6 +34,9 @@ jobs:
       - name: Parser testen
         run: node tracker/test-parser.mjs
 
+      - name: Kijken wat funda terugstuurt
+        run: node tracker/funda-tracker.mjs diagnose || true
+
       - name: Proefmeting bij funda
         run: |
           if node tracker/funda-tracker.mjs fetch; then
