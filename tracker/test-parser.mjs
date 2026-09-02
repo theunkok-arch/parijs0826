@@ -2,7 +2,7 @@
  * Mini-test voor de parser. Draaien met: node tracker/test-parser.mjs
  * Geen testframework nodig.
  */
-import { parseStats, filterOnwaarschijnlijk } from './funda-tracker.mjs';
+import { parseStats, filterOnwaarschijnlijk, detecteerLoginMuur } from './funda-tracker.mjs';
 
 const gevallen = [
   ['zichtbare tekst', '<div><span>1.412</span> keer bekeken</div><div><span>65</span> keer bewaard</div>', 1412, 65],
@@ -32,5 +32,17 @@ for (const [naam, ruw, bekeken, bewaard] of nulGevallen) {
   if (!ok) gezakt++;
   console.log(`${ok ? 'OK  ' : 'FOUT'} ${naam.padEnd(22)} bekeken=${r.bekeken} bewaard=${r.bewaard}`);
 }
+// De publieke funda-pagina toont de cijfers niet, die staan achter een login.
+const muurGevallen = [
+  ['login-muur herkend', '<div>Populariteit <span>Log in om te bekijken</span> 0x Bekeken 0x Bewaard</div>', true],
+  ['gewone pagina', '<div>1.412 keer bekeken</div>', false],
+];
+for (const [naam, html, verwacht] of muurGevallen) {
+  const r = detecteerLoginMuur(html);
+  const ok = r === verwacht;
+  if (!ok) gezakt++;
+  console.log(`${ok ? 'OK  ' : 'FOUT'} ${naam.padEnd(22)} muur=${r}`);
+}
+
 console.log(gezakt === 0 ? '\nAlle tests geslaagd.' : `\n${gezakt} test(s) gezakt.`);
 process.exitCode = gezakt === 0 ? 0 : 1;

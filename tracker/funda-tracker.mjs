@@ -94,6 +94,15 @@ export function parseStats(html) {
 }
 
 /**
+ * Funda toont de populariteitscijfers alleen aan ingelogde gebruikers. Op de
+ * publieke pagina staat "Log in om te bekijken" met 0x Bekeken en 0x Bewaard.
+ * Dat is geen meting van nul, dat is een muur.
+ */
+export function detecteerLoginMuur(html) {
+  return /log\s*in\s*om\s*te\s*bekijken/i.test(striptTags(html));
+}
+
+/**
  * Een nul is geen meting maar een misser: een woning die live staat is altijd
  * minstens een keer bekeken. Nul betekent dus dat de parser de verkeerde plek
  * pakt, of dat we een blokkade- of consentpagina te pakken hebben.
@@ -121,11 +130,18 @@ const BROWSER_HEADERS = {
   'Upgrade-Insecure-Requests': '1',
 };
 
+function headers() {
+  // Een funda-sessiecookie kan meegegeven worden via de omgevingsvariabele
+  // FUNDA_COOKIE. Zonder die cookie zijn de populariteitscijfers niet zichtbaar.
+  const cookie = process.env.FUNDA_COOKIE;
+  return cookie ? { ...BROWSER_HEADERS, Cookie: cookie } : { ...BROWSER_HEADERS };
+}
+
 async function haalPagina(url, pogingen = 3) {
   let laatsteFout = null;
   for (let poging = 1; poging <= pogingen; poging++) {
     try {
-      const res = await fetch(url, { headers: BROWSER_HEADERS, redirect: 'follow' });
+      const res = await fetch(url, { headers: headers(), redirect: 'follow' });
       if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
       return await res.text();
     } catch (fout) {
@@ -166,6 +182,14 @@ async function commandoFetch() {
     const stats = filterOnwaarschijnlijk(ruw);
 
     if (stats.bekeken === null && stats.bewaard === null) {
+      if (detecteerLoginMuur(html)) {
+        throw new Error(
+          'Funda toont de populariteitscijfers alleen aan ingelogde gebruikers ' +
+            '("Log in om te bekijken", 0x Bekeken en 0x Bewaard op de publieke pagina). ' +
+            'Zet een geldige funda-sessiecookie in de omgevingsvariabele FUNDA_COOKIE, ' +
+            'of voer de cijfers handmatig in met: funda-tracker.mjs add --bekeken N --bewaard N',
+        );
+      }
       mkdirSync(DEBUG_MAP, { recursive: true });
       const dump = join(DEBUG_MAP, `funda-${vandaag()}.html`);
       writeFileSync(dump, html, 'utf8');
@@ -230,7 +254,7 @@ function commandoAdd(args) {
  */
 async function commandoDiagnose() {
   const store = leesStore();
-  const res = await fetch(store.woning.url, { headers: BROWSER_HEADERS, redirect: 'follow' });
+  const res = await fetch(store.woning.url, { headers: headers(), redirect: 'follow' });
   const html = await res.text();
 
   console.log(`HTTP ${res.status} ${res.statusText}`);
@@ -256,6 +280,9 @@ async function commandoDiagnose() {
   console.log(`\nJSON-sleutels die op views of saves lijken (${sleutels.length}, max 40):`);
   if (sleutels.length === 0) console.log('  geen gevonden');
   for (const s of sleutels) console.log(`  ${s[1]} = ${s[2]}`);
+
+  console.log(`\nLogin-muur aanwezig: ${detecteerLoginMuur(html) ? 'ja' : 'nee'}`);
+  console.log(`Sessiecookie meegegeven: ${process.env.FUNDA_COOKIE ? 'ja' : 'nee'}`);
 
   const stats = parseStats(html);
   console.log(`\nHuidige parser levert: bekeken=${stats.bekeken} bewaard=${stats.bewaard}`);
@@ -294,7 +321,8 @@ function commandoReport() {
   regels.push('');
 
   if (metingen.length === 0) {
-    regels.push('Nog geen metingen. Draai eerst "fetch" of voer handmatig cijfers in met "add".');
+    regels.push('Nog geen metingen. Voer de cijfers in met:');
+    regels.push('  node tracker/funda-tracker.mjs add --bekeken N --bewaard N');
   } else {
     const laatste = metingen[metingen.length - 1];
     const vorige = metingen[metingen.length - 2] ?? null;

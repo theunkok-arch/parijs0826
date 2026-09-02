@@ -3,61 +3,84 @@
 Houdt bij hoe vaak onze woning op funda is bekeken en bewaard, zodat "update mij"
 een overzicht kan geven van de stand en de groei.
 
-Woning: https://www.funda.nl/detail/17201073
+Woning: Palestrinalaan 19, Bilthoven
+https://www.funda.nl/detail/17201073
 
-## Hoe het werkt
+## Belangrijk om te weten
 
-1. Een GitHub Action draait elke ochtend (06:00 UTC) `node tracker/funda-tracker.mjs fetch`.
-2. Die haalt de funda-pagina op en zoekt de cijfers voor bekeken en bewaard.
-3. De meting wordt als regel toegevoegd aan `tracker/data/funda-stats.json` en gecommit.
-4. Bij "update mij" draait `node tracker/funda-tracker.mjs report` en krijg je het overzicht.
+**Funda toont deze cijfers alleen aan ingelogde gebruikers.** Op de publieke pagina
+staat letterlijk "Populariteit, log in om te bekijken" met 0x Bekeken en 0x Bewaard
+als lege plaatshouders. Automatisch scrapen zonder login levert dus niets op. Dat is
+in de proefmeting op deze branch vastgesteld, niet aangenomen.
 
-De data staat buiten `site/`, dus de Parijs-website verandert er niet door. De commits
-krijgen `[skip netlify]` mee zodat er geen deploys door getriggerd worden.
+Daarom werkt de tracker standaard **handmatig**: jij leest de cijfers af in je eigen
+funda-omgeving, voert ze in met één commando, en de tracker rekent de rest uit
+(verschil sinds vorige meting, verschil sinds vorige week, gemiddelde views per dag,
+bewaarratio).
 
-## Commando's
+Wil je het toch automatisch, dan kan dat met een funda-sessiecookie in een
+repository-secret. Zie "Automatisch meten" hieronder, inclusief de haken.
+
+## Dagelijks gebruik
 
 ```bash
-# cijfers ophalen en opslaan (doet de Action automatisch)
-node tracker/funda-tracker.mjs fetch
-
-# handmatig een meting invoeren, bijvoorbeeld overgetypt uit je funda-dashboard
+# cijfers invoeren (de gewone manier)
 node tracker/funda-tracker.mjs add --bekeken 1240 --bewaard 58
+
+# met een datum in het verleden
 node tracker/funda-tracker.mjs add --bekeken 1240 --bewaard 58 --datum 2026-08-26
 
-# het overzicht printen
+# het overzicht printen, dit draait bij "update mij"
 node tracker/funda-tracker.mjs report
+```
+
+Eén meting per dag: draai je twee keer op dezelfde dag, dan overschrijft de nieuwste
+de oude. De data staat in `tracker/data/funda-stats.json`, buiten `site/`, dus de
+Parijs-website verandert er niet door.
+
+## Automatisch meten
+
+De GitHub Action draait elke ochtend om 06:00 UTC, maar haalt alleen op als er een
+repository-secret `FUNDA_COOKIE` bestaat met een geldige funda-sessiecookie. Is die
+er niet, dan slaat de run het ophalen over en blijft hij groen, met een uitleg in de
+run-samenvatting. Zo krijg je geen dagelijkse valse alarmen.
+
+Instellen zou zo gaan: inloggen op funda in je browser, de sessiecookie kopiëren uit
+de developer tools, en die in GitHub zetten onder Settings, Secrets and variables,
+Actions, New repository secret, met de naam `FUNDA_COOKIE`.
+
+De haken daarbij, eerlijk:
+
+- Een sessiecookie is net zo gevoelig als een wachtwoord. Wie hem heeft, komt in jouw
+  funda-account. Hij komt in GitHub-secrets terecht, niet in de code, maar het blijft
+  een sleutel die je weggeeft.
+- Sessies verlopen. Reken op opnieuw instellen om de paar weken, en op stille
+  mislukkingen daartussen.
+- Geautomatiseerd inloggen en uitlezen gaat waarschijnlijk in tegen de
+  gebruiksvoorwaarden van funda.
+
+Handmatig invoeren kost je tien seconden per week en heeft geen van die nadelen.
+Mijn advies is dus: doe het handmatig.
+
+## Overige commando's
+
+```bash
+# laat zien wat funda daadwerkelijk terugstuurt (status, titel, tekst rond de cijfers)
+node tracker/funda-tracker.mjs diagnose
 
 # parser testen
 node tracker/test-parser.mjs
 ```
 
-Eén meting per dag: draai je twee keer op dezelfde dag, dan overschrijft de nieuwste
-de oude.
+Op een pull request draait een proefmeting die funda benadert en de diagnose in de
+log zet, zonder iets weg te schrijven. Die run wordt nooit rood van een blokkade,
+want dat is geen fout in deze code.
 
-## Waar het stuk kan gaan
+## Vangnetten in de code
 
-- **Funda blokkeert bots.** Als de pagina met een 403 terugkomt of er een captcha
-  voor staat, mislukt de meting. De run wordt dan rood, het rapport zet er een
-  waarschuwing bij ("de laatste automatische run is mislukt") en de ruwe pagina wordt
-  als artifact bij de Action-run bewaard. Je krijgt dus nooit stiekem oude cijfers
-  gepresenteerd als nieuw.
-- **Funda verandert de HTML.** De parser kent meerdere patronen (zichtbare tekst en
-  embedded JSON), maar als funda de opzet omgooit vindt hij niets. Ook dan: run rood,
-  ruwe HTML bewaard, patronen bijwerken in `funda-tracker.mjs`.
-- **Vangnet.** Werkt het scrapen niet, gebruik dan `add` en tik de cijfers een keer
-  per week over uit je eigen funda-omgeving. De rest van het overzicht (verschillen,
-  gemiddelde per dag, bewaarratio) werkt daar precies hetzelfde mee.
-
-De Action draait één keer per dag, dat is bewust: netjes voor funda en genoeg om de
-trend te zien.
-
-## Belangrijk
-
-De geplande run start pas als deze branch op `main` staat. GitHub draait
-`schedule`-workflows alleen vanaf de default branch. Je kunt hem daarna ook
-handmatig starten via Actions, knop "Run workflow".
-
-Op een pull request draait alleen een proefmeting: die kijkt of funda bereikbaar
-is en of de parser de cijfers eruit haalt, maar schrijft niets weg en maakt de
-run nooit rood. Het resultaat staat in de samenvatting van de Action-run.
+- Een nul wordt nooit als meting opgeslagen. Een woning die live staat is altijd
+  minstens een keer bekeken, dus nul betekent dat de parser de verkeerde plek pakt.
+- De login-muur wordt herkend en apart gemeld, zodat je niet gaat zoeken naar een
+  bug die er niet is.
+- Mislukt een automatische run, dan zet het rapport er een waarschuwing bij. Je
+  krijgt nooit stiekem oude cijfers gepresenteerd als nieuw.

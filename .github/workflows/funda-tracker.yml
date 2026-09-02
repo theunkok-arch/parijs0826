@@ -35,9 +35,13 @@ jobs:
         run: node tracker/test-parser.mjs
 
       - name: Kijken wat funda terugstuurt
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
         run: node tracker/funda-tracker.mjs diagnose || true
 
       - name: Proefmeting bij funda
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
         run: |
           if node tracker/funda-tracker.mjs fetch; then
             echo "### Proefmeting geslaagd" >> "$GITHUB_STEP_SUMMARY"
@@ -75,9 +79,35 @@ jobs:
       - name: Parser testen
         run: node tracker/test-parser.mjs
 
+      # Funda toont de populariteitscijfers alleen ingelogd. Zonder sessiecookie
+      # heeft ophalen geen zin, dan zou deze run elke dag onterecht rood worden.
+      - name: Kijken of er een funda-sessie beschikbaar is
+        id: sessie
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
+        run: |
+          if [ -n "$FUNDA_COOKIE" ]; then
+            echo "aanwezig=ja" >> "$GITHUB_OUTPUT"
+          else
+            echo "aanwezig=nee" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Automatisch meten staat uit"
+              echo ""
+              echo "Er is geen FUNDA_COOKIE ingesteld als repository-secret."
+              echo "Funda laat het aantal keer bekeken en bewaard alleen zien aan ingelogde"
+              echo "gebruikers, dus zonder sessiecookie valt er niets op te halen."
+              echo ""
+              echo "Voer de cijfers zolang handmatig in met:"
+              echo '`node tracker/funda-tracker.mjs add --bekeken N --bewaard N`'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Cijfers ophalen van funda
         id: ophalen
+        if: steps.sessie.outputs.aanwezig == 'ja'
         continue-on-error: true
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
         run: node tracker/funda-tracker.mjs fetch
 
       - name: Overzicht tonen in de log
@@ -85,7 +115,7 @@ jobs:
         run: node tracker/funda-tracker.mjs report
 
       - name: Meting committen
-        if: always()
+        if: steps.sessie.outputs.aanwezig == 'ja'
         run: |
           git config user.name "funda-tracker"
           git config user.email "actions@github.com"
@@ -107,7 +137,7 @@ jobs:
           retention-days: 7
 
       - name: Run rood maken als het ophalen mislukte
-        if: steps.ophalen.outcome == 'failure'
+        if: steps.sessie.outputs.aanwezig == 'ja' && steps.ophalen.outcome == 'failure'
         run: |
           echo "Het ophalen van funda is mislukt, zie de log en het debug-artifact."
           exit 1
