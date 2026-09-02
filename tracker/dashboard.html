@@ -402,9 +402,9 @@
   <p class="voet" id="voet">De metingen worden bij deze pagina zelf bewaard, dus iedereen met de link ziet dezelfde cijfers.</p>
 </div>
 
-<script type="application/json" id="metingen">[]</script>
+<script type="application/json" id="metingen" data-eigen>[]</script>
 
-<script>
+<script data-eigen>
 (function () {
   "use strict";
 
@@ -682,15 +682,31 @@
 
   // -------------------------------------------------------------- bewaren
 
+  // Bouwt de versie die bewaard wordt. Alleen onze eigen inhoud gaat mee: geen
+  // platform-scripts, geen gerenderde blokken, en geen toestand van het moment
+  // (een uitgeschakelde knop tijdens het bewaren zou anders blijvend uitstaan).
   function heleDocument(nieuw) {
-    var kopie = document.documentElement.cloneNode(true);
-    kopie.querySelectorAll("script[src]").forEach(function (s) { s.remove(); });
+    var kopie = document.body.cloneNode(true);
+
+    // Alleen onze eigen scripts blijven staan. Filteren op de inhoud van een
+    // script kan niet: dit script zou dan op zichzelf matchen en zichzelf wissen.
+    kopie.querySelectorAll("script").forEach(function (s) {
+      if (!s.hasAttribute("data-eigen")) { s.remove(); }
+    });
     kopie.querySelectorAll("[data-render]").forEach(function (n) { n.innerHTML = ""; });
+    kopie.querySelectorAll("[disabled]").forEach(function (n) { n.removeAttribute("disabled"); });
+    kopie.querySelectorAll("[hidden]").forEach(function (n) { n.removeAttribute("hidden"); });
+
     var vak = kopie.querySelector("#metingen");
     if (vak) { vak.textContent = JSON.stringify(nieuw); }
     var m = kopie.querySelector("#melding");
     if (m) { m.textContent = ""; m.className = "melding"; }
-    return "<!doctype html>\n" + kopie.outerHTML;
+    var d = kopie.querySelector("#in-datum");
+    if (d) { d.removeAttribute("value"); }
+
+    return '<!doctype html>\n<html>\n<head>\n<meta charset="utf-8">\n' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+      "</head>\n<body>\n" + kopie.innerHTML + "\n</body>\n</html>";
   }
 
   var meldingVak = document.getElementById("melding");
@@ -709,8 +725,16 @@
     var bewaard = document.getElementById("in-bewaard").value.trim();
     var datum = document.getElementById("in-datum").value || vandaagISO();
 
-    if (bekeken === "" && bewaard === "") {
-      meld("Vul minstens een van de twee getallen in.", true);
+    var bekekenN = bekeken === "" ? null : Math.round(+bekeken);
+    var bewaardN = bewaard === "" ? null : Math.round(+bewaard);
+
+    // Nul bekeken is geen meting maar een lege pagina: een woning die op funda
+    // staat is altijd al een keer bekeken. Nul bewaard kan wel echt zijn.
+    if (!(bekekenN > 0)) { bekekenN = null; }
+    if (!(bewaardN >= 0)) { bewaardN = null; }
+
+    if (bekekenN === null && !(bewaardN > 0)) {
+      meld("Vul het aantal keer bekeken in. Nul is geen meting, dat is een lege pagina.", true);
       return;
     }
     if (!artifact) {
@@ -718,11 +742,7 @@
       return;
     }
 
-    var nieuweMeting = {
-      datum: datum,
-      bekeken: bekeken === "" ? null : Math.round(+bekeken),
-      bewaard: bewaard === "" ? null : Math.round(+bewaard)
-    };
+    var nieuweMeting = { datum: datum, bekeken: bekekenN, bewaard: bewaardN };
 
     var kopieLijst = metingen.filter(function (m) { return m.datum !== datum; });
     kopieLijst.push(nieuweMeting);
