@@ -21,7 +21,17 @@ bewaarratio).
 Wil je het toch automatisch, dan kan dat met een funda-sessiecookie in een
 repository-secret. Zie "Automatisch meten" hieronder, inclusief de haken.
 
-## Dagelijks gebruik
+## De pagina
+
+`dashboard.html` is de dagelijkse route: een privépagina waar je de twee getallen
+intikt en meteen de trend ziet. De metingen worden bij de pagina zelf bewaard, dus
+wie de link heeft ziet dezelfde cijfers. De pagina is gepubliceerd als artifact op
+claude.ai en staat hier in de repo zodat de broncode meeversioned wordt.
+
+Twee grafieken met elk hun eigen schaal, nooit twee assen in één grafiek: bekeken
+loopt in duizenden, bewaard in tientallen, die horen niet op dezelfde as.
+
+## Handmatig via de terminal
 
 ```bash
 # cijfers invoeren (de gewone manier)
@@ -34,9 +44,14 @@ node tracker/funda-tracker.mjs add --bekeken 1240 --bewaard 58 --datum 2026-08-2
 node tracker/funda-tracker.mjs report
 ```
 
-Eén meting per dag: draai je twee keer op dezelfde dag, dan overschrijft de nieuwste
-de oude. De data staat in `tracker/data/funda-stats.json`, buiten `site/`, dus de
-Parijs-website verandert er niet door.
+Eén meting per dag: voer je twee keer dezelfde datum in, dan overschrijft de nieuwste
+de oude. Dat geldt zowel op de pagina als in de terminal.
+
+Let op: de pagina en `tracker/data/funda-stats.json` zijn twee losse opslagplekken.
+De pagina is de plek waar je in de praktijk werkt; het JSON-bestand is er voor als je
+de historie in git wilt hebben. Overzetten gaat met het `add`-commando.
+
+Alles staat buiten `site/`, dus de Parijs-website verandert er niet door.
 
 ## Automatisch meten
 

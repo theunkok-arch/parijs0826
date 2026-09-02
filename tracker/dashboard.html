@@ -1,0 +1,785 @@
+<title>Palestrinalaan 19</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --grond: #F4F2F6;
+    --vlak: #FBFAFC;
+    --inkt: #221E28;
+    --gedempt: #6B6474;
+    --haarlijn: #DDD8E3;
+    --haarlijn-zacht: #E9E5EE;
+    --bekeken: #B87314;
+    --bewaard: #9B2C6B;
+    --bekeken-vlak: rgba(184, 115, 20, 0.13);
+    --bewaard-vlak: rgba(155, 44, 107, 0.13);
+    --focus: #4A3F5C;
+
+    --schaal-eyebrow: 0.75rem;
+    --schaal-klein: 0.8125rem;
+    --schaal-tekst: 0.9375rem;
+    --schaal-kop: 1.375rem;
+    --schaal-titel: 2.125rem;
+    --schaal-cijfer: 2.75rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --grond: #1A1720;
+      --vlak: #221E2A;
+      --inkt: #EDE9F0;
+      --gedempt: #9C93A8;
+      --haarlijn: #332D3C;
+      --haarlijn-zacht: #2A2532;
+      --bekeken: #BE8129;
+      --bewaard: #CB6FA4;
+      --bekeken-vlak: rgba(190, 129, 41, 0.16);
+      --bewaard-vlak: rgba(203, 111, 164, 0.16);
+      --focus: #B9AECB;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --grond: #1A1720;
+    --vlak: #221E2A;
+    --inkt: #EDE9F0;
+    --gedempt: #9C93A8;
+    --haarlijn: #332D3C;
+    --haarlijn-zacht: #2A2532;
+    --bekeken: #BE8129;
+    --bewaard: #CB6FA4;
+    --bekeken-vlak: rgba(190, 129, 41, 0.16);
+    --bewaard-vlak: rgba(203, 111, 164, 0.16);
+    --focus: #B9AECB;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--grond);
+    color: var(--inkt);
+    font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--schaal-tekst);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .blad {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 22px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+  }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  /* ---------------------------------------------------------- kop */
+
+  .kop { display: flex; flex-direction: column; gap: 6px; }
+
+  .eyebrow {
+    font-size: var(--schaal-eyebrow);
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--gedempt);
+    font-weight: 600;
+  }
+
+  .adres {
+    font-family: "Newsreader", ui-serif, Georgia, serif;
+    font-size: var(--schaal-titel);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .kop-link {
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+    text-decoration-color: var(--haarlijn);
+    text-underline-offset: 3px;
+    width: fit-content;
+  }
+  .kop-link:hover { color: var(--inkt); }
+
+  /* ---------------------------------------------------------- cijfers */
+
+  .cijfers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--haarlijn);
+    border-block: 1px solid var(--haarlijn);
+  }
+
+  .cijfer {
+    background: var(--grond);
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .cijfer-label {
+    font-size: var(--schaal-eyebrow);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .stip {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .stip-bekeken { background: var(--bekeken); }
+  .stip-bewaard { background: var(--bewaard); }
+
+  .cijfer-waarde {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: var(--schaal-cijfer);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .cijfer-waarde.leeg { color: var(--gedempt); font-weight: 400; }
+
+  .cijfer-noot {
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------------------------------------------------------- invoer */
+
+  .kaart-titel {
+    font-family: "Newsreader", ui-serif, Georgia, serif;
+    font-size: var(--schaal-kop);
+    font-weight: 400;
+    margin: 0 0 4px;
+  }
+
+  .sectie { display: flex; flex-direction: column; gap: 14px; }
+
+  .uitleg {
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  .formulier {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    background: var(--vlak);
+    border: 1px solid var(--haarlijn);
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  .veld { display: flex; flex-direction: column; gap: 5px; }
+  .veld-bekeken { flex: 1 1 130px; }
+  .veld-bewaard { flex: 1 1 110px; }
+  .veld-datum { flex: 1 1 150px; }
+
+  .veld label {
+    font-size: var(--schaal-eyebrow);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gedempt);
+  }
+
+  .veld input {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--inkt);
+    background: var(--grond);
+    border: 1px solid var(--haarlijn);
+    border-radius: 9px;
+    padding: 9px 11px;
+    width: 100%;
+    min-width: 0;
+  }
+  .veld input:focus { border-color: var(--focus); }
+
+  .knop {
+    font-family: inherit;
+    font-size: var(--schaal-tekst);
+    font-weight: 600;
+    color: var(--grond);
+    background: var(--inkt);
+    border: 1px solid var(--inkt);
+    border-radius: 999px;
+    padding: 10px 22px;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+  .knop:hover { opacity: 0.88; }
+  .knop:disabled { opacity: 0.45; cursor: default; }
+
+  .melding {
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+    min-height: 1.4em;
+    margin: 0;
+  }
+  .melding.fout { color: var(--bewaard); }
+
+  /* ---------------------------------------------------------- grafiek */
+
+  .grafieken { display: flex; flex-direction: column; gap: 26px; }
+
+  .grafiek-kop {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .grafiek-titel {
+    font-size: var(--schaal-eyebrow);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+  }
+
+  .grafiek-bereik {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .plot { position: relative; }
+  .plot svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+  .grafiek-leeg {
+    border: 1px dashed var(--haarlijn);
+    border-radius: 14px;
+    padding: 26px 18px;
+    text-align: center;
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+  }
+
+  .tip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--vlak);
+    border: 1px solid var(--haarlijn);
+    border-radius: 9px;
+    padding: 7px 10px;
+    font-size: var(--schaal-klein);
+    line-height: 1.35;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(20, 15, 28, 0.14);
+    transform: translate(-50%, -120%);
+    opacity: 0;
+    transition: opacity 0.12s ease;
+  }
+  .tip strong {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  /* ---------------------------------------------------------- tabel */
+
+  .tabel-wikkel { overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+
+  th {
+    text-align: right;
+    font-size: var(--schaal-eyebrow);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gedempt);
+    font-weight: 600;
+    padding: 0 0 9px;
+    border-bottom: 1px solid var(--haarlijn);
+    white-space: nowrap;
+  }
+  th:first-child, td:first-child { text-align: left; }
+
+  td {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: var(--schaal-klein);
+    text-align: right;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--haarlijn-zacht);
+    white-space: nowrap;
+  }
+  td.datum { font-family: "Karla", ui-sans-serif, system-ui, sans-serif; }
+  td.groei { color: var(--gedempt); }
+  th + th, td + td { padding-left: 18px; }
+
+  .voet {
+    font-size: var(--schaal-klein);
+    color: var(--gedempt);
+    border-top: 1px solid var(--haarlijn);
+    padding-top: 16px;
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  @media (max-width: 480px) {
+    :root { --schaal-cijfer: 2.25rem; --schaal-titel: 1.75rem; }
+    .knop { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="blad">
+  <header class="kop">
+    <div class="eyebrow">Belangstelling op Funda</div>
+    <h1 class="adres">Palestrinalaan 19, Bilthoven</h1>
+    <a class="kop-link" href="https://www.funda.nl/detail/17201073" target="_blank" rel="noopener">Bekijk de advertentie op funda.nl</a>
+  </header>
+
+  <section class="cijfers" data-render="cijfers"></section>
+
+  <section class="sectie" data-invoer>
+    <div>
+      <h2 class="kaart-titel">Nieuwe meting</h2>
+      <p class="uitleg">Log in op funda, lees bij Populariteit de twee getallen af en zet ze hier neer. Funda toont die cijfers alleen aan jou, dus overtypen is de enige weg.</p>
+    </div>
+    <form class="formulier" id="formulier">
+      <div class="veld veld-bekeken">
+        <label for="in-bekeken">Bekeken</label>
+        <input id="in-bekeken" name="bekeken" type="number" min="0" step="1" inputmode="numeric" placeholder="1240">
+      </div>
+      <div class="veld veld-bewaard">
+        <label for="in-bewaard">Bewaard</label>
+        <input id="in-bewaard" name="bewaard" type="number" min="0" step="1" inputmode="numeric" placeholder="58">
+      </div>
+      <div class="veld veld-datum">
+        <label for="in-datum">Datum</label>
+        <input id="in-datum" name="datum" type="date">
+      </div>
+      <button class="knop" type="submit" id="bewaarknop">Bewaren</button>
+    </form>
+    <p class="melding" id="melding"></p>
+  </section>
+
+  <section class="grafieken" data-render="grafieken"></section>
+
+  <section class="sectie">
+    <h2 class="kaart-titel">Alle metingen</h2>
+    <div class="tabel-wikkel" data-render="tabel"></div>
+  </section>
+
+  <p class="voet" id="voet">De metingen worden bij deze pagina zelf bewaard, dus iedereen met de link ziet dezelfde cijfers.</p>
+</div>
+
+<script type="application/json" id="metingen">[]</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var metingen = [];
+  try {
+    metingen = JSON.parse(document.getElementById("metingen").textContent) || [];
+  } catch (e) {
+    metingen = [];
+  }
+
+  var artifact = null;
+  var bezig = false;
+
+  var nlGetal = new Intl.NumberFormat("nl-NL");
+  var nlDatumKort = new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "short" });
+  var nlDatumLang = new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "long", year: "numeric" });
+
+  function alsDatum(iso) {
+    var d = iso.split("-");
+    return new Date(Date.UTC(+d[0], +d[1] - 1, +d[2]));
+  }
+
+  function dagenTussen(isoA, isoB) {
+    return Math.round((alsDatum(isoB) - alsDatum(isoA)) / 86400000);
+  }
+
+  function vandaagISO() {
+    var nu = new Date();
+    return new Date(nu.getTime() - nu.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  }
+
+  function sorteer() {
+    metingen.sort(function (a, b) { return a.datum < b.datum ? -1 : a.datum > b.datum ? 1 : 0; });
+  }
+
+  function verschilTekst(nu, eerder) {
+    if (typeof nu !== "number" || typeof eerder !== "number") return "";
+    var d = nu - eerder;
+    if (d === 0) return "gelijk";
+    return (d > 0 ? "+" : "−") + nlGetal.format(Math.abs(d));
+  }
+
+  // -------------------------------------------------------------- cijfers
+
+  function toonCijfers() {
+    var doel = document.querySelector('[data-render="cijfers"]');
+    var laatste = metingen[metingen.length - 1] || null;
+    var vorige = metingen[metingen.length - 2] || null;
+
+    doel.innerHTML = [
+      paneel("Bekeken", "bekeken", laatste, vorige),
+      paneel("Bewaard", "bewaard", laatste, vorige)
+    ].join("");
+  }
+
+  function paneel(titel, sleutel, laatste, vorige) {
+    var waarde = laatste && typeof laatste[sleutel] === "number" ? laatste[sleutel] : null;
+    var noot;
+
+    if (waarde === null) {
+      noot = "nog geen meting";
+    } else if (vorige && typeof vorige[sleutel] === "number") {
+      var dagen = dagenTussen(vorige.datum, laatste.datum);
+      noot = verschilTekst(waarde, vorige[sleutel]) + " in " + dagen + (dagen === 1 ? " dag" : " dagen");
+    } else {
+      noot = "eerste meting, " + nlDatumLang.format(alsDatum(laatste.datum));
+    }
+
+    return '<div class="cijfer">' +
+      '<div class="cijfer-label"><span class="stip stip-' + sleutel + '"></span>' + titel + "</div>" +
+      '<div class="cijfer-waarde' + (waarde === null ? " leeg" : "") + '">' +
+        (waarde === null ? "—" : nlGetal.format(waarde)) +
+      "</div>" +
+      '<div class="cijfer-noot">' + noot + "</div>" +
+      "</div>";
+  }
+
+  // -------------------------------------------------------------- grafieken
+
+  function toonGrafieken() {
+    var doel = document.querySelector('[data-render="grafieken"]');
+    var breedte = doel.clientWidth || Math.min(640, window.innerWidth - 44);
+    doel.innerHTML = "";
+    doel.appendChild(grafiek("Bekeken", "bekeken", "var(--bekeken)", "var(--bekeken-vlak)", breedte));
+    doel.appendChild(grafiek("Bewaard", "bewaard", "var(--bewaard)", "var(--bewaard-vlak)", breedte));
+  }
+
+  // Ronde asgetallen lezen sneller dan de exacte randen van de data.
+  function nettePlafond(max) {
+    if (!(max > 0)) return 5;
+    var mag = Math.pow(10, Math.floor(Math.log10(max)));
+    var stappen = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+    for (var i = 0; i < stappen.length; i++) {
+      if (stappen[i] * mag >= max) return stappen[i] * mag;
+    }
+    return 10 * mag;
+  }
+
+  function grafiek(titel, sleutel, lijnKleur, vlakKleur, breedte) {
+    var punten = metingen.filter(function (m) { return typeof m[sleutel] === "number"; });
+
+    var blok = document.createElement("figure");
+    blok.style.margin = "0";
+
+    var kop = document.createElement("div");
+    kop.className = "grafiek-kop";
+    kop.innerHTML = '<h3 class="grafiek-titel"><span class="stip stip-' + sleutel + '"></span>' + titel + "</h3>" +
+      '<span class="grafiek-bereik">' +
+        (punten.length > 1
+          ? nlDatumKort.format(alsDatum(punten[0].datum)) + " – " + nlDatumKort.format(alsDatum(punten[punten.length - 1].datum))
+          : "") +
+      "</span>";
+    blok.appendChild(kop);
+
+    if (punten.length < 2) {
+      var leeg = document.createElement("div");
+      leeg.className = "grafiek-leeg";
+      leeg.textContent = punten.length === 0
+        ? "De lijn verschijnt zodra er twee metingen zijn."
+        : "Nog één meting. Vanaf de tweede loopt hier de lijn.";
+      blok.appendChild(leeg);
+      return blok;
+    }
+
+    var B = Math.max(320, Math.min(640, Math.round(breedte)));
+    var H = B < 460 ? 200 : 170;
+    var mL = 46, mR = 14, mT = 14, mB = 26;
+    var pB = B - mL - mR, pH = H - mT - mB;
+
+    var waarden = punten.map(function (p) { return p[sleutel]; });
+    var max = Math.max.apply(null, waarden);
+    var yMin = 0;
+    var yMax = nettePlafond(max * 1.08);
+
+    var t0 = alsDatum(punten[0].datum).getTime();
+    var t1 = alsDatum(punten[punten.length - 1].datum).getTime();
+    var spanT = t1 - t0 || 1;
+
+    function x(p) { return mL + ((alsDatum(p.datum).getTime() - t0) / spanT) * pB; }
+    function y(v) { return mT + (1 - (v - yMin) / (yMax - yMin)) * pH; }
+
+    var xy = punten.map(function (p) { return { px: x(p), py: y(p[sleutel]), p: p }; });
+    var lijn = xy.map(function (q, i) { return (i ? "L" : "M") + q.px.toFixed(1) + " " + q.py.toFixed(1); }).join(" ");
+    var vlak = lijn + " L" + xy[xy.length - 1].px.toFixed(1) + " " + (mT + pH) + " L" + xy[0].px.toFixed(1) + " " + (mT + pH) + " Z";
+
+    var ns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 " + B + " " + H);
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", titel + ": van " + nlGetal.format(waarden[0]) + " naar " + nlGetal.format(waarden[waarden.length - 1]));
+
+    function el(naam, attrs) {
+      var e = document.createElementNS(ns, naam);
+      for (var k in attrs) { e.setAttribute(k, attrs[k]); }
+      return e;
+    }
+
+    [yMax, (yMax + yMin) / 2, yMin].forEach(function (v) {
+      svg.appendChild(el("line", {
+        x1: mL, x2: mL + pB, y1: y(v), y2: y(v),
+        stroke: "var(--haarlijn-zacht)", "stroke-width": 1
+      }));
+      var t = el("text", {
+        x: mL - 9, y: y(v) + 3.5, "text-anchor": "end",
+        fill: "var(--gedempt)", "font-size": 10.5,
+        "font-family": "IBM Plex Mono, ui-monospace, monospace"
+      });
+      t.textContent = nlGetal.format(v);
+      svg.appendChild(t);
+    });
+
+    svg.appendChild(el("path", { d: vlak, fill: vlakKleur, stroke: "none" }));
+    svg.appendChild(el("path", {
+      d: lijn, fill: "none", stroke: lijnKleur, "stroke-width": 2,
+      "stroke-linejoin": "round", "stroke-linecap": "round"
+    }));
+
+    xy.forEach(function (q, i) {
+      var laatst = i === xy.length - 1;
+      svg.appendChild(el("circle", {
+        cx: q.px, cy: q.py, r: laatst ? 4.5 : 2.6,
+        fill: laatst ? lijnKleur : "var(--grond)",
+        stroke: lijnKleur, "stroke-width": 2
+      }));
+    });
+
+    [0, xy.length - 1].forEach(function (i, n) {
+      if (n === 1 && xy.length < 2) return;
+      var t = el("text", {
+        x: xy[i].px, y: H - 7,
+        "text-anchor": i === 0 ? "start" : "end",
+        fill: "var(--gedempt)", "font-size": 10.5,
+        "font-family": "Karla, ui-sans-serif, system-ui, sans-serif"
+      });
+      t.textContent = nlDatumKort.format(alsDatum(xy[i].p.datum));
+      svg.appendChild(t);
+    });
+
+    var vizier = el("line", {
+      y1: mT, y2: mT + pH, stroke: "var(--haarlijn)", "stroke-width": 1, opacity: 0
+    });
+    svg.appendChild(vizier);
+
+    var plot = document.createElement("div");
+    plot.className = "plot";
+    plot.appendChild(svg);
+
+    var tip = document.createElement("div");
+    tip.className = "tip";
+    plot.appendChild(tip);
+
+    function volg(ev) {
+      var vak = plot.getBoundingClientRect();
+      var relX = ((ev.clientX - vak.left) / vak.width) * B;
+      var dichtst = xy[0], best = Infinity;
+      xy.forEach(function (q) {
+        var d = Math.abs(q.px - relX);
+        if (d < best) { best = d; dichtst = q; }
+      });
+      vizier.setAttribute("x1", dichtst.px);
+      vizier.setAttribute("x2", dichtst.px);
+      vizier.setAttribute("opacity", 1);
+      tip.innerHTML = "<strong>" + nlGetal.format(dichtst.p[sleutel]) + "</strong> " + titel.toLowerCase() +
+        "<br>" + nlDatumLang.format(alsDatum(dichtst.p.datum));
+      tip.style.left = (dichtst.px / B) * 100 + "%";
+      tip.style.top = (dichtst.py / H) * 100 + "%";
+      tip.style.opacity = 1;
+    }
+
+    function stop() {
+      vizier.setAttribute("opacity", 0);
+      tip.style.opacity = 0;
+    }
+
+    plot.addEventListener("pointermove", volg);
+    plot.addEventListener("pointerleave", stop);
+
+    blok.appendChild(plot);
+    return blok;
+  }
+
+  // -------------------------------------------------------------- tabel
+
+  function toonTabel() {
+    var doel = document.querySelector('[data-render="tabel"]');
+
+    if (metingen.length === 0) {
+      doel.innerHTML = '<p class="uitleg">Nog geen metingen. De eerste die je bewaart staat hier.</p>';
+      return;
+    }
+
+    var rijen = metingen.slice().reverse().map(function (m, i, lijst) {
+      var vorige = lijst[i + 1] || null;
+      var dagen = vorige ? dagenTussen(vorige.datum, m.datum) : null;
+      return "<tr>" +
+        '<td class="datum">' + nlDatumLang.format(alsDatum(m.datum)) + "</td>" +
+        "<td>" + (typeof m.bekeken === "number" ? nlGetal.format(m.bekeken) : "—") + "</td>" +
+        '<td class="groei">' + (vorige ? verschilTekst(m.bekeken, vorige.bekeken) : "—") + "</td>" +
+        "<td>" + (typeof m.bewaard === "number" ? nlGetal.format(m.bewaard) : "—") + "</td>" +
+        '<td class="groei">' + (vorige ? verschilTekst(m.bewaard, vorige.bewaard) : "—") + "</td>" +
+        '<td class="groei">' + (dagen === null ? "—" : dagen) + "</td>" +
+        "</tr>";
+    }).join("");
+
+    doel.innerHTML = "<table><thead><tr>" +
+      "<th>Datum</th><th>Bekeken</th><th>Groei</th><th>Bewaard</th><th>Groei</th><th>Dagen</th>" +
+      "</tr></thead><tbody>" + rijen + "</tbody></table>";
+  }
+
+  function toonAlles() {
+    toonCijfers();
+    toonGrafieken();
+    toonTabel();
+  }
+
+  // -------------------------------------------------------------- bewaren
+
+  function heleDocument(nieuw) {
+    var kopie = document.documentElement.cloneNode(true);
+    kopie.querySelectorAll("script[src]").forEach(function (s) { s.remove(); });
+    kopie.querySelectorAll("[data-render]").forEach(function (n) { n.innerHTML = ""; });
+    var vak = kopie.querySelector("#metingen");
+    if (vak) { vak.textContent = JSON.stringify(nieuw); }
+    var m = kopie.querySelector("#melding");
+    if (m) { m.textContent = ""; m.className = "melding"; }
+    return "<!doctype html>\n" + kopie.outerHTML;
+  }
+
+  var meldingVak = document.getElementById("melding");
+  var knop = document.getElementById("bewaarknop");
+
+  function meld(tekst, isFout) {
+    meldingVak.textContent = tekst;
+    meldingVak.className = isFout ? "melding fout" : "melding";
+  }
+
+  document.getElementById("formulier").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    if (bezig) return;
+
+    var bekeken = document.getElementById("in-bekeken").value.trim();
+    var bewaard = document.getElementById("in-bewaard").value.trim();
+    var datum = document.getElementById("in-datum").value || vandaagISO();
+
+    if (bekeken === "" && bewaard === "") {
+      meld("Vul minstens een van de twee getallen in.", true);
+      return;
+    }
+    if (!artifact) {
+      meld("Bewaren kan hier niet: deze weergave heeft geen schrijfrechten op de pagina.", true);
+      return;
+    }
+
+    var nieuweMeting = {
+      datum: datum,
+      bekeken: bekeken === "" ? null : Math.round(+bekeken),
+      bewaard: bewaard === "" ? null : Math.round(+bewaard)
+    };
+
+    var kopieLijst = metingen.filter(function (m) { return m.datum !== datum; });
+    kopieLijst.push(nieuweMeting);
+    kopieLijst.sort(function (a, b) { return a.datum < b.datum ? -1 : a.datum > b.datum ? 1 : 0; });
+
+    bezig = true;
+    knop.disabled = true;
+    meld("Bezig met bewaren…");
+
+    artifact.publish(heleDocument(kopieLijst)).then(function () {
+      metingen = kopieLijst;
+      toonAlles();
+      meld("Bewaard.");
+    }).catch(function (fout) {
+      var code = fout && fout.code;
+      if (code === "conflict") {
+        meld("Iemand anders bewaarde net iets. De pagina laadt die versie, probeer het daarna opnieuw.", true);
+      } else if (code === "not_granted" || code === "not_writer") {
+        meld("Je kunt deze pagina wel bekijken, maar niet aanpassen.", true);
+        verbergFormulier();
+      } else {
+        meld("Bewaren lukte niet. Probeer het zo nog eens.", true);
+      }
+    }).then(function () {
+      bezig = false;
+      knop.disabled = false;
+    });
+  });
+
+  function verbergFormulier() {
+    var vak = document.querySelector("[data-invoer]");
+    if (vak) { vak.hidden = true; }
+  }
+
+  // -------------------------------------------------------------- start
+
+  sorteer();
+  document.getElementById("in-datum").value = vandaagISO();
+  toonAlles();
+
+  var hertekenTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(hertekenTimer);
+    hertekenTimer = setTimeout(toonGrafieken, 180);
+  });
+
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("artifact").then(function (ns) {
+      artifact = ns;
+      if (!ns) {
+        verbergFormulier();
+        document.getElementById("voet").textContent =
+          "Meelezen kan, aanpassen niet. Alleen wie de pagina mag bewerken kan hier metingen toevoegen.";
+      }
+    }).catch(function () { verbergFormulier(); });
+  } else {
+    verbergFormulier();
+  }
+})();
+</script>
