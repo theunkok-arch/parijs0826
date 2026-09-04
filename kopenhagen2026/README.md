@@ -121,6 +121,48 @@ Navigatie, homepagina en datum-weergave passen zich vanzelf aan.
 Onder `praktisch` staan de blokken met de vaste afspraken. `rows` is de tabel eronder;
 zet er `"href"` bij voor een klikbare mail (`mailto:...`) of telefoon (`tel:...`).
 
+### Foto's toevoegen
+De foto's staan in `site/img/`. In de data verwijs je met de bestandsnaam zonder
+extensie, plus een Nederlandse alt-tekst voor wie de foto niet ziet.
+
+```json
+"img": { "file": "nyhavn", "alt": "De gekleurde gevels langs de gracht van Nyhavn", "webp": false }
+```
+
+Zo'n blok kan op drie plekken staan:
+- `meta.hero` voor de grote foto op de startpagina
+- `hero` in een dagblok, direct onder de dagtitel
+- `img` in een activiteit of in een blok onder `praktisch`
+
+Regels voor de bestanden:
+- maximaal 1200px breed, dat is ruim genoeg voor een telefoon met retina-scherm
+- `naam.jpg` is verplicht, `naam.webp` is optioneel maar wel een stuk lichter
+- **zet `"webp": true` alleen als het .webp-bestand er echt is.** Staat het op
+  `true` zonder bestand, dan blijft het beeld leeg: een `<picture>` valt niet
+  terug op de jpg als de opgegeven bron een 404 geeft
+- ontbreekt de foto helemaal, dan haalt de site het beeld netjes weg
+
+### Fotoverantwoording (verplicht)
+Onder `credits` staan de rechten. Het blok verschijnt onderaan de site als
+uitklapbaar colofon, en verdwijnt vanzelf als de lijst leeg is. **Zolang er
+foto's op de site staan hoort deze lijst gevuld te zijn, dat is een voorwaarde
+van de licenties.**
+
+```json
+"credits": {
+  "title": "Fotoverantwoording",
+  "intro": "Optionele regel boven de lijst.",
+  "photos": [
+    {
+      "subject": "Nyhavn",
+      "photographer": "Naam van de fotograaf",
+      "license": "CC BY 4.0",
+      "url": "https://bron-van-de-foto"
+    }
+  ]
+}
+```
+
 ### Afsluiting van een dag
 `outro` onderaan een dagblok wordt een omkaderde regel onder de laatste activiteit.
 Zondag gebruikt die voor het inleveren van de camper op maandag.
@@ -169,6 +211,8 @@ meer te zetten.
   waarbij je er maar één hoeft te vergeten.
 - **Linkslots zijn data, geen code.** De rij Website, Instagram, TikTok komt uit één lijstje
   bovenin `app.js`. Een vierde kanaal toevoegen is één regel plus een sleutel in de JSON.
+- **Dagkleuren doen echt iets.** Het accent van een dag kleurt de titel, de tijdlabels en
+  een zachte tint achter de pagina, zodat je aan de kleur ziet welke dag je bekijkt.
 - **Adresbalk werkt mee.** Elke dag heeft een eigen `#hash`, dus je kunt een dag doorsturen
   en de terugknop van de telefoon doet wat je verwacht.
 - **Geen zoekfunctie, geen tickets-module.** Dit programma is klein genoeg om te scrollen.
