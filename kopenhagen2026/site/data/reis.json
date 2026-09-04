@@ -182,8 +182,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nyhavn%20K%C3%B8benhavn",
           "links": {
             "web": "",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/explore/tags/nyhavn/",
+            "tiktok": "https://www.tiktok.com/tag/nyhavn"
           }
         },
         {
@@ -194,8 +194,8 @@
           "address": "Amalienborg Slotsplads, København K",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amalienborg%20K%C3%B8benhavn",
           "links": {
-            "web": "",
-            "insta": "",
+            "web": "https://denkongeligesamling.dk/en/amalienborg-museum/",
+            "insta": "https://www.instagram.com/amalienborgmuseet/",
             "tiktok": ""
           }
         },
@@ -208,8 +208,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kastellet%20K%C3%B8benhavn",
           "links": {
             "web": "",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/kastellet_kbh/",
+            "tiktok": "https://www.tiktok.com/tag/kastellet"
           }
         },
         {
@@ -217,10 +217,10 @@
           "time": "Lunch",
           "title": "Torvehallerne",
           "desc": "Twee glazen markthallen met zo'n vijftig kramen: smørrebrød, oesters, taco's, koffie en gebak door elkaar. Iedereen haalt wat hij wil en je eet buiten op het plein.",
-          "address": "Frederiksborggade 21, 1360 København",
+          "address": "Frederiksborggade 21, 1360 København K",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Torvehallerne%20Frederiksborggade%2021%2C%201360%20K%C3%B8benhavn",
           "links": {
-            "web": "",
+            "web": "https://torvehallernekbh.dk/",
             "insta": "https://www.instagram.com/torvehallernekbh/",
             "tiktok": ""
           }
@@ -233,9 +233,9 @@
           "address": "Kødbyen, Flæsketorvet, København V",
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=K%C3%B8dbyen%20K%C3%B8benhavn",
           "links": {
-            "web": "",
-            "insta": "",
-            "tiktok": ""
+            "web": "https://kodbyen.kk.dk/en/visit-us",
+            "insta": "https://www.instagram.com/explore/tags/k%C3%B8dbyen/",
+            "tiktok": "https://www.tiktok.com/tag/k%C3%B8dbyen"
           }
         },
         {
@@ -323,8 +323,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amager%20Strandpark%20Amager%20Strandvej%20110%2C%202300%20K%C3%B8benhavn%20S",
           "links": {
             "web": "",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/explore/locations/217497512/amager-strandpark/",
+            "tiktok": "https://www.tiktok.com/tag/amagerstrandpark"
           }
         },
         {
@@ -413,8 +413,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hornb%C3%A6k%20Danmark",
           "links": {
             "web": "",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/explore/tags/hornb%C3%A6k/",
+            "tiktok": "https://www.tiktok.com/tag/hornb%C3%A6k"
           },
           "warn": "Kijk voor je parkeert of de plek hoog genoeg is voor de camper, de parkeerterreinen bij het strand hebben soms een hoogtebeperking."
         },
@@ -439,8 +439,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gilleleje%20Havn",
           "links": {
             "web": "",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/explore/tags/gilleleje/",
+            "tiktok": "https://www.tiktok.com/tag/gilleleje"
           },
           "places": [
             {
@@ -465,7 +465,7 @@
               "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Gilleleje%20Havn%20Havnevej%2014%2C%203250%20Gilleleje",
               "links": {
                 "web": "https://www.gillelejehavn.dk/",
-                "insta": "",
+                "insta": "https://www.instagram.com/restaurantgillelejehavn/",
                 "tiktok": ""
               }
             }
@@ -480,8 +480,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=J%C3%A6gersborggade%20K%C3%B8benhavn%20N",
           "links": {
             "web": "",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/explore/tags/n%C3%B8rrebro/",
+            "tiktok": "https://www.tiktok.com/tag/n%C3%B8rrebro"
           },
           "places": [
             {
@@ -506,7 +506,7 @@
               "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mirabelle%20Guldbergsgade%2029%20K%C3%B8benhavn",
               "links": {
                 "web": "https://www.mirabelle-cph.dk/",
-                "insta": "",
+                "insta": "https://www.instagram.com/mirabelle_cph/",
                 "tiktok": ""
               }
             }
@@ -573,8 +573,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vandel%20Gokart%20T%C3%A5rnvej%208%2C%207184%20Vandel",
           "links": {
             "web": "https://vandelgokart.dk/",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/vandel_gokart/",
+            "tiktok": "https://www.tiktok.com/@vandel_gokart"
           },
           "warn": "Gebruik alleen de noordelijke ingang bij het dorp Vandel. De andere toegangswegen komen uit op het oude vliegveldterrein en daar kom je niet bij de baan."
         },
@@ -587,8 +587,8 @@
           "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vandel%20Gokart%20T%C3%A5rnvej%208%2C%207184%20Vandel",
           "links": {
             "web": "https://vandelgokart.dk/",
-            "insta": "",
-            "tiktok": ""
+            "insta": "https://www.instagram.com/vandel_gokart/",
+            "tiktok": "https://www.tiktok.com/@vandel_gokart"
           }
         },
         {
@@ -611,8 +611,8 @@
               "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vandel%20Gokart%20T%C3%A5rnvej%208%2C%207184%20Vandel",
               "links": {
                 "web": "https://vandelgokart.dk/spisning/",
-                "insta": "",
-                "tiktok": ""
+                "insta": "https://www.instagram.com/vandel_gokart/",
+                "tiktok": "https://www.tiktok.com/@vandel_gokart"
               }
             },
             {
@@ -721,8 +721,8 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Vandel%20Gokart%20T%C3%A5rnvej%208%2C%207184%20Vandel",
       "links": {
         "web": "https://vandelgokart.dk/",
-        "insta": "",
-        "tiktok": ""
+        "insta": "https://www.instagram.com/vandel_gokart/",
+        "tiktok": "https://www.tiktok.com/@vandel_gokart"
       }
     },
     {
