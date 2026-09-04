@@ -11,6 +11,7 @@ const ICONS = {
   globe: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
   insta: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
   tiktok: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4v9.5a4 4 0 1 1-3.2-3.92"/><path d="M15 4a4.5 4.5 0 0 0 4.5 4.5"/></svg>',
+  phone: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 5.2 2 2 0 0 1 6.5 3z"/></svg>',
   download: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 11 12 15.5 16.5 11M5 19h14"/></svg>',
 };
 
@@ -51,8 +52,26 @@ function linkBtn(url, label, iconName, extraClass = '') {
   return h`<a class="btn ${extraClass}" href="${url}" target="_blank" rel="noopener">${icon(iconName)}${label}</a>`;
 }
 
+function placeCard(place) {
+  const l = place.links || {};
+  return h`
+    <article class="place">
+      <p class="place-role">${place.role}</p>
+      <h4>${place.name}</h4>
+      <p class="place-desc">${place.desc}</p>
+      ${place.address ? h`<p class="address">${place.address}</p>` : ''}
+      <div class="btnrow">
+        ${place.mapsUrl ? linkBtn(place.mapsUrl, 'Kaart', 'pin', 'btn-maps') : ''}
+        ${place.phone ? h`<a class="btn" href="tel:${place.phone.replace(/\s/g, '')}">${icon('phone')}Bellen</a>` : ''}
+        ${LINK_SLOTS.map((slot) => linkBtn(l[slot.key], slot.label, slot.icon, 'btn-social'))}
+      </div>
+    </article>`;
+}
+
 function itemCard(item) {
   const links = item.links || {};
+  // lege slots alleen bij een echte locatie, anders wordt het ruis op logistieke regels
+  const showSlots = Boolean(item.mapsUrl) || LINK_SLOTS.some((slot) => links[slot.key]);
   return h`
     <article class="card" id="item-${item.id}">
       <div class="card-top">
@@ -61,31 +80,30 @@ function itemCard(item) {
       </div>
       ${item.desc ? h`<p class="desc">${item.desc}</p>` : ''}
       ${item.address ? h`<p class="address">${item.address}</p>` : ''}
+      ${item.warn ? h`<p class="warn"><strong>Let op:</strong> ${item.warn}</p>` : ''}
       ${item.check ? h`<p class="check"><strong>Nog checken:</strong> ${item.check}</p>` : ''}
       <div class="btnrow">
         ${item.mapsUrl ? linkBtn(item.mapsUrl, 'Kaart', 'pin', 'btn-maps') : ''}
-        ${LINK_SLOTS.map((slot) => linkBtn(links[slot.key], slot.label, slot.icon, 'btn-social'))}
+        ${showSlots ? LINK_SLOTS.map((slot) => linkBtn(links[slot.key], slot.label, slot.icon, 'btn-social')) : ''}
       </div>
+      ${item.places && item.places.length ? h`<div class="places">${item.places.map(placeCard)}</div>` : ''}
     </article>`;
 }
 
-function routeCard(route) {
-  if (!route) return '';
-  let body;
-  if (route.embedUrl) {
-    body = h`<div class="route-embed"><iframe src="${route.embedUrl}" loading="lazy" title="Routekaart ${route.title}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>`;
-  } else {
-    body = h`<div class="route-empty"><span>Routekaart volgt</span><small>Zet een Google Maps embed-link in <code>route.embedUrl</code> of een GPX-bestand in <code>route.gpxUrl</code>.</small></div>`;
-  }
+function routeCard(r) {
   return h`
     <section class="routecard">
-      <p class="route-label">Route</p>
-      <h3>${route.title}</h3>
-      ${route.summary ? h`<p class="route-summary">${route.summary}</p>` : ''}
-      ${body}
+      <div class="route-head">
+        <p class="route-label">Route</p>
+        <span class="route-mode">${r.mode}</span>
+      </div>
+      <h3>${r.title}</h3>
+      ${r.summary ? h`<p class="route-summary">${r.summary}</p>` : ''}
+      ${r.via && r.via.length ? h`<ol class="route-via">${r.via.map((v) => h`<li>${v}</li>`)}</ol>` : ''}
+      ${r.embedUrl ? h`<div class="route-embed"><iframe src="${r.embedUrl}" loading="lazy" title="Routekaart ${r.title}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>` : ''}
       <div class="btnrow">
-        ${route.mapsUrl ? linkBtn(route.mapsUrl, 'Open in Maps', 'route', 'btn-maps') : ''}
-        ${route.gpxUrl ? linkBtn(route.gpxUrl, 'GPX', 'download') : ''}
+        ${r.mapsUrl ? linkBtn(r.mapsUrl, 'Route in Maps', 'route', 'btn-maps') : ''}
+        ${r.gpxUrl ? linkBtn(r.gpxUrl, 'GPX', 'download') : ''}
       </div>
     </section>`;
 }
@@ -99,8 +117,9 @@ function dayView(day) {
         <p class="view-sub">${day.sub}</p>
         ${day.intro ? h`<p class="view-intro">${day.intro}</p>` : ''}
       </header>
-      ${routeCard(day.route)}
+      ${(day.routes || []).map(routeCard)}
       ${day.items.map(itemCard)}
+      ${day.outro ? h`<p class="outro">${day.outro}</p>` : ''}
     </section>`;
 }
 

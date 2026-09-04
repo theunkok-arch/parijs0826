@@ -385,16 +385,78 @@ body {
   color: var(--ink-mute);
 }
 
-.check {
+.warn {
   margin: 10px 0 0;
   padding: 10px 14px;
   border-radius: 14px;
-  background: #FFF9E3;
+  background: #FFF3C9;
   color: #7A5F12;
   font-size: 14px;
   line-height: 1.5;
 }
+.warn strong { font-weight: 800; }
+
+.outro {
+  margin: 14px 0 0;
+  padding: 14px 16px;
+  border: 1px dashed rgba(43, 43, 63, 0.2);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.check {
+  margin: 10px 0 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--ink-mute);
+  font-size: 14px;
+  line-height: 1.5;
+}
 .check strong { font-weight: 800; }
+
+/* ---------- Eetplekken binnen een kaart ---------- */
+
+.places {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.place {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.place-role {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.place h4 {
+  margin: 2px 0 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.place-desc {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.place .address { margin-top: 4px; }
+.place .btnrow { margin-top: 10px; }
+.place .btn { background: var(--card); }
 
 /* ---------- Praktisch-rijen ---------- */
 
@@ -444,6 +506,56 @@ body {
   background: var(--accent-soft);
 }
 
+.route-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.route-mode {
+  flex-shrink: 0;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--accent-deep);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.route-via {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 15px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route-via li {
+  position: relative;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.route-via li + li::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  border-right: 1.5px solid var(--ink-mute);
+  border-top: 1.5px solid var(--ink-mute);
+  transform: rotate(45deg);
+}
+
 .route-label {
   margin: 0;
   font-size: 11px;
@@ -463,38 +575,6 @@ body {
   margin: 4px 0 0;
   font-size: 14px;
   color: var(--ink-soft);
-}
-
-.route-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  aspect-ratio: 16 / 10;
-  margin-top: 12px;
-  padding: 16px;
-  border: 2px dashed rgba(43, 43, 63, 0.18);
-  border-radius: 14px;
-  text-align: center;
-}
-
-.route-empty span {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--ink-mute);
-}
-
-.route-empty small {
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--ink-mute);
-  opacity: 0.85;
-}
-
-.route-empty code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
 }
 
 .route-embed {
