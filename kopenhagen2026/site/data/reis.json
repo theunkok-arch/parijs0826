@@ -47,16 +47,16 @@
       "intro": "Lange rijdag met de camper. Als alles meezit staan we rond etenstijd op de camping en houden we de avond rustig.",
       "routes": [
         {
-          "title": "Amsterdam naar CityCamp Kopenhagen",
+          "title": "Reinier Vinkeleskade naar CityCamp Kopenhagen",
           "mode": "Camper",
           "summary": "Ongeveer 900 km, met de Storebæltbrug als laatste stuk voor Sjælland. Tol betaal je bij de brug, zie Praktisch.",
           "via": [
-            "Amsterdam",
+            "Reinier Vinkeleskade",
             "Hamburg",
             "Storebæltbrug",
             "CityCamp"
           ],
-          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Amsterdam%2C%20Nederland&destination=Prags%20Boulevard%2069%2C%202300%20K%C3%B8benhavn%20S&travelmode=driving",
+          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Reinier%20Vinkeleskade%2037%2C%201071%20SV%20Amsterdam&destination=Prags%20Boulevard%2069%2C%202300%20K%C3%B8benhavn%20S&travelmode=driving",
           "embedUrl": null,
           "gpxUrl": null
         }
@@ -76,13 +76,15 @@
         {
           "id": "wo-vertrek",
           "time": "11:00",
-          "title": "Vertrek Amsterdam",
+          "title": "Vertrek Reinier Vinkeleskade",
           "desc": "Vanaf hier zit je een dag op de weg. Spreek af wie welk stuk rijdt en plan de pauzes rond het tanken.",
           "links": {
             "web": "",
             "insta": "",
             "tiktok": ""
-          }
+          },
+          "address": "Reinier Vinkeleskade 37, 1071 SV Amsterdam",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Reinier%20Vinkeleskade%2037%2C%201071%20SV%20Amsterdam"
         },
         {
           "id": "wo-onderweg",
