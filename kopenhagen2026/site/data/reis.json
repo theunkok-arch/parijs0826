@@ -8,8 +8,8 @@
     "status": "Programma van 9 t/m 14 september 2026. Adressen, routes en contactgegevens zijn online nagekeken.",
     "hero": {
       "file": "nyhavn",
-      "alt": "De gekleurde gevels langs de gracht van Nyhavn in Kopenhagen",
-      "webp": false
+      "alt": "De gekleurde gevels van Nyhavn met houten boten in de gracht, in het licht van de avondschemering",
+      "webp": true
     }
   },
   "overview": {
@@ -151,8 +151,8 @@
       ],
       "hero": {
         "file": "storebaelt",
-        "alt": "De Storebæltbrug over de zeestraat tussen Fyn en Sjælland",
-        "webp": false
+        "alt": "De Storebæltbrug als silhouet boven het water, bij zonsondergang",
+        "webp": true
       }
     },
     {
@@ -210,8 +210,8 @@
           },
           "img": {
             "file": "amalienborg",
-            "alt": "Het paleisplein van Amalienborg met de ruiterstandbeeld in het midden",
-            "webp": false
+            "alt": "Het paleisplein van Amalienborg in de schemering, met het ruiterstandbeeld en de koepel van de Frederikskerk erachter",
+            "webp": true
           }
         },
         {
@@ -228,8 +228,8 @@
           },
           "img": {
             "file": "kastellet",
-            "alt": "De graswallen en gracht van het stervormige fort Kastellet",
-            "webp": false
+            "alt": "De groene wal van Kastellet met de molen erbovenop, weerspiegeld in de gracht op een heldere herfstdag",
+            "webp": true
           }
         },
         {
@@ -246,8 +246,8 @@
           },
           "img": {
             "file": "torvehallerne",
-            "alt": "Kramen met verse waren in de glazen markthallen van Torvehallerne",
-            "webp": false
+            "alt": "Een kruidenkraam vol glazen potten in de markthal van Torvehallerne",
+            "webp": true
           }
         },
         {
@@ -264,8 +264,8 @@
           },
           "img": {
             "file": "koedbyen-vesterbro",
-            "alt": "De witte hallen van Kødbyen, de oude slachthuiswijk in Vesterbro",
-            "webp": false
+            "alt": "Een breed kruispunt in Kopenhagen met fietsers en oude gevels aan weerszijden",
+            "webp": true
           }
         },
         {
@@ -310,8 +310,8 @@
       ],
       "hero": {
         "file": "nyhavn",
-        "alt": "De gekleurde gevels en houten boten aan de kade van Nyhavn",
-        "webp": false
+        "alt": "De gekleurde gevels van Nyhavn met houten boten in de gracht, in het licht van de avondschemering",
+        "webp": true
       }
     },
     {
@@ -389,8 +389,8 @@
           },
           "img": {
             "file": "valbyparken",
-            "alt": "Het groen van Valbyparken, waar het festival plaatsvindt",
-            "webp": false
+            "alt": "Festivalpubliek met de handen in de lucht voor het podium, tegen de laagstaande zon",
+            "webp": true
           }
         },
         {
@@ -409,8 +409,8 @@
       ],
       "hero": {
         "file": "amager-strandpark",
-        "alt": "Het brede zandstrand van Amager Strandpark aan de Sont",
-        "webp": false
+        "alt": "Het zandstrand van Amager Strandpark met helmgras, windmolens op zee en een donkere regenlucht",
+        "webp": true
       }
     },
     {
@@ -517,8 +517,8 @@
           ],
           "img": {
             "file": "gilleleje",
-            "alt": "Vissersboten in de haven van Gilleleje",
-            "webp": false
+            "alt": "De witte vuurtoren Nakkehoved bij Gilleleje met de Deense vlag, hoog boven de zee",
+            "webp": true
           }
         },
         {
@@ -563,15 +563,15 @@
           ],
           "img": {
             "file": "noerrebro",
-            "alt": "Een straat in Nørrebro met winkels en terrassen",
-            "webp": false
+            "alt": "Het Superkilen-park in Nørrebro met bloeiende kersenbomen boven de witte golflijnen op het plein",
+            "webp": true
           }
         }
       ],
       "hero": {
         "file": "hornbaek",
-        "alt": "De kust bij Hornbæk aan de noordkant van Sjælland",
-        "webp": false
+        "alt": "De kust van boven gezien: herfstbos, een pad langs het strand en turkoois water met branding",
+        "webp": true
       }
     },
     {
@@ -719,8 +719,8 @@
       "outro": "Camper inleveren: maandag 14 september voor 09:00. Tanken, watertank en toilet legen en alles eruit halen voordat je wegrijdt.",
       "hero": {
         "file": "gokart",
-        "alt": "Kartbaan met karts in de bocht",
-        "webp": false
+        "alt": "Karts van bovenaf gezien tussen de stapels autobanden langs de baan",
+        "webp": true
       }
     }
   ],
@@ -816,14 +816,93 @@
       },
       "img": {
         "file": "storebaelt",
-        "alt": "De Storebæltbrug gezien vanaf de weg",
-        "webp": false
+        "alt": "De Storebæltbrug als silhouet boven het water, bij zonsondergang",
+        "webp": true
       }
     }
   ],
   "credits": {
     "title": "Fotoverantwoording",
-    "intro": "",
-    "photos": []
+    "intro": "De foto's komen van Unsplash, op een na. De foto van Torvehallerne is gemaakt door Jorge Franganillo en staat hier onder de CC BY 2.0 licentie.",
+    "photos": [
+      {
+        "subject": "Nyhavn",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc"
+      },
+      {
+        "subject": "Amalienborg",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1665112961914-f75f07281f8d"
+      },
+      {
+        "subject": "Kastellet",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1685131702833-c0175fa822f0"
+      },
+      {
+        "subject": "Vesterbro",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1535272518984-73bf7a3e36d7"
+      },
+      {
+        "subject": "Amager Strandpark",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1653155131694-a850b58131b1"
+      },
+      {
+        "subject": "Valbyparken",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1684348406379-950ef79e81c9"
+      },
+      {
+        "subject": "Hornbæk",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1603536520481-8b6840ec6c40"
+      },
+      {
+        "subject": "Gilleleje",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1558100096-654c7c1fabb7"
+      },
+      {
+        "subject": "Nørrebro",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1651598165241-7ac92988a11b"
+      },
+      {
+        "subject": "Reffen",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1768661608069-791be520e7a4"
+      },
+      {
+        "subject": "Storebæltbrug",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1786377281262-a09226cb32e6"
+      },
+      {
+        "subject": "Kartbaan",
+        "photographer": "",
+        "license": "Unsplash-licentie",
+        "url": "https://images.unsplash.com/photo-1783954754492-3a170ebf03bc"
+      },
+      {
+        "subject": "Torvehallerne",
+        "photographer": "Jorge Franganillo",
+        "license": "CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
+      }
+    ]
   }
 }

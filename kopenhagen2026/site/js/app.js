@@ -223,7 +223,7 @@ function creditsView(credits) {
           ${credits.photos.map((c) => h`
             <li>
               <span class="colofon-subject">${c.subject}</span>
-              <span class="colofon-meta">${c.photographer}${c.license ? h` &middot; ${c.license}` : ''}</span>
+              <span class="colofon-meta">${[c.photographer, c.license].filter(Boolean).join(' \u00b7 ')}</span>
               ${c.url ? h`<a href="${c.url}" target="_blank" rel="noopener">Bron</a>` : ''}
             </li>`)}
         </ul>
