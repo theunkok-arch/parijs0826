@@ -565,7 +565,8 @@
             "file": "noerrebro",
             "alt": "Het Superkilen-park in Nørrebro met bloeiende kersenbomen boven de witte golflijnen op het plein",
             "webp": true
-          }
+          },
+          "warn": "Jeroen en Joep: reserveer voor zaterdagavond. Bæst is klein en zit op zaterdag snel vol, en Mirabelle ernaast net zo goed. Bel er een dag van tevoren achteraan, de nummers staan hieronder bij de zaken zelf."
         }
       ],
       "hero": {
@@ -597,15 +598,15 @@
           "gpxUrl": null
         },
         {
-          "title": "Vandel naar Amsterdam",
+          "title": "Vandel naar de Reinier Vinkeleskade",
           "mode": "Camper",
-          "summary": "Laatste etappe. Vertrek rond 14:00, thuis tussen 20:30 en 21:00.",
+          "summary": "Laatste etappe naar huis. Vertrek rond 14:00, thuis tussen 20:30 en 21:00.",
           "via": [
             "Vandel",
             "Hamburg",
-            "Amsterdam"
+            "Reinier Vinkeleskade"
           ],
-          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=T%C3%A5rnvej%208%2C%207184%20Vandel&destination=Amsterdam%2C%20Nederland&travelmode=driving",
+          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=T%C3%A5rnvej%208%2C%207184%20Vandel&destination=Reinier%20Vinkeleskade%2037%2C%201071%20SV%20Amsterdam&travelmode=driving",
           "embedUrl": null,
           "gpxUrl": null
         }
@@ -695,7 +696,7 @@
           "time": "14:00",
           "title": "Vertrek richting Amsterdam",
           "desc": "Ongeveer zeven uur rijden. De tol bij de Storebæltbrug heb je vanochtend al betaald, dit stuk gaat via Jutland en Duitsland naar huis. Tanken doe je goedkoper in Duitsland dan in Denemarken.",
-          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=T%C3%A5rnvej%208%2C%207184%20Vandel&destination=Amsterdam%2C%20Nederland&travelmode=driving",
+          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=T%C3%A5rnvej%208%2C%207184%20Vandel&destination=Reinier%20Vinkeleskade%2037%2C%201071%20SV%20Amsterdam&travelmode=driving",
           "links": {
             "web": "",
             "insta": "",
@@ -705,10 +706,10 @@
         {
           "id": "zo-thuis",
           "time": "20:30",
-          "title": "Thuis in Amsterdam",
+          "title": "Thuis aan de Reinier Vinkeleskade",
           "desc": "Aankomst tussen 20:30 en 21:00. Haal er alleen uit wat mee naar binnen moet, de rest blijft staan voor morgen.",
-          "address": "Amsterdam, Nederland",
-          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amsterdam%2C%20Nederland",
+          "address": "Reinier Vinkeleskade 37, 1071 SV Amsterdam",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Reinier%20Vinkeleskade%2037%2C%201071%20SV%20Amsterdam",
           "links": {
             "web": "",
             "insta": "",
@@ -793,7 +794,7 @@
     {
       "id": "storebaelt",
       "title": "Storebæltbrug: 2x tol",
-      "text": "De brug tussen Fyn en Sjælland is tolweg en we passeren hem twee keer: op de heenweg woensdag en op de terugweg zondag. Reken dus twee keer af. Het tarief hangt af van de lengte en de hoogte van de camper, een camper valt in een duurdere klasse dan een personenauto.",
+      "text": "De brug tussen Fyn en Sjælland is tolweg en we passeren hem twee keer: op de heenweg woensdag en op zondagochtend op weg naar Vandel. Je betaalt niet vooraf, maar ter plekke bij het tolplein. Het tarief hangt af van de lengte en de hoogte van de camper, een camper valt in een duurdere klasse dan een personenauto.",
       "rows": [
         {
           "label": "Heenweg",
@@ -804,13 +805,17 @@
           "value": "zondag 13 september"
         },
         {
+          "label": "Betalen",
+          "value": "ter plekke bij het tolplein"
+        },
+        {
           "label": "Tarief",
           "value": "naar lengte en hoogte van de camper"
         }
       ],
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Storeb%C3%A6ltsbroen%20Danmark",
       "links": {
-        "web": "",
+        "web": "https://storebaelt.dk/en/traffic-weather/toll-booth/",
         "insta": "",
         "tiktok": ""
       },
@@ -822,87 +827,7 @@
     }
   ],
   "credits": {
-    "title": "Fotoverantwoording",
-    "intro": "De foto's komen van Unsplash, op een na. De foto van Torvehallerne is gemaakt door Jorge Franganillo en staat hier onder de CC BY 2.0 licentie.",
-    "photos": [
-      {
-        "subject": "Nyhavn",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc"
-      },
-      {
-        "subject": "Amalienborg",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1665112961914-f75f07281f8d"
-      },
-      {
-        "subject": "Kastellet",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1685131702833-c0175fa822f0"
-      },
-      {
-        "subject": "Vesterbro",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1535272518984-73bf7a3e36d7"
-      },
-      {
-        "subject": "Amager Strandpark",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1653155131694-a850b58131b1"
-      },
-      {
-        "subject": "Valbyparken",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1684348406379-950ef79e81c9"
-      },
-      {
-        "subject": "Hornbæk",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1603536520481-8b6840ec6c40"
-      },
-      {
-        "subject": "Gilleleje",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1558100096-654c7c1fabb7"
-      },
-      {
-        "subject": "Nørrebro",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1651598165241-7ac92988a11b"
-      },
-      {
-        "subject": "Reffen",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1768661608069-791be520e7a4"
-      },
-      {
-        "subject": "Storebæltbrug",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1786377281262-a09226cb32e6"
-      },
-      {
-        "subject": "Kartbaan",
-        "photographer": "",
-        "license": "Unsplash-licentie",
-        "url": "https://images.unsplash.com/photo-1783954754492-3a170ebf03bc"
-      },
-      {
-        "subject": "Torvehallerne",
-        "photographer": "Jorge Franganillo",
-        "license": "CC BY 2.0",
-        "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
-      }
-    ]
+    "required": "Foto Torvehallerne: Jorge Franganillo, CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
   }
 }
