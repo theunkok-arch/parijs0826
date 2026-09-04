@@ -83,7 +83,7 @@
           "id": "wo-onderweg",
           "time": "Onderweg",
           "title": "Eten onderweg",
-          "desc": "Geen vaste stop, we eten waar het uitkomt. Rond Hamburg is het laatste logische moment voor een echte pauze voordat je Denemarken in rijdt.",
+          "desc": "Geen vaste stop, we eten waar het uitkomt. Doe dat wel serieus onderweg: in Kopenhagen sluiten de meeste keukens om 22:00, dus rond Hamburg of Rødby is de laatste plek voor een echte maaltijd.",
           "links": {
             "web": "",
             "insta": "",
@@ -107,7 +107,7 @@
           "id": "wo-avond",
           "time": "Avond",
           "title": "Rustige avond op de camping",
-          "desc": "Camper opstellen, fietsen eraf, accu's aan de lader. Wie na de rit nog trek heeft, kan hieronder terecht.",
+          "desc": "Camper opstellen, fietsen eraf, accu's aan de lader. Wie na de rit nog trek heeft: hieronder de twee opties die om deze tijd nog open zijn.",
           "links": {
             "web": "",
             "insta": "",
@@ -117,7 +117,7 @@
             {
               "role": "Vaste keuze",
               "name": "Mother",
-              "desc": "Napolitaanse pizza uit de houtoven in een oude slachthal. Luidruchtig, ontspannen en de keuken draait door tot 23:00, dus ook laat op de avond nog te doen.",
+              "desc": "Napolitaanse pizza uit de houtoven in een oude slachthal. De keuken draait op maandag tot en met donderdag tot 23:00, en dat is bij aankomst zo'n beetje de laatste warme maaltijd van de stad. Vanaf de camping is het ongeveer 5 km fietsen, dus uiterlijk rond 22:15 weg.",
               "address": "Høkerboderne 9-15, København V",
               "phone": "+45 22 27 58 98",
               "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mother%20H%C3%B8kerboderne%209-15%2C%20K%C3%B8benhavn%20V",
@@ -129,19 +129,19 @@
             },
             {
               "role": "Plan B",
-              "name": "Reffen",
-              "desc": "Streetfoodmarkt buiten aan het water op Refshaleøen, iedereen kiest zijn eigen kraam. Sluit een stuk vroeger dan de stad, dus alleen als jullie op tijd binnen zijn.",
-              "address": "Refshalevej 167A, København K",
-              "phone": "",
-              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Reffen%20Copenhagen%20Street%20Food",
+              "name": "Amar Konya Kebab",
+              "desc": "Turkse grill op ruim een kilometer van de camping, dus geen rit de stad in. Simpel, snel en precies goed na een dag rijden.",
+              "address": "Amagerbrogade 102, 2300 København S",
+              "phone": "+45 32 55 35 60",
+              "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amar%20Konya%20Kebab%20Amagerbrogade%20102%2C%202300%20K%C3%B8benhavn%20S",
               "links": {
-                "web": "https://reffen.dk/en/",
-                "insta": "https://www.instagram.com/reffen_copenhagenstreetfood/",
+                "web": "https://www.amarkonya.dk/",
+                "insta": "",
                 "tiktok": ""
               }
             }
           ],
-          "check": "Openingsdagen en sluitingstijd van Reffen in september, dat wisselt per seizoen."
+          "check": "Openingstijden van Amar Konya verschillen per bron (21:30 of 22:00). Bel even als je daar naartoe wilt."
         }
       ]
     },
@@ -242,7 +242,7 @@
           "id": "do-diner",
           "time": "Avond",
           "title": "Diner in Kødbyen",
-          "desc": "Blijven eten waar je toch al bent. De hallen lopen 's avonds vol en je hoeft nergens netjes voor te zijn.",
+          "desc": "Blijven eten waar je toch al bent. De hallen lopen 's avonds vol en je hoeft nergens netjes voor te zijn. Let op de keukentijd: bij WarPigs stopt het eten om 22:00, de bar gaat door.",
           "links": {
             "web": "",
             "insta": "",
