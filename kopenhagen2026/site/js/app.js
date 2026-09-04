@@ -210,25 +210,14 @@ function praktischView(data) {
     </section>`;
 }
 
-/* Fotoverantwoording. Verplicht bij de licentie van de foto's, dus dit blok
-   hoort te verschijnen zodra er ook maar een foto op de site staat. */
+/* De Unsplash-licentie vraagt geen naamsvermelding, de foto van Torvehallerne
+   staat onder CC BY 2.0 en die credit is wel verplicht. Vandaar deze ene regel. */
 function creditsView(credits) {
-  if (!credits || !credits.photos || !credits.photos.length) return '';
-  return h`
-    <details class="colofon">
-      <summary>${credits.title || 'Fotoverantwoording'}</summary>
-      <div class="colofon-body">
-        ${credits.intro ? h`<p class="colofon-intro">${credits.intro}</p>` : ''}
-        <ul>
-          ${credits.photos.map((c) => h`
-            <li>
-              <span class="colofon-subject">${c.subject}</span>
-              <span class="colofon-meta">${[c.photographer, c.license].filter(Boolean).join(' \u00b7 ')}</span>
-              ${c.url ? h`<a href="${c.url}" target="_blank" rel="noopener">Bron</a>` : ''}
-            </li>`)}
-        </ul>
-      </div>
-    </details>`;
+  if (!credits || !credits.required) return '';
+  const text = credits.url
+    ? h`<a href="${credits.url}" target="_blank" rel="noopener">${credits.required}</a>`
+    : credits.required;
+  return h`<p class="fotocredit">${text}</p>`;
 }
 
 /* ---------- Navigatie ---------- */
@@ -263,22 +252,6 @@ function firstViewId(data) {
   return today ? today.id : 'start';
 }
 
-/* ---------- Delen ---------- */
-
-async function share(meta) {
-  const btn = $('#share-btn');
-  const url = meta.url || location.href;
-  const done = () => {
-    btn.textContent = 'Gekopieerd';
-    setTimeout(() => { btn.textContent = 'Deel'; }, 2000);
-  };
-  if (navigator.share) {
-    try { await navigator.share({ title: meta.title, text: meta.subtitle, url }); } catch { /* geannuleerd */ }
-    return;
-  }
-  try { await navigator.clipboard.writeText(url); done(); } catch { /* geen toegang */ }
-}
-
 /* ---------- Start ---------- */
 
 async function init() {
@@ -298,7 +271,7 @@ async function init() {
   $('#footer-status').textContent = data.meta.status;
 
   mount($('#daynav'), navView(data));
-  mount($('#colofon'), creditsView(data.credits));
+  mount($('#fotocredit'), creditsView(data.credits));
   mount($('#main'), h`${homeView(data)}${data.days.map(dayView)}${praktischView(data)}`);
 
   $('#daynav').addEventListener('click', (e) => {
@@ -323,7 +296,6 @@ async function init() {
   });
 
   window.addEventListener('hashchange', () => showView(location.hash.slice(1) || 'start'));
-  $('#share-btn').addEventListener('click', () => share(data.meta));
 
   showView(firstViewId(data));
 }

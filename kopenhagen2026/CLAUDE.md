@@ -16,8 +16,9 @@ Eigenaar: Dominique. Mobile-first is heilig, ontworpen op 390px breed.
 - Externe links altijd `target="_blank" rel="noopener"`.
 - Foto's: max 1200px breed, Nederlandse alt-tekst verplicht, `"webp": true` alleen als dat
   bestand er echt is (een `<picture>` valt niet terug op de jpg bij een 404).
-- **Staat er een foto op de site, dan moet die in `credits.photos` staan met fotograaf en
-  licentie.** Dat is een licentievoorwaarde, geen nette-bedoening.
+- De Unsplash-foto's vragen geen naamsvermelding. De foto van Torvehallerne staat onder
+  CC BY 2.0 en **die credit moet op de site blijven** (`credits.required` in de data).
+  Verdwijnt die foto, dan mag de regel weg.
 
 ## Strikt gescheiden van het Parijs-project
 Deze map is een op zichzelf staand project met een eigen `netlify.toml` en een eigen

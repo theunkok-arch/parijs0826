@@ -142,26 +142,20 @@ Regels voor de bestanden:
   terug op de jpg als de opgegeven bron een 404 geeft
 - ontbreekt de foto helemaal, dan haalt de site het beeld netjes weg
 
-### Fotoverantwoording (verplicht)
-Onder `credits` staan de rechten. Het blok verschijnt onderaan de site als
-uitklapbaar colofon, en verdwijnt vanzelf als de lijst leeg is. **Zolang er
-foto's op de site staan hoort deze lijst gevuld te zijn, dat is een voorwaarde
-van de licenties.**
+### Fotocredit
+De foto's komen van Unsplash en die licentie vraagt geen naamsvermelding. Eén foto is
+de uitzondering: Torvehallerne staat onder CC BY 2.0 en die credit **moet** op de site
+blijven staan. Dat is de kleine regel onderaan, uit `credits`:
 
 ```json
 "credits": {
-  "title": "Fotoverantwoording",
-  "intro": "Optionele regel boven de lijst.",
-  "photos": [
-    {
-      "subject": "Nyhavn",
-      "photographer": "Naam van de fotograaf",
-      "license": "CC BY 4.0",
-      "url": "https://bron-van-de-foto"
-    }
-  ]
+  "required": "Foto Torvehallerne: Jorge Franganillo, CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
 }
 ```
+
+Laat je `required` leeg, dan verdwijnt de regel. Doe dat alleen als je ook de foto van
+Torvehallerne van de site haalt, anders klopt de licentie niet meer.
 
 ### Afsluiting van een dag
 `outro` onderaan een dagblok wordt een omkaderde regel onder de laatste activiteit.

@@ -78,29 +78,6 @@ body {
   color: var(--ink-mute);
 }
 
-.header-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 8px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--card);
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 /* ---------- Navigatie ---------- */
 
 .daynav {
@@ -713,74 +690,20 @@ body {
   color: var(--ink-soft);
 }
 
-/* ---------- Colofon met de fotocredits ---------- */
+/* ---------- Fotocredit ---------- */
 
-.colofon {
-  margin-top: 14px;
-  padding: 0 4px;
-  text-align: left;
-}
-
-.colofon summary {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--ink-soft);
-  cursor: pointer;
-  list-style: none;
-}
-.colofon summary::-webkit-details-marker { display: none; }
-.colofon summary::before {
-  content: '';
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  margin-right: 9px;
-  border-right: 2px solid var(--ink-mute);
-  border-bottom: 2px solid var(--ink-mute);
-  transform: rotate(-45deg);
-  transition: transform 0.15s;
-}
-.colofon[open] summary::before { transform: rotate(45deg); }
-
-.colofon-intro {
-  margin: 0 0 8px;
-  font-size: 13px;
+.fotocredit {
+  margin: 10px 0 0;
+  font-size: 11px;
   color: var(--ink-mute);
+  opacity: 0.75;
 }
-
-.colofon-body ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.colofon-body li {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 8px;
-  padding: 7px 0;
-  border-bottom: 1px solid var(--line-soft);
-  font-size: 13px;
-}
-.colofon-body li:last-child { border-bottom: none; }
-
-.colofon-subject {
-  flex: 1 0 100%;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.colofon-meta { color: var(--ink-mute); }
-
-.colofon-body a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--ink-soft);
-  text-underline-offset: 3px;
+.fotocredit a {
+  display: inline-block;
+  padding: 8px 0;
+  color: inherit;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
 }
 
 /* ---------- Footer ---------- */
