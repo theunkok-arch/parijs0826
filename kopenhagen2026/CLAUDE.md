@@ -6,8 +6,9 @@ Eigenaar: Dominique. Mobile-first is heilig, ontworpen op 390px breed.
 ## Regels
 - **`site/data/reis.json` is de enige bron van waarheid.** Alle dagen, activiteiten, tijden,
   routes, links en praktische info staan daar. Nooit content hardcoden in HTML of JS.
-- Het programma is een werkversie en verandert nog. Verzin geen tijden, prijzen of feiten.
-  Weet je iets niet zeker, zet het dan in het veld `check` in plaats van het in te vullen.
+- Verzin geen tijden, prijzen, adressen of accounts. Adressen, telefoonnummers, websites en
+  social-accounts zijn online opgezocht. Weet je iets niet zeker, zet het in het veld `check`
+  in plaats van het in te vullen. Geen placeholders in de content.
 - Puur statisch: geen build-stap, geen npm dependencies. `site/` is de publish-map.
 - Nederlands is de enige taal. Toon: warm, direct, geen jargon. Geen em-dashes, gebruik
   komma's, punten of haakjes.
@@ -20,7 +21,7 @@ Netlify-site (`cph2026`, op cph2026.netlify.app). Raak niets aan buiten `kopenha
 `netlify.toml`, `site/`, `docs/` en `prompts/` horen bij de Parijs-site.
 
 ## Structuur
-- `site/data/reis.json` - meta, overview, days (met route en items), praktisch
+- `site/data/reis.json` - meta, overview, days (routes, items, places, outro), praktisch
 - `site/js/app.js` - rendert alle views, hash-routing, deel-knop
 - `site/js/html.js` - `h` tagged template die automatisch escapet, plus `raw` en `mount`
 - `site/css/style.css` - accenten via `[data-accent]` custom properties

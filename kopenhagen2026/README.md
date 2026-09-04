@@ -34,53 +34,82 @@ Plak dit blok in `items` van de juiste dag, op de plek waar het in de volgorde h
 
 ```json
 {
-  "id": "wo-tivoli",
+  "id": "do-tivoli",
   "time": "Avond",
   "title": "Tivoli",
   "desc": "Korte uitleg in een of twee zinnen.",
-  "address": "Vesterbrogade 3, Kopenhagen",
+  "address": "Vesterbrogade 3, 1630 København V",
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Tivoli+Copenhagen",
-  "check": "Wat we nog moeten uitzoeken. Laat weg als er niets te checken is.",
+  "warn": "Aandachtspunt dat je echt moet weten. Laat weg als er niets is.",
+  "check": "Iets dat nog uitgezocht moet worden. Laat weg als alles vaststaat.",
   "links": { "web": "", "insta": "", "tiktok": "" }
 }
 ```
 
 `id` moet uniek zijn, de rest van de velden mag je weglaten.
 De volgorde in het bestand is de volgorde op de site, er wordt niet gesorteerd.
+`warn` wordt een gele "Let op"-balk, `check` een grijze "Nog checken"-regel.
 
-### Links vullen (Instagram, TikTok, website)
+### Links vullen (website, Instagram, TikTok)
 Zet de URL tussen de aanhalingstekens:
 
 ```json
 "links": {
-  "web": "https://reffen.dk/",
-  "insta": "https://www.instagram.com/reffencph/",
+  "web": "https://reffen.dk/en/",
+  "insta": "https://www.instagram.com/reffen_copenhagenstreetfood/",
   "tiktok": ""
 }
 ```
 
-Een gevuld slot wordt een knop. Een leeg slot blijft staan als gestippelde plek,
-zodat je in een oogopslag ziet waar nog iets moet komen.
+Een gevuld slot wordt een knop. Een leeg slot blijft staan als gestippelde plek, zodat je
+in een oogopslag ziet waar nog iets moet komen. Bij regels zonder `mapsUrl` (dingen als
+"Vertrek Amsterdam") worden de lege slots weggelaten, anders wordt het ruis.
 
-### Een routekaart invullen
-Elke dag heeft een `route`-blok. Nu staat er een placeholder. Twee manieren om hem te vullen:
-
-1. **Google Maps embed**: open de route in Google Maps, klik Delen, dan Kaart insluiten,
-   kopieer alleen de URL uit `src="..."` en zet die in `embedUrl`.
-2. **GPX**: leg het bestand in `site/img/` (of maak `site/routes/`) en zet het pad in
-   `gpxUrl`, bijvoorbeeld `"routes/hornbaek-gilleleje.gpx"`.
+### Een restaurant met plan B toevoegen
+Zet een `places`-lijst in het item. De eerste is de vaste keuze, de tweede het plan B.
 
 ```json
-"route": {
-  "title": "Kustpad Hornbæk naar Gilleleje",
-  "summary": "Fietsen via Dronningmølle.",
-  "embedUrl": "https://www.google.com/maps/embed?pb=...",
-  "gpxUrl": null,
-  "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Hornbæk&destination=Gilleleje"
-}
+"places": [
+  {
+    "role": "Vaste keuze",
+    "name": "WarPigs Brewpub",
+    "desc": "Waarom hierheen, in een of twee zinnen.",
+    "address": "Flæsketorvet 25, 1711 København V",
+    "phone": "+45 43 48 48 48",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=WarPigs+Brewpub",
+    "links": { "web": "https://www.warpigs.dk/", "insta": "", "tiktok": "" }
+  },
+  { "role": "Plan B", "name": "..." }
+]
 ```
 
-`mapsUrl` is de knop "Open in Maps" en werkt los van de kaart zelf.
+`phone` wordt automatisch een belknop, dus die mag met spaties.
+
+### Routes aanpassen
+Elke dag heeft een `routes`-lijst, want sommige dagen hebben er twee (auto en fiets).
+`mapsUrl` is de knop "Route in Maps" en opent op de telefoon direct de Maps-app.
+
+```json
+"routes": [{
+  "title": "Kustpad Hornbæk, Dronningmølle, Gilleleje",
+  "mode": "E-bike",
+  "summary": "Ongeveer 15 km langs zee.",
+  "via": ["Hornbæk", "Dronningmølle", "Gilleleje"],
+  "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Hornb%C3%A6k&destination=Gilleleje&travelmode=bicycling",
+  "embedUrl": null,
+  "gpxUrl": null
+}]
+```
+
+Zelf een route-link maken:
+`https://www.google.com/maps/dir/?api=1&origin=VAN&destination=NAAR&travelmode=driving`
+(of `bicycling`). Tussenpunten voeg je toe met `&waypoints=A|B|C`.
+Zet `mode` op `Camper` of `E-bike`, dat is alleen het labeltje rechtsboven.
+`via` zijn de bolletjes onder de omschrijving.
+
+Wil je een echte kaart in de pagina: open de route in Google Maps, klik Delen, dan
+Kaart insluiten, kopieer alleen de URL uit `src="..."` en zet die in `embedUrl`.
+Een GPX-bestand leg je in `site/routes/` en zet je in `gpxUrl`.
 
 ### Een dag toevoegen of weghalen
 Kopieer een heel dagblok in `days`. Verplicht: `id`, `date` (JJJJ-MM-DD), `label`,
@@ -92,9 +121,12 @@ Navigatie, homepagina en datum-weergave passen zich vanzelf aan.
 Onder `praktisch` staan de blokken met de vaste afspraken. `rows` is de tabel eronder;
 zet er `"href"` bij voor een klikbare mail (`mailto:...`) of telefoon (`tel:...`).
 
+### Afsluiting van een dag
+`outro` onderaan een dagblok wordt een omkaderde regel onder de laatste activiteit.
+Zondag gebruikt die voor het inleveren van de camper op maandag.
+
 ### De kop en de statusregel
 Onder `meta` staan de titel, de ondertitel en de regel onderaan de site.
-`status` staat er nu als "Werkversie". Zet die op iets anders zodra het programma vaststaat.
 
 ## Lokaal bekijken
 
