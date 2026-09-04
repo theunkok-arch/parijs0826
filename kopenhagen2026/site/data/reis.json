@@ -247,7 +247,11 @@
           "img": {
             "file": "torvehallerne",
             "alt": "Een kruidenkraam vol glazen potten in de markthal van Torvehallerne",
-            "webp": true
+            "webp": true,
+            "credit": {
+              "text": "Foto: Jorge Franganillo, CC BY 2.0",
+              "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
+            }
           }
         },
         {
@@ -825,9 +829,5 @@
         "webp": true
       }
     }
-  ],
-  "credits": {
-    "required": "Foto Torvehallerne: Jorge Franganillo, CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
-  }
+  ]
 }

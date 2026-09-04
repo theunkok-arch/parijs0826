@@ -144,18 +144,23 @@ Regels voor de bestanden:
 
 ### Fotocredit
 De foto's komen van Unsplash en die licentie vraagt geen naamsvermelding. Eén foto is
-de uitzondering: Torvehallerne staat onder CC BY 2.0 en die credit **moet** op de site
-blijven staan. Dat is de kleine regel onderaan, uit `credits`:
+de uitzondering: Torvehallerne staat onder CC BY 2.0 en die credit **moet** erbij blijven.
+Die hangt aan de foto zelf, dus hij verschijnt alleen op de pagina waar de foto staat:
 
 ```json
-"credits": {
-  "required": "Foto Torvehallerne: Jorge Franganillo, CC BY 2.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
+"img": {
+  "file": "torvehallerne",
+  "alt": "...",
+  "webp": true,
+  "credit": {
+    "text": "Foto: Jorge Franganillo, CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Copenhagen_Torvehallerne_(30267894558).jpg"
+  }
 }
 ```
 
-Laat je `required` leeg, dan verdwijnt de regel. Doe dat alleen als je ook de foto van
-Torvehallerne van de site haalt, anders klopt de licentie niet meer.
+Laat `credit` weg en de regel verdwijnt. Doe dat alleen als je ook die foto vervangt of
+weghaalt, anders klopt de licentie niet meer.
 
 ### Afsluiting van een dag
 `outro` onderaan een dagblok wordt een omkaderde regel onder de laatste activiteit.
