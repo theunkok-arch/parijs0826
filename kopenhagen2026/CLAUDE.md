@@ -14,6 +14,10 @@ Eigenaar: Dominique. Mobile-first is heilig, ontworpen op 390px breed.
   komma's, punten of haakjes.
 - Design: pastel, ronde vormen (radius 20px, pill-knoppen), veel witruimte.
 - Externe links altijd `target="_blank" rel="noopener"`.
+- Foto's: max 1200px breed, Nederlandse alt-tekst verplicht, `"webp": true` alleen als dat
+  bestand er echt is (een `<picture>` valt niet terug op de jpg bij een 404).
+- **Staat er een foto op de site, dan moet die in `credits.photos` staan met fotograaf en
+  licentie.** Dat is een licentievoorwaarde, geen nette-bedoening.
 
 ## Strikt gescheiden van het Parijs-project
 Deze map is een op zichzelf staand project met een eigen `netlify.toml` en een eigen
@@ -21,7 +25,8 @@ Netlify-site (`cph2026`, op cph2026.netlify.app). Raak niets aan buiten `kopenha
 `netlify.toml`, `site/`, `docs/` en `prompts/` horen bij de Parijs-site.
 
 ## Structuur
-- `site/data/reis.json` - meta, overview, days (routes, items, places, outro), praktisch
+- `site/data/reis.json` - meta, overview, days (hero, routes, items, places, outro), praktisch, credits
+- `site/img/` - foto's als `naam.jpg`, optioneel `naam.webp` ernaast
 - `site/js/app.js` - rendert alle views, hash-routing, deel-knop
 - `site/js/html.js` - `h` tagged template die automatisch escapet, plus `raw` en `mount`
 - `site/css/style.css` - accenten via `[data-accent]` custom properties

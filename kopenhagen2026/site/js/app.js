@@ -43,13 +43,32 @@ function icon(name) {
   return raw(ICONS[name] || '');
 }
 
-/* Gevuld slot wordt een knop, leeg slot blijft zichtbaar als plek waar
-   de link nog moet komen. Zo blijft de kaart-layout altijd hetzelfde. */
+/* Een rij zonder knoppen laten we helemaal weg, anders blijft er marge staan. */
+function btnRow(buttons, extraClass = '') {
+  const filled = buttons.filter(Boolean);
+  if (!filled.length) return '';
+  return h`<div class="btnrow ${extraClass}">${filled}</div>`;
+}
+
+/* Zonder URL geen knop: een grijze dode knop is alleen maar ruis. */
 function linkBtn(url, label, iconName, extraClass = '') {
-  if (!url) {
-    return h`<span class="btn btn-slot ${extraClass}" aria-disabled="true" title="${label} nog toevoegen">${icon(iconName)}${label}</span>`;
-  }
+  if (!url) return '';
   return h`<a class="btn ${extraClass}" href="${url}" target="_blank" rel="noopener">${icon(iconName)}${label}</a>`;
+}
+
+/* Foto's staan in img/. De .webp-bron wordt alleen aangeboden als het bestand
+   er echt is (webp: true in de data): een <picture> valt namelijk NIET terug op
+   de <img> wanneer de gekozen <source> 404't, dan blijft het beeld leeg.
+   Ontbreekt de foto helemaal, dan haalt het error-vangnet in init() hem weg. */
+function picture(image, shape) {
+  if (!image || !image.file) return '';
+  const jpg = h`<img src="img/${image.file}.jpg" alt="${image.alt}" loading="lazy" decoding="async">`;
+  if (!image.webp) return h`<picture class="media media-${shape}">${jpg}</picture>`;
+  return h`
+    <picture class="media media-${shape}">
+      <source srcset="img/${image.file}.webp" type="image/webp">
+      ${jpg}
+    </picture>`;
 }
 
 function placeCard(place) {
@@ -60,11 +79,11 @@ function placeCard(place) {
       <h4>${place.name}</h4>
       <p class="place-desc">${place.desc}</p>
       ${place.address ? h`<p class="address">${place.address}</p>` : ''}
-      <div class="btnrow">
-        ${place.mapsUrl ? linkBtn(place.mapsUrl, 'Kaart', 'pin', 'btn-maps') : ''}
-        ${place.phone ? h`<a class="btn" href="tel:${place.phone.replace(/\s/g, '')}">${icon('phone')}Bellen</a>` : ''}
-        ${LINK_SLOTS.map((slot) => linkBtn(l[slot.key], slot.label, slot.icon, 'btn-social'))}
-      </div>
+      ${btnRow([
+        place.mapsUrl ? linkBtn(place.mapsUrl, 'Kaart', 'pin', 'btn-maps') : '',
+        place.phone ? h`<a class="btn" href="tel:${place.phone.replace(/\s/g, '')}">${icon('phone')}Bellen</a>` : '',
+        ...LINK_SLOTS.map((slot) => linkBtn(l[slot.key], slot.label, slot.icon, 'btn-social')),
+      ])}
     </article>`;
 }
 
@@ -73,7 +92,8 @@ function itemCard(item) {
   // lege slots alleen bij een echte locatie, anders wordt het ruis op logistieke regels
   const showSlots = Boolean(item.mapsUrl) || LINK_SLOTS.some((slot) => links[slot.key]);
   return h`
-    <article class="card" id="item-${item.id}">
+    <article class="card${item.img ? ' has-media' : ''}" id="item-${item.id}">
+      ${picture(item.img, 'card')}
       <div class="card-top">
         <span class="time-chip">${item.time}</span>
         <h3>${item.title}</h3>
@@ -82,10 +102,10 @@ function itemCard(item) {
       ${item.address ? h`<p class="address">${item.address}</p>` : ''}
       ${item.warn ? h`<p class="warn"><strong>Let op:</strong> ${item.warn}</p>` : ''}
       ${item.check ? h`<p class="check"><strong>Nog checken:</strong> ${item.check}</p>` : ''}
-      <div class="btnrow">
-        ${item.mapsUrl ? linkBtn(item.mapsUrl, 'Kaart', 'pin', 'btn-maps') : ''}
-        ${showSlots ? LINK_SLOTS.map((slot) => linkBtn(links[slot.key], slot.label, slot.icon, 'btn-social')) : ''}
-      </div>
+      ${btnRow([
+        item.mapsUrl ? linkBtn(item.mapsUrl, 'Kaart', 'pin', 'btn-maps') : '',
+        ...(showSlots ? LINK_SLOTS.map((slot) => linkBtn(links[slot.key], slot.label, slot.icon, 'btn-social')) : []),
+      ])}
       ${item.places && item.places.length ? h`<div class="places">${item.places.map(placeCard)}</div>` : ''}
     </article>`;
 }
@@ -101,10 +121,10 @@ function routeCard(r) {
       ${r.summary ? h`<p class="route-summary">${r.summary}</p>` : ''}
       ${r.via && r.via.length ? h`<ol class="route-via">${r.via.map((v) => h`<li>${v}</li>`)}</ol>` : ''}
       ${r.embedUrl ? h`<div class="route-embed"><iframe src="${r.embedUrl}" loading="lazy" title="Routekaart ${r.title}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>` : ''}
-      <div class="btnrow">
-        ${r.mapsUrl ? linkBtn(r.mapsUrl, 'Route in Maps', 'route', 'btn-maps') : ''}
-        ${r.gpxUrl ? linkBtn(r.gpxUrl, 'GPX', 'download') : ''}
-      </div>
+      ${btnRow([
+        r.mapsUrl ? linkBtn(r.mapsUrl, 'Route in Maps', 'route', 'btn-maps') : '',
+        r.gpxUrl ? linkBtn(r.gpxUrl, 'GPX', 'download') : '',
+      ])}
     </section>`;
 }
 
@@ -115,8 +135,9 @@ function dayView(day) {
         <h2>${day.label} <span class="view-date">${formatDate(day.date)}</span></h2>
         <span class="accent-bar"></span>
         <p class="view-sub">${day.sub}</p>
-        ${day.intro ? h`<p class="view-intro">${day.intro}</p>` : ''}
       </header>
+      ${picture(day.hero, 'hero')}
+      ${day.intro ? h`<p class="view-intro">${day.intro}</p>` : ''}
       ${(day.routes || []).map(routeCard)}
       ${day.items.map(itemCard)}
       ${day.outro ? h`<p class="outro">${day.outro}</p>` : ''}
@@ -128,11 +149,18 @@ function homeView(data) {
   return h`
     <section class="view" id="view-start" data-accent="sky">
       <section class="hero">
-        <p class="hero-dates">${meta.dates}</p>
-        <h2>${overview.headline}</h2>
-        <p class="hero-intro">${overview.intro}</p>
-        <div class="stats">
-          ${overview.stats.map((s) => h`<div class="stat"><span class="stat-value">${s.value}</span><span class="stat-label">${s.label}</span></div>`)}
+        <div class="hero-media">
+          ${picture(meta.hero, 'hero')}
+          <div class="hero-overlay">
+            <p class="hero-dates">${meta.dates}</p>
+            <h2>${overview.headline}</h2>
+          </div>
+        </div>
+        <div class="hero-body">
+          <p class="hero-intro">${overview.intro}</p>
+          <div class="stats">
+            ${overview.stats.map((s) => h`<div class="stat"><span class="stat-value">${s.value}</span><span class="stat-label">${s.label}</span></div>`)}
+          </div>
         </div>
       </section>
 
@@ -162,7 +190,8 @@ function praktischView(data) {
         <p class="view-sub">De dingen die vastliggen of vooraf geregeld moeten zijn.</p>
       </header>
       ${data.praktisch.map((p) => h`
-        <article class="card" id="praktisch-${p.id}">
+        <article class="card${p.img ? ' has-media' : ''}" id="praktisch-${p.id}">
+          ${picture(p.img, 'card')}
           <h3>${p.title}</h3>
           <p class="desc">${p.text}</p>
           ${p.rows && p.rows.length ? h`
@@ -173,9 +202,33 @@ function praktischView(data) {
                   <dd>${r.href ? h`<a href="${r.href}">${r.value}</a>` : r.value}</dd>
                 </div>`)}
             </dl>` : ''}
-          ${p.mapsUrl ? h`<div class="btnrow">${linkBtn(p.mapsUrl, 'Kaart', 'pin', 'btn-maps')}</div>` : ''}
+          ${btnRow([
+            p.mapsUrl ? linkBtn(p.mapsUrl, 'Kaart', 'pin', 'btn-maps') : '',
+            ...LINK_SLOTS.map((slot) => linkBtn((p.links || {})[slot.key], slot.label, slot.icon, 'btn-social')),
+          ])}
         </article>`)}
     </section>`;
+}
+
+/* Fotoverantwoording. Verplicht bij de licentie van de foto's, dus dit blok
+   hoort te verschijnen zodra er ook maar een foto op de site staat. */
+function creditsView(credits) {
+  if (!credits || !credits.photos || !credits.photos.length) return '';
+  return h`
+    <details class="colofon">
+      <summary>${credits.title || 'Fotoverantwoording'}</summary>
+      <div class="colofon-body">
+        ${credits.intro ? h`<p class="colofon-intro">${credits.intro}</p>` : ''}
+        <ul>
+          ${credits.photos.map((c) => h`
+            <li>
+              <span class="colofon-subject">${c.subject}</span>
+              <span class="colofon-meta">${c.photographer}${c.license ? h` &middot; ${c.license}` : ''}</span>
+              ${c.url ? h`<a href="${c.url}" target="_blank" rel="noopener">Bron</a>` : ''}
+            </li>`)}
+        </ul>
+      </div>
+    </details>`;
 }
 
 /* ---------- Navigatie ---------- */
@@ -245,12 +298,24 @@ async function init() {
   $('#footer-status').textContent = data.meta.status;
 
   mount($('#daynav'), navView(data));
+  mount($('#colofon'), creditsView(data.credits));
   mount($('#main'), h`${homeView(data)}${data.days.map(dayView)}${praktischView(data)}`);
 
   $('#daynav').addEventListener('click', (e) => {
     const tab = e.target.closest('.daytab');
     if (tab) showView(tab.dataset.view);
   });
+
+  // Ontbreekt een fotobestand, dan halen we het beeld weg in plaats van
+  // een gebroken plaatje te tonen. Error-events bubbelen niet, vandaar capture.
+  $('#main').addEventListener('error', (e) => {
+    const el = e.target;
+    if (el.tagName !== 'IMG') return;
+    const heroHolder = el.closest('.hero-media');
+    const pic = el.closest('picture');
+    if (pic) pic.remove();
+    if (heroHolder) heroHolder.classList.add('no-media');
+  }, true);
 
   $('#main').addEventListener('click', (e) => {
     const card = e.target.closest('[data-goto]');

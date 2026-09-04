@@ -5,7 +5,12 @@
     "subtitle": "Amsterdam naar Kopenhagen met de camper en de e-bikes.",
     "dates": "9 t/m 14 september 2026",
     "url": "https://cph2026.netlify.app",
-    "status": "Programma van 9 t/m 14 september 2026. Adressen, routes en contactgegevens zijn online nagekeken."
+    "status": "Programma van 9 t/m 14 september 2026. Adressen, routes en contactgegevens zijn online nagekeken.",
+    "hero": {
+      "file": "nyhavn",
+      "alt": "De gekleurde gevels langs de gracht van Nyhavn in Kopenhagen",
+      "webp": false
+    }
   },
   "overview": {
     "headline": "Vijf dagen, een camper, de e-bikes mee.",
@@ -143,7 +148,12 @@
           ],
           "check": "Openingstijden van Amar Konya verschillen per bron (21:30 of 22:00). Bel even als je daar naartoe wilt."
         }
-      ]
+      ],
+      "hero": {
+        "file": "storebaelt",
+        "alt": "De Storebæltbrug over de zeestraat tussen Fyn en Sjælland",
+        "webp": false
+      }
     },
     {
       "id": "do-10",
@@ -197,6 +207,11 @@
             "web": "https://denkongeligesamling.dk/en/amalienborg-museum/",
             "insta": "https://www.instagram.com/amalienborgmuseet/",
             "tiktok": ""
+          },
+          "img": {
+            "file": "amalienborg",
+            "alt": "Het paleisplein van Amalienborg met de ruiterstandbeeld in het midden",
+            "webp": false
           }
         },
         {
@@ -210,6 +225,11 @@
             "web": "",
             "insta": "https://www.instagram.com/kastellet_kbh/",
             "tiktok": "https://www.tiktok.com/tag/kastellet"
+          },
+          "img": {
+            "file": "kastellet",
+            "alt": "De graswallen en gracht van het stervormige fort Kastellet",
+            "webp": false
           }
         },
         {
@@ -223,6 +243,11 @@
             "web": "https://torvehallernekbh.dk/",
             "insta": "https://www.instagram.com/torvehallernekbh/",
             "tiktok": ""
+          },
+          "img": {
+            "file": "torvehallerne",
+            "alt": "Kramen met verse waren in de glazen markthallen van Torvehallerne",
+            "webp": false
           }
         },
         {
@@ -236,6 +261,11 @@
             "web": "https://kodbyen.kk.dk/en/visit-us",
             "insta": "https://www.instagram.com/explore/tags/k%C3%B8dbyen/",
             "tiktok": "https://www.tiktok.com/tag/k%C3%B8dbyen"
+          },
+          "img": {
+            "file": "koedbyen-vesterbro",
+            "alt": "De witte hallen van Kødbyen, de oude slachthuiswijk in Vesterbro",
+            "webp": false
           }
         },
         {
@@ -277,7 +307,12 @@
             }
           ]
         }
-      ]
+      ],
+      "hero": {
+        "file": "nyhavn",
+        "alt": "De gekleurde gevels en houten boten aan de kade van Nyhavn",
+        "webp": false
+      }
     },
     {
       "id": "vr-11",
@@ -351,6 +386,11 @@
             "web": "https://keinemusik.com/adam-port-and-me-in-copenhagen-2/",
             "insta": "https://www.instagram.com/keinemusik/",
             "tiktok": "https://www.tiktok.com/@keinemusikcrue"
+          },
+          "img": {
+            "file": "valbyparken",
+            "alt": "Het groen van Valbyparken, waar het festival plaatsvindt",
+            "webp": false
           }
         },
         {
@@ -366,7 +406,12 @@
           },
           "warn": "Rond middernacht terugfietsen na een dag festival: zorg dat de fietsverlichting het doet en dat de accu's vol zijn, spreek af dat je samen blijft, en kies de verlichte doorgaande route in plaats van het park. Twijfel je over de conditie van iemand, neem dan een taxi en laat de fietsen staan, ophalen kan zaterdagochtend."
         }
-      ]
+      ],
+      "hero": {
+        "file": "amager-strandpark",
+        "alt": "Het brede zandstrand van Amager Strandpark aan de Sont",
+        "webp": false
+      }
     },
     {
       "id": "za-12",
@@ -469,7 +514,12 @@
                 "tiktok": ""
               }
             }
-          ]
+          ],
+          "img": {
+            "file": "gilleleje",
+            "alt": "Vissersboten in de haven van Gilleleje",
+            "webp": false
+          }
         },
         {
           "id": "za-norrebro",
@@ -510,9 +560,19 @@
                 "tiktok": ""
               }
             }
-          ]
+          ],
+          "img": {
+            "file": "noerrebro",
+            "alt": "Een straat in Nørrebro met winkels en terrassen",
+            "webp": false
+          }
         }
-      ]
+      ],
+      "hero": {
+        "file": "hornbaek",
+        "alt": "De kust bij Hornbæk aan de noordkant van Sjælland",
+        "webp": false
+      }
     },
     {
       "id": "zo-13",
@@ -656,7 +716,12 @@
           }
         }
       ],
-      "outro": "Camper inleveren: maandag 14 september voor 09:00. Tanken, watertank en toilet legen en alles eruit halen voordat je wegrijdt."
+      "outro": "Camper inleveren: maandag 14 september voor 09:00. Tanken, watertank en toilet legen en alles eruit halen voordat je wegrijdt.",
+      "hero": {
+        "file": "gokart",
+        "alt": "Kartbaan met karts in de bocht",
+        "webp": false
+      }
     }
   ],
   "praktisch": [
@@ -748,7 +813,17 @@
         "web": "",
         "insta": "",
         "tiktok": ""
+      },
+      "img": {
+        "file": "storebaelt",
+        "alt": "De Storebæltbrug gezien vanaf de weg",
+        "webp": false
       }
     }
-  ]
+  ],
+  "credits": {
+    "title": "Fotoverantwoording",
+    "intro": "",
+    "photos": []
+  }
 }
