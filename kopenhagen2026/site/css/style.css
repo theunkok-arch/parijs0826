@@ -775,7 +775,13 @@ body {
 
 .colofon-meta { color: var(--ink-mute); }
 
-.colofon-body a { color: var(--ink-soft); }
+.colofon-body a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink-soft);
+  text-underline-offset: 3px;
+}
 
 /* ---------- Footer ---------- */
 
