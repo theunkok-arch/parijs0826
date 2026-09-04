@@ -17,8 +17,9 @@ Eigenaar: Dominique. Mobile-first is heilig, ontworpen op 390px breed.
 - Foto's: max 1200px breed, Nederlandse alt-tekst verplicht, `"webp": true` alleen als dat
   bestand er echt is (een `<picture>` valt niet terug op de jpg bij een 404).
 - De Unsplash-foto's vragen geen naamsvermelding. De foto van Torvehallerne staat onder
-  CC BY 2.0 en **die credit moet op de site blijven** (`credits.required` in de data).
-  Verdwijnt die foto, dan mag de regel weg.
+  CC BY 2.0 en **die credit moet zichtbaar blijven**: hij hangt via `img.credit` aan de
+  foto zelf en staat er dus alleen op de pagina waar die foto staat. Verdwijnt de foto,
+  dan mag de credit weg. Nooit wegwerken door hem onzichtbaar te maken.
 
 ## Strikt gescheiden van het Parijs-project
 Deze map is een op zichzelf staand project met een eigen `netlify.toml` en een eigen
@@ -26,7 +27,7 @@ Netlify-site (`cph2026`, op cph2026.netlify.app). Raak niets aan buiten `kopenha
 `netlify.toml`, `site/`, `docs/` en `prompts/` horen bij de Parijs-site.
 
 ## Structuur
-- `site/data/reis.json` - meta, overview, days (hero, routes, items, places, outro), praktisch, credits
+- `site/data/reis.json` - meta, overview, days (hero, routes, items, places, outro), praktisch
 - `site/img/` - foto's als `naam.jpg`, optioneel `naam.webp` ernaast
 - `site/js/app.js` - rendert alle views, hash-routing, deel-knop
 - `site/js/html.js` - `h` tagged template die automatisch escapet, plus `raw` en `mount`

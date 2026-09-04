@@ -63,12 +63,15 @@ function linkBtn(url, label, iconName, extraClass = '') {
 function picture(image, shape) {
   if (!image || !image.file) return '';
   const jpg = h`<img src="img/${image.file}.jpg" alt="${image.alt}" loading="lazy" decoding="async">`;
-  if (!image.webp) return h`<picture class="media media-${shape}">${jpg}</picture>`;
-  return h`
-    <picture class="media media-${shape}">
-      <source srcset="img/${image.file}.webp" type="image/webp">
-      ${jpg}
-    </picture>`;
+  const pic = image.webp
+    ? h`<picture class="media media-${shape}"><source srcset="img/${image.file}.webp" type="image/webp">${jpg}</picture>`
+    : h`<picture class="media media-${shape}">${jpg}</picture>`;
+  // Een credit staat bij de foto waar hij bij hoort, niet op elke pagina.
+  if (!image.credit) return pic;
+  const c = image.credit;
+  return h`${pic}<p class="fotocredit">${c.url
+    ? h`<a href="${c.url}" target="_blank" rel="noopener">${c.text}</a>`
+    : c.text}</p>`;
 }
 
 function placeCard(place) {
@@ -210,16 +213,6 @@ function praktischView(data) {
     </section>`;
 }
 
-/* De Unsplash-licentie vraagt geen naamsvermelding, de foto van Torvehallerne
-   staat onder CC BY 2.0 en die credit is wel verplicht. Vandaar deze ene regel. */
-function creditsView(credits) {
-  if (!credits || !credits.required) return '';
-  const text = credits.url
-    ? h`<a href="${credits.url}" target="_blank" rel="noopener">${credits.required}</a>`
-    : credits.required;
-  return h`<p class="fotocredit">${text}</p>`;
-}
-
 /* ---------- Navigatie ---------- */
 
 function navView(data) {
@@ -271,7 +264,6 @@ async function init() {
   $('#footer-status').textContent = data.meta.status;
 
   mount($('#daynav'), navView(data));
-  mount($('#fotocredit'), creditsView(data.credits));
   mount($('#main'), h`${homeView(data)}${data.days.map(dayView)}${praktischView(data)}`);
 
   $('#daynav').addEventListener('click', (e) => {

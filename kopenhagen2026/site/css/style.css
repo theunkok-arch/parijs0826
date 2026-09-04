@@ -693,7 +693,7 @@ body {
 /* ---------- Fotocredit ---------- */
 
 .fotocredit {
-  margin: 10px 0 0;
+  margin: -6px 0 10px;
   font-size: 11px;
   color: var(--ink-mute);
   opacity: 0.75;
