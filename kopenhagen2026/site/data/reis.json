@@ -31,7 +31,7 @@
     ],
     "highlights": [
       "Adam Port en &ME van Keinemusik in Valbyparken, vrijdag vanaf 15:00",
-      "De stad per e-bike: Nyhavn, Amalienborg, Kastellet en Torvehallerne",
+      "De stad per e-bike: Christiania, Nyhavn, Amalienborg, Kastellet en Torvehallerne",
       "Kustpad Hornbæk naar Gilleleje, vis eten op de haven",
       "Karten op de baan van Vandel, zondagochtend om 11:00"
     ]
@@ -164,14 +164,15 @@
       "short": "Do",
       "accent": "mint",
       "sub": "De stad per e-bike",
-      "intro": "Hele dag op de fiets. Kopenhagen is vlak en heeft overal vrijliggende fietspaden, dus alles hieronder ligt op een halfuur van elkaar.",
+      "intro": "Hele dag op de fiets, met Christiania als eerste stop. Kopenhagen is vlak en heeft overal vrijliggende fietspaden, dus alles hieronder ligt op een halfuur van elkaar.",
       "routes": [
         {
           "title": "Stadsronde per e-bike",
           "mode": "E-bike",
-          "summary": "Rondje vanaf CityCamp langs de haven, het paleis en de foodmarket, en via Vesterbro weer terug.",
+          "summary": "Rondje vanaf CityCamp: eerst Christiania, dan langs de haven, het paleis en de foodmarket, en via Vesterbro weer terug.",
           "via": [
             "CityCamp",
+            "Christiania",
             "Nyhavn",
             "Amalienborg",
             "Kastellet",
@@ -179,12 +180,31 @@
             "Kødbyen",
             "CityCamp"
           ],
-          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Prags%20Boulevard%2069%2C%202300%20K%C3%B8benhavn%20S&destination=Prags%20Boulevard%2069%2C%202300%20K%C3%B8benhavn%20S&waypoints=Nyhavn%2C%20K%C3%B8benhavn%20K%7CAmalienborg%20Slotsplads%2C%20K%C3%B8benhavn%20K%7CKastellet%2C%20K%C3%B8benhavn%20%C3%98%7CFrederiksborggade%2021%2C%201360%20K%C3%B8benhavn%7CFl%C3%A6sketorvet%2025%2C%201711%20K%C3%B8benhavn%20V&travelmode=bicycling",
+          "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=Prags%20Boulevard%2069%2C%202300%20K%C3%B8benhavn%20S&destination=Prags%20Boulevard%2069%2C%202300%20K%C3%B8benhavn%20S&waypoints=Prinsessegade%202%2C%201422%20K%C3%B8benhavn%20K%7CNyhavn%2C%20K%C3%B8benhavn%20K%7CAmalienborg%20Slotsplads%2C%20K%C3%B8benhavn%20K%7CKastellet%2C%20K%C3%B8benhavn%20%C3%98%7CFrederiksborggade%2021%2C%201360%20K%C3%B8benhavn%7CFl%C3%A6sketorvet%2025%2C%201711%20K%C3%B8benhavn%20V&travelmode=bicycling",
           "embedUrl": null,
           "gpxUrl": null
         }
       ],
       "items": [
+        {
+          "id": "do-christiania",
+          "time": "10:00",
+          "title": "Vrijstad Christiania",
+          "desc": "Gratis toegang en geen tickets nodig, je loopt zo naar binnen bij de ingang aan de Prinsessegade. Het gebied is autovrij, dus zet de fietsen in het rek bij de ingang. Binnen: street art op bijna elke muur, zelfgebouwde huizen langs het water, koffie bij Månefiskeren of Nemoland, en ergens staat Green George, een van de houten trollen van Thomas Dambo. Even zoeken hoort erbij.",
+          "address": "Ingang Prinsessegade, Christianshavn, København K",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Christiania%20Prinsessegade%20K%C3%B8benhavn",
+          "warn": "Huisregels: foto's mogen in de meeste delen, maar vraag het even als je iemand van dichtbij op de foto zet. Niet rennen. En cannabis kopen is gewoon illegaal, ook hier.",
+          "links": {
+            "web": "https://www.christiania.org/",
+            "insta": "https://www.instagram.com/christiania.freetown/",
+            "tiktok": "https://www.tiktok.com/tag/christiania"
+          },
+          "img": {
+            "file": "christiania",
+            "alt": "De houten toegangspoort van Christiania met het bord boven de weg en beschilderde gebouwen erachter",
+            "webp": true
+          }
+        },
         {
           "id": "do-nyhavn",
           "time": "Ochtend",
