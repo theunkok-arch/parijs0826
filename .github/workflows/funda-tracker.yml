@@ -1,0 +1,143 @@
+name: Funda tracker
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 Nederlandse zomertijd, 07:00 wintertijd
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "tracker/**"
+      - ".github/workflows/funda-tracker.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: funda-tracker-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  # Draait op de PR: alleen kijken of funda bereikbaar is en of de parser de
+  # cijfers eruit haalt. Schrijft niets weg en maakt de run nooit rood, want
+  # een blokkade van funda is geen fout in deze code.
+  proefmeting:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Parser testen
+        run: node tracker/test-parser.mjs
+
+      - name: Kijken wat funda terugstuurt
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
+        run: node tracker/funda-tracker.mjs diagnose || true
+
+      - name: Proefmeting bij funda
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
+        run: |
+          if node tracker/funda-tracker.mjs fetch; then
+            echo "### Proefmeting geslaagd" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            node tracker/funda-tracker.mjs report >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Proefmeting mislukt" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Funda gaf geen bruikbare pagina terug. Zie de log hierboven en het debug-artifact." >> "$GITHUB_STEP_SUMMARY"
+            echo "Werk de patronen bij in tracker/funda-tracker.mjs, of gebruik het vangnet met 'add'." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Ruwe pagina bewaren als het parsen mislukte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funda-debug-proef-${{ github.run_id }}
+          path: tracker/.debug/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # De echte dagelijkse meting, die wel wegschrijft en commit.
+  meting:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Parser testen
+        run: node tracker/test-parser.mjs
+
+      # Funda toont de populariteitscijfers alleen ingelogd. Zonder sessiecookie
+      # heeft ophalen geen zin, dan zou deze run elke dag onterecht rood worden.
+      - name: Kijken of er een funda-sessie beschikbaar is
+        id: sessie
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
+        run: |
+          if [ -n "$FUNDA_COOKIE" ]; then
+            echo "aanwezig=ja" >> "$GITHUB_OUTPUT"
+          else
+            echo "aanwezig=nee" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Automatisch meten staat uit"
+              echo ""
+              echo "Er is geen FUNDA_COOKIE ingesteld als repository-secret."
+              echo "Funda laat het aantal keer bekeken en bewaard alleen zien aan ingelogde"
+              echo "gebruikers, dus zonder sessiecookie valt er niets op te halen."
+              echo ""
+              echo "Voer de cijfers zolang handmatig in met:"
+              echo '`node tracker/funda-tracker.mjs add --bekeken N --bewaard N`'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Cijfers ophalen van funda
+        id: ophalen
+        if: steps.sessie.outputs.aanwezig == 'ja'
+        continue-on-error: true
+        env:
+          FUNDA_COOKIE: ${{ secrets.FUNDA_COOKIE }}
+        run: node tracker/funda-tracker.mjs fetch
+
+      - name: Overzicht tonen in de log
+        if: always()
+        run: node tracker/funda-tracker.mjs report
+
+      - name: Meting committen
+        if: steps.sessie.outputs.aanwezig == 'ja'
+        run: |
+          git config user.name "funda-tracker"
+          git config user.email "actions@github.com"
+          git add tracker/data/funda-stats.json
+          if git diff --staged --quiet; then
+            echo "Niets veranderd, geen commit."
+          else
+            git commit -m "chore(tracker): funda-meting $(date -u +%F) [skip netlify]"
+            git push
+          fi
+
+      - name: Ruwe pagina bewaren als het parsen mislukte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funda-debug-${{ github.run_id }}
+          path: tracker/.debug/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Run rood maken als het ophalen mislukte
+        if: steps.sessie.outputs.aanwezig == 'ja' && steps.ophalen.outcome == 'failure'
+        run: |
+          echo "Het ophalen van funda is mislukt, zie de log en het debug-artifact."
+          exit 1
